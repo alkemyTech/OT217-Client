@@ -13,4 +13,8 @@ export class ActivityFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public functiontest(){
+    
+  }
+
 }
