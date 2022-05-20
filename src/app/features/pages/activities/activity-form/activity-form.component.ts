@@ -14,7 +14,7 @@ export class ActivityFormComponent implements OnInit {
   }
 
   public functiontest(){
-    
+    console.log("Hola")
   }
 
 }
