@@ -1,2 +1,15 @@
+<form class="form-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input matInput placeholder="Titulo" required />
+  </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <mat-select>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
 
+  <ckeditor class="content-editor" [editor]="Editor"></ckeditor>
+</form>
