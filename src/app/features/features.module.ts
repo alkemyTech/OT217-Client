@@ -15,6 +15,7 @@ import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
+import { PaginatePipe } from "../shared/pipes/paginate.pipe";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ActivityCardComponent } from './pages/activities/activity-card/activity
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
+    PaginatePipe
   ],
   exports: [
     ActivityFormComponent,

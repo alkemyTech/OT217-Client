@@ -1,4 +1,4 @@
-<main class="activity-page-container">
+<main class="activity-page-container" data-aos="fade-up">
   <h2 class="page-title text">Activity</h2>
   <p class="page-description text">
     Mediante nuestros programas educativos, buscamos incrementar la capacidad
@@ -6,12 +6,24 @@
     las normas de convivencia de la sociedad a la que pertenecen.
   </p>
   <div class="card-container">
-    <section *ngFor="let item of activities">
+    <section
+      *ngFor="let item of activities | paginate: page_size:page_number"
+      data-aos="fade-up"
+    >
       <app-activity-card
         name="{{ item.name }}"
         image="{{ item.image }}"
         description="{{ item.description }}"
       ></app-activity-card>
     </section>
+    <div class="card-paginator">
+      <mat-paginator
+        [length]="activities.length"
+        [pageSize]="page_size"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="handlePage($event)"
+      >
+      </mat-paginator>
+    </div>
   </div>
 </main>

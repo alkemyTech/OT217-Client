@@ -16,7 +16,7 @@
   font-weight: bolder;
   font-size: 36px;
   text-decoration: underline;
-  text-decoration-color: #9AC9FB ;
+  text-decoration-color: #9ac9fb;
 }
 
 .text {
@@ -31,4 +31,10 @@
   justify-content: center;
   align-items: center;
   margin: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-paginator {
+    width: 50%;
+  }
 }
