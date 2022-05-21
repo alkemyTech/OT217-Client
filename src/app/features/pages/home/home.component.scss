@@ -129,6 +129,12 @@ ul {
   border-radius: 50%;
 }
 
+
+
+.testimonial-card:hover {
+  transform: scale(0.8); 
+}
+
 //media queries
 
 /* Small devices (tablets, 768px and up) */
@@ -139,4 +145,5 @@ ul {
     /* banner displayed only for desktops */
   //  #banner { display: block; }
 
+  
   
