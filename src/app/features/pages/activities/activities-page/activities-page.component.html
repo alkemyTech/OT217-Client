@@ -1,19 +1,17 @@
-<div class="back">
-  <main class="activity-page-container">
-    <h2 class="page-title text">Activity</h2>
-    <p class="page-description text">
-      Mediante nuestros programas educativos, buscamos incrementar la capacidad
-      intelectual, moral y afectiva de las personas de acuerdo con la cultura y
-      las normas de convivencia de la sociedad a la que pertenecen.
-    </p>
-    <div class="card-container">
-      <section *ngFor="let item of activities">
-        <app-activity-card
-          name="{{ item.name }}"
-          image="{{ item.image }}"
-          description="{{ item.description }}"
-        ></app-activity-card>
-      </section>
-    </div>
-  </main>
-</div>
+<main class="activity-page-container">
+  <h2 class="page-title text">Activity</h2>
+  <p class="page-description text">
+    Mediante nuestros programas educativos, buscamos incrementar la capacidad
+    intelectual, moral y afectiva de las personas de acuerdo con la cultura y
+    las normas de convivencia de la sociedad a la que pertenecen.
+  </p>
+  <div class="card-container">
+    <section *ngFor="let item of activities">
+      <app-activity-card
+        name="{{ item.name }}"
+        image="{{ item.image }}"
+        description="{{ item.description }}"
+      ></app-activity-card>
+    </section>
+  </div>
+</main>
