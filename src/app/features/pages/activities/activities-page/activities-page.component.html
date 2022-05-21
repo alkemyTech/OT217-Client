@@ -1,17 +1,19 @@
 <div class="back">
-  <main>
-    <h2>Activity</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. A in dolor magni.
-      Aperiam similique blanditiis, quis eaque tempore maiores deleniti
-      perspiciatis, ab facere, magnam eos provident natus quo quidem. Cum.
+  <main class="activity-page-container">
+    <h2 class="page-title text">Activity</h2>
+    <p class="page-description text">
+      Mediante nuestros programas educativos, buscamos incrementar la capacidad
+      intelectual, moral y afectiva de las personas de acuerdo con la cultura y
+      las normas de convivencia de la sociedad a la que pertenecen.
     </p>
-    <section *ngFor="let item of activities">
-      <app-activity-card
-        name="{{ item.name }}"
-        image="{{ item.image }}"
-        description="{{ item.description }}"
-      ></app-activity-card>
-    </section>
+    <div class="card-container">
+      <section *ngFor="let item of activities">
+        <app-activity-card
+          name="{{ item.name }}"
+          image="{{ item.image }}"
+          description="{{ item.description }}"
+        ></app-activity-card>
+      </section>
+    </div>
   </main>
 </div>

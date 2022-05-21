@@ -15,7 +15,6 @@ export class ActivitiesPageComponent implements OnInit {
   ngOnInit(): void {
     this.activitiesService.getActivities().subscribe((response) => {
       this.activities = response.data;
-      console.log(this.activities);
     });
   }
 }
