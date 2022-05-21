@@ -1,1 +1,17 @@
-<p>activities-page works!</p>
+<div class="back">
+  <main>
+    <h2>Activity</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A in dolor magni.
+      Aperiam similique blanditiis, quis eaque tempore maiores deleniti
+      perspiciatis, ab facere, magnam eos provident natus quo quidem. Cum.
+    </p>
+    <section *ngFor="let item of activities">
+      <app-activity-card
+        name="{{ item.name }}"
+        image="{{ item.image }}"
+        description="{{ item.description }}"
+      ></app-activity-card>
+    </section>
+  </main>
+</div>

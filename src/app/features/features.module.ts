@@ -2,6 +2,9 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
+import { MaterialModule } from "../material/material.module";
+
+
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
@@ -11,6 +14,7 @@ import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.comp
 import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
+import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { ActivitiesPageComponent } from './pages/activities/activities-page/acti
     TestimonialFormComponent,
     UserFormComponent,
     ActivitiesPageComponent,
+    ActivityCardComponent,
   ],
   exports: [
     ActivityFormComponent,
@@ -33,8 +38,9 @@ import { ActivitiesPageComponent } from './pages/activities/activities-page/acti
     SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
-    RouterModule
+    RouterModule,
+    
   ],
-  imports: [CommonModule, AppRoutingModule, RouterModule],
+  imports: [CommonModule, MaterialModule, AppRoutingModule, RouterModule],
 })
 export class FeaturesModule {}
