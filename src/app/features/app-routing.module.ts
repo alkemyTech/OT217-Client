@@ -10,11 +10,11 @@ const routes: Routes = [
     component: ActivitiesPageComponent,
   },
   {
-    path: "backoffice/news/:id",
+    path: "backoffice/news",
     component: NewsFormComponent,
   },
   {
-    path: "backoffice/news/",
+    path: "backoffice/news/:id",
     component: NewsFormComponent,
   },
   {

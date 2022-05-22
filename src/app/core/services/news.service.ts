@@ -18,4 +18,8 @@ export class NewsService {
   postNews(news:any):Observable<any>{
     return this.http.post(this.url,news);
   }
+
+  updateNews(news:any, id:string):Observable<any>{
+    return this.http.put(this.url + `/${id}`,news);
+  }
 }

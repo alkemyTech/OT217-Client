@@ -4,7 +4,7 @@ import { NewsService } from "src/app/core/services/news.service";
 import { FormBuilder, Validators } from "@angular/forms";
 import { News } from "../../../../shared/models/News";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-news-form",
@@ -15,12 +15,11 @@ export class NewsFormComponent implements OnInit {
   categories: News[] = [];
   cardImageBase64: string = "";
   news: any;
-  public id: string | null = "";
+  newsId: string | null = "";
 
   public Editor = ClassicEditor;
 
   toBase64(event: any) {
-    let permanent: string[] = [];
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = () => {
@@ -30,18 +29,25 @@ export class NewsFormComponent implements OnInit {
 
   newsCommit() {
     let newsCommit = {
+      id: 0,
       name: this.news.get(["name"]).value,
       category_id: this.news.get(["category_id"]).value,
       content: this.news.get(["content"]).value,
       image: this.cardImageBase64,
     };
 
-    if (newsCommit.image) {
+    if (this.newsId) {
+      this.newsService
+        .updateNews(newsCommit, this.newsId)
+        .subscribe((response) => {
+          console.log(response);
+        });
+      this.news.reset();
+    } else if (!this.newsId) {
       this.newsService.postNews(newsCommit).subscribe((response) => {
         console.log(response);
       });
-    } else {
-      alert("Agregue una imagen por favor")
+      this.news.reset();
     }
   }
 
@@ -50,25 +56,20 @@ export class NewsFormComponent implements OnInit {
     private newsService: NewsService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.newsId = this.route.snapshot.params.id;
+  }
 
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe((response) => {
       this.categories = response.data;
-
-      let id = this.route.snapshot.params.id
-
-      if(this.id){
-        console.log(this.id)
-      } else {
-        console.log("Nada en el id")
-      }
     });
 
     this.news = this.formBuilder.group({
       name: ["", [Validators.required, Validators.minLength(4)]],
       category_id: ["", Validators.required],
       content: ["", Validators.required],
+      image: [this.cardImageBase64, Validators.required],
     });
   }
 }
