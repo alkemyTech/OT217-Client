@@ -16,8 +16,9 @@ export class NewsFormComponent implements OnInit {
   cardImageBase64: string = "";
   news: any;
   newsId: string | null = "";
-  currentNews: News[] = []
+  currentNews: News[] = [];
 
+  title: string = "";
 
   public Editor = ClassicEditor;
 
@@ -67,18 +68,23 @@ export class NewsFormComponent implements OnInit {
       this.categories = response.data;
     });
 
-    if (this.newsId){;
-      this.newsService.getNewsId(this.newsId).subscribe((response)=>{
-        this.currentNews.push(response.data)
-        console.log(this.currentNews[0])
+    if (this.newsId) {
+      this.title = "Modificar Novedad";
+      this.newsService.getNewsId(this.newsId).subscribe((response) => {
+        this.currentNews.push(response.data);
+        console.log(this.currentNews[0]);
         this.news = this.formBuilder.group({
-          name: [this.currentNews[0].name, [Validators.required, Validators.minLength(4)]],
+          name: [
+            this.currentNews[0].name,
+            [Validators.required, Validators.minLength(4)],
+          ],
           category_id: [this.currentNews[0].category_id, Validators.required],
           content: [this.currentNews[0].content, Validators.required],
           image: [this.currentNews[0].image, Validators.required],
         });
       });
-    } else{
+    } else {
+      this.title = "Crear Novedad";
       this.news = this.formBuilder.group({
         name: ["", [Validators.required, Validators.minLength(4)]],
         category_id: ["", Validators.required],
@@ -86,16 +92,5 @@ export class NewsFormComponent implements OnInit {
         image: [this.cardImageBase64, Validators.required],
       });
     }
-
-/*     if (this.newsId){
-      this.newsService.getNewsId(this.newsId).subscribe((response)=>{
-        this.currentNews = {
-          name: response.data.name ,
-          category_id: response.data.category_id,
-          content: response.data.content,
-          image: response.data.iamge
-        }
-      })
-    } */
   }
 }
