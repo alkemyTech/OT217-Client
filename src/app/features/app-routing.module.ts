@@ -5,18 +5,19 @@ import { ActivitiesPageComponent } from "./pages/activities/activities-page/acti
 import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
 
 const routes: Routes = [
-  { 
-    path: "actividades", 
-    component: ActivitiesPageComponent },
+  {
+    path: "actividades",
+    component: ActivitiesPageComponent,
+  },
+  {
+    path: "backoffice/news",
+    component: NewsFormComponent,
+  },
   {
     path: "",
     redirectTo: "actividades",
     pathMatch: "full",
   },
-  // ESTO DEBE SER ELIMINADO ES SOLO PARA PRUEBAS
-  { 
-    path: "news", 
-    component: NewsFormComponent },
   {
     path: "**",
     redirectTo: "actividades",
