@@ -19,7 +19,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { OrganizationComponent } from './features/pages/organization/organization.component';
+
 
 
 @NgModule({
@@ -49,8 +49,7 @@ import { OrganizationComponent } from './features/pages/organization/organizatio
     MatCheckboxModule,
     MatIconModule,
     MatCardModule,
-    HttpClientModule,
-    OrganizationComponent
+    HttpClientModule
   ],
   exports: [
     BrowserAnimationsModule,
