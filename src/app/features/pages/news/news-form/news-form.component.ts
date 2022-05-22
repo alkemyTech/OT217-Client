@@ -1,6 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { CategoriesService } from "src/app/core/services/categories.service";
 import { NewsService } from "src/app/core/services/news.service";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
+import { News } from "../../../../shared/models/News";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 @Component({
@@ -9,44 +16,46 @@ import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
   styleUrls: ["./news-form.component.scss"],
 })
 export class NewsFormComponent implements OnInit {
-  categories: any[] = [];
-  cardImageBase64: string = "";
+  categories: News[] = [];
+  cardImageBase64: any;
+  news: any;
 
   public Editor = ClassicEditor;
 
   toBase64(event: any) {
+    let permanent:string[] = []
     const reader = new FileReader();
-    reader.onload = (e: any) => {
-      const image = new Image();
-      image.src = e.target.result;
-      image.onload = (rs) => {};
-      const imgBase64Path = e.target.result;
-      this.cardImageBase64 = imgBase64Path;
-    };
     reader.readAsDataURL(event.target.files[0]);
+    reader.onload = () => {
+      this.cardImageBase64 = reader.result as string;
+      permanent.push(this.cardImageBase64);
+    };
   }
 
   testing() {
-    let newsSend = {
-      name: "Esta es mi new prueba",
-      content: "string",
-      image: this.cardImageBase64,
-    };
-
-    this.newsService.postNews(newsSend).subscribe((response) => {
-      console.log(response);
-    });
+    console.log(this.news.value)
+    console.log(this.cardImageBase64)
+/*     this.newsService.postNews(this.news.value).subscribe(response=>{
+      console.log(response)
+    }) */
   }
 
   constructor(
     private categoriesService: CategoriesService,
-    private newsService: NewsService
+    private newsService: NewsService,
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe((response) => {
       this.categories = response.data;
-      console.log(this.categories);
+    });
+
+    this.news = this.formBuilder.group({
+      name: ["", [Validators.required, Validators.minLength(4)]],
+      category_id: ["", Validators.required],
+      content: ["", Validators.required],
+      image: [this.cardImageBase64]
     });
   }
 }

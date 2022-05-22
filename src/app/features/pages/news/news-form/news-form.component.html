@@ -1,21 +1,21 @@
-<form class="form-container">
+<form class="form-container" [formGroup]="news">
   <mat-form-field appearance="fill">
     <mat-label>Titulo</mat-label>
-    <input matInput placeholder="Titulo" required />
+    <input matInput placeholder="Titulo" formControlName="name"/>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Categoria</mat-label>
-    <mat-select>
+    <mat-select formControlName="category_id">
       <div *ngFor="let category of categories">
-        <mat-option value="{{ category.name }}">{{ category.name }}</mat-option>
+        <mat-option value="{{ category.id }}">{{ category.name }}</mat-option>
       </div>
     </mat-select>
   </mat-form-field>
 
-  <input type="file" (change)="toBase64($event)">
+  <input type="file" class="image" (change)="toBase64($event)">
 
-  <ckeditor class="content-editor" [editor]="Editor"></ckeditor>
+  <ckeditor class="content-editor" formControlName="content" [editor]="Editor"></ckeditor>
 
   <button (click)="testing()">Push test</button>
 </form>
