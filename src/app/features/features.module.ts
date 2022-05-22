@@ -11,6 +11,8 @@ import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.comp
 import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
+import { FormContactComponent } from './pages/form-contact/form-contact.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.c
     TestimonialFormComponent,
     UserFormComponent,
     SlideInicioComponent,
+    FormContactComponent,
   ],
   exports: [
     ActivityFormComponent,
@@ -33,8 +36,8 @@ import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.c
     SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
-    RouterModule
+    RouterModule,
   ],
-  imports: [CommonModule, AppRoutingModule, RouterModule],
+  imports: [CommonModule, AppRoutingModule, RouterModule,FormsModule,ReactiveFormsModule],
 })
 export class FeaturesModule {}
