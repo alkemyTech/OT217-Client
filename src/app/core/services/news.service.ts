@@ -22,4 +22,8 @@ export class NewsService {
   updateNews(news:any, id:string):Observable<any>{
     return this.http.put(this.url + `/${id}`,news);
   }
+
+  getNewsId(id:string):Observable<any>{
+    return this.http.get(this.url+`/${id}`);
+  }
 }
