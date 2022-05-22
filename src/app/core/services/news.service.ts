@@ -14,4 +14,8 @@ export class NewsService {
   getNews():Observable<any>{
     return this.http.get(this.url);
   }
+
+  postNews(file:any):Observable<any>{
+    return this.http.post(this.url,file);
+  }
 }

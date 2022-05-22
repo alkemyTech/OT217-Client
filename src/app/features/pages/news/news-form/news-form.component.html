@@ -7,9 +7,15 @@
   <mat-form-field appearance="fill">
     <mat-label>Categoria</mat-label>
     <mat-select>
-      <mat-option value="option">Option</mat-option>
+      <div *ngFor="let category of categories">
+        <mat-option value="{{ category.name }}">{{ category.name }}</mat-option>
+      </div>
     </mat-select>
   </mat-form-field>
 
+  <input type="file" (change)="toBase64($event)">
+
   <ckeditor class="content-editor" [editor]="Editor"></ckeditor>
+
+  <button (click)="testing()">Push test</button>
 </form>
