@@ -1,21 +1,57 @@
-<form class="form-container" [formGroup]="news">
-  <mat-form-field appearance="fill">
-    <mat-label>Titulo</mat-label>
-    <input matInput placeholder="Titulo" formControlName="name"/>
-  </mat-form-field>
+<div class="news-container">
+  <main class="section-wrapper">
 
-  <mat-form-field appearance="fill">
-    <mat-label>Categoria</mat-label>
-    <mat-select formControlName="category_id">
-      <div *ngFor="let category of categories">
-        <mat-option value="{{ category.id }}">{{ category.name }}</mat-option>
+    <form class="form-container" [formGroup]="news" autocomplete="off">
+      <h1 class="title">Novedades</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <input
+          class="inputs"
+          matInput
+          placeholder="Titulo"
+          formControlName="name"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <mat-select class="inputs" formControlName="category_id">
+          <div *ngFor="let category of categories">
+            <mat-option value="{{ category.id }}">{{
+              category.name
+            }}</mat-option>
+          </div>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="special-input">
+        <label class="input-label">Agrega una imagen a la novedad</label>
+        <input
+          class="inputs"
+          type="file"
+          class="image"
+          accept=".png, .jpg, .jpeg"
+          (change)="toBase64($event)"
+        />
       </div>
-    </mat-select>
-  </mat-form-field>
 
-  <input type="file" class="image" (change)="toBase64($event)">
+      <div class="special-input">
+        <label class="input-label">Descripción de la novedad</label>
+        <ckeditor
+          class="content-editor file-input"
+          formControlName="content"
+          [editor]="Editor"
+        ></ckeditor>
+      </div>
 
-  <ckeditor class="content-editor" formControlName="content" [editor]="Editor"></ckeditor>
-
-  <button (click)="testing()">Push test</button>
-</form>
+      <button
+        mat-raised-button
+        class="form-button inputs"
+        (click)="newsCommit()"
+        [disabled]="!news.valid"
+      >
+        Enviar
+      </button>
+    </form>
+  </main>
+</div>
