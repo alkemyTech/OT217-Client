@@ -1,0 +1,69 @@
+<mat-card class="contact-card">
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form id="contactForm" [formGroup]="form" (ngSubmit)="submit()">
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Nombre" formControlName="firstname" class="form-control" name="firstname">
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <mat-label>Subir logo</mat-label>
+            <button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
+            <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+            <span class="file-name">{{selectedFile?.name}}</span>
+            <input matInput placeholder="logo" formControlName="lastname" class="form-control" name="lastname">
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="description" formControlName="description" class="form-control"
+              name="descripcion">
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <textarea rows="4" cols="50" matInput placeholder="descripcion 2" formControlName="message"
+              class="form-control" name="message"></textarea>
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="facebook" formControlName="lastname" class="form-control" name="lastname">
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="linkedin" formControlName="lastname" class="form-control" name="lastname">
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="instagram" formControlName="lastname" class="form-control" name="lastname">
+          </mat-form-field>
+        </div>
+        <br>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="twitter" formControlName="lastname" class="form-control" name="lastname">
+          </mat-form-field>
+        </div>
+        <br>
+        <button id="btnSubmit" mat-raised-button type="submit" color="primary">Enviar</button>
+      </form>
+      <strong>{{form.value.firstname}} </strong>
+      <strong>{{form.value.lastname}} </strong>
+      <strong>{{form.value.email}} </strong>
+      <strong>{{form.value.message}} </strong>
+
+    </mat-card-content>
+  </mat-card>
