@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
+import { OrganizationFormComponent } from "./pages/organization/edit/organization.component";
 
 const routes: Routes = [
   {
@@ -18,10 +19,15 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
+    path: "backoffice/organization/edit",
+    component: OrganizationFormComponent
+  },
+  {
     path: "**",
     redirectTo: "actividades",
     pathMatch: "full",
   },
+
 ];
 
 @NgModule({
