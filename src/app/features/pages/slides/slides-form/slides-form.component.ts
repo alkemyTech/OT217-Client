@@ -11,6 +11,7 @@ import { SlidesService } from "src/app/core/services/slides.service";
   styleUrls: ["./slides-form.component.scss"],
 })
 export class SlidesFormComponent implements OnInit {
+  slidesOrderNumber:number[] = []
   cardImageBase64: string = "";
   slides: any;
   slidesId: string | null = "";
@@ -59,6 +60,15 @@ export class SlidesFormComponent implements OnInit {
     this.slidesId = this.route.snapshot.params.id;
   }
 
+  getOrderNumber(){
+    this.slidesService.getSlides().subscribe((response)=>{
+      for(let item of response.data){
+        this.slidesOrderNumber.push(item.order)
+      }
+      console.log(this.slidesOrderNumber)
+    })
+  }
+
   ngOnInit(): void {
     if (this.slidesId) {
       this.title = "Modificar Slide";
@@ -83,5 +93,8 @@ export class SlidesFormComponent implements OnInit {
         image: ["", Validators.required],
       });
     }
+
+    this.getOrderNumber();
+    
   }
 }
