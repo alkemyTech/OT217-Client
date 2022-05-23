@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { ActivitiesPageComponent } from "./pages/activities/activities-page/activities-page.component";
 import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
+import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: "backoffice/news/:id",
     component: NewsFormComponent,
+  },
+  {
+    path: "backoffice/slides",
+    component: SlidesFormComponent,
+  },
+  {
+    path: "backoffice/slides/:id",
+    component: SlidesFormComponent,
   },
   {
     path: "",
