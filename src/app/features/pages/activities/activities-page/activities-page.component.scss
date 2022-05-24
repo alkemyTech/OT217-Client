@@ -1,0 +1,40 @@
+.activity-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.page-description {
+  width: 80%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.page-title {
+  font-weight: bolder;
+  font-size: 36px;
+  text-decoration: underline;
+  text-decoration-color: #9ac9fb;
+}
+
+.text {
+  color: #151515;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-paginator {
+    width: 50%;
+  }
+}
