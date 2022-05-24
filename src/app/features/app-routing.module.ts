@@ -7,6 +7,8 @@ import { LoginFormComponent } from "./pages/auth/login-form/login-form.component
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
 
+//import { CreationActivitiesComponent } from "./pages/activities/creation-activities/creation-activities.component";
+import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 const routes: Routes = [
   {
     path: "actividades",
@@ -36,6 +38,11 @@ const routes: Routes = [
     path: "",
     redirectTo: "actividades",
     pathMatch: "full",
+  },
+  
+  { 
+    path: "backoffice", 
+    component: DashBoardBackofficeComponent
   },
   {
     path: "**",

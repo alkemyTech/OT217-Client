@@ -11,3 +11,25 @@ body { margin: 0; font-family: Roboto, sans-serif; }
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root{
+  --success-Buttom:#9AC9FB
+}
+.colorButtomSuccess{
+  color:#ffffffff;
+  background-color: var(--success-Buttom);
+}
+.textBackoffice{
+  color:  var(--success-Buttom);
+}
+
+.widthImg{
+  width: 400px;
+}
+
+.iconBackoffice{
+  width: 80px !important;
+}
+
+.welcomBackoffice{
+  font-size: 3rem;
+}
