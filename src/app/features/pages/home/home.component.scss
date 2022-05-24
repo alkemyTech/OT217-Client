@@ -21,17 +21,24 @@ a {
   transition: .4s all ease-in-out;
 }
 
-title{
+.title{
   color: #151515;
   font-weight: bolder;
   font-size: 36px;
 }
 
-ul {
-  list-style: none;
+#texto-bienvenida, #texto-novedades{
+text-align: center;
+margin-bottom: 10px;
 }
 
-//menu items and links
+#logo{
+  list-style: none;
+  margin-left: 5%;
+}
+
+
+//menu items, logo and links
 
 .menu {
   background-color: #9ac9fb;
@@ -63,6 +70,11 @@ ul {
   box-shadow: 0 -1px 0 0 #151515 inset;
 }
 
+.logo{
+  width: 40%;
+  list-style-type: none;
+}
+
 //navbar
 
 /* Modify the background color */
@@ -74,14 +86,44 @@ ul {
   font-family: Roboto;
 }
 
+.nav-item active{
+  list-style: none;
+}
+
+.navbar-nav{
+  display: flex; 
+  margin-left: 20px;
+}
 
 .btn-warning {
   background: #FAFA88;
-  color: #ffffff;
+  color: #151515;
   font-family: Roboto;
 }
 
+.btn-primary{
+  margin-right: 10px;
+}
+
+//hero
+
+#foto-hero{
+  height: 300px;
+  background-size:     cover;                      
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+
 //cards testimonials
+
+h1{
+  text-align: center; 
+  margin-top: 5%; 
+  font-family: Roboto; 
+  font-size: 24px; 
+  font-weight: strong
+}
 
 .testimonial-card .card-up {
   height: 120px;
@@ -111,20 +153,7 @@ ul {
 }
 
 
-
-
-
-//media queries
-
-/* Small devices (tablets, 768px and up) */
-//@media (min-width: 768px) { … }
-/* Medium devices (desktops, 992px and up) */
-//(large desktops, 1200px and up) */
-//@media (min-width: 1200px) {
-/* banner displayed only for desktops */
-//  #banner { display: block; }
-
-/* cards news */
+/* news cards */
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 $main-green: #79dd09 !default;
@@ -493,3 +522,26 @@ a, a:hover {
 		);
 	}
 }
+
+//footer
+
+footer{
+  background-color: #9AC9FB;
+}
+
+
+
+.logo-footer{
+  width: 15%;
+}
+
+#facebook-logo, #twitter-logo, #instagram-logo, #linkedin-logo {
+  margin-left:5px; 
+  margin-right: 5px;
+}
+
+#fondo-texto{
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
+
