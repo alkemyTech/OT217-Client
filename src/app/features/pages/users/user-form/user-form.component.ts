@@ -1,15 +1,68 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Validators, FormBuilder} from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss']
 })
-export class UserFormComponent implements OnInit {
 
-  constructor() { }
+export class UserFormComponent {
 
-  ngOnInit(): void {
+   formRecicler:any;
+   userId:string | null = "";
+
+  constructor(private FormBuilder:FormBuilder, private userService:UserService, private route:ActivatedRoute) {
+    this.formRecicler = this.FormBuilder.group({
+      name:['', [Validators.required,Validators.minLength(4)]],
+      password:['', [Validators.required,Validators.minLength(4)]],
+      email: ['', [Validators.required, Validators.email]],
+      image: ['', Validators.required],
+      rol_id: ['', Validators.required],
+      description: ['', [Validators.required, Validators.minLength(10)]],
+
+    })
+    this.userId = this.route.snapshot.params.id
+   }
+
+
+
+  get Name(){
+    return this.formRecicler.get("name");
+  }
+  get Email(){
+    return this.formRecicler.get("email");
+  }
+  get Image(){
+    return this.formRecicler.get("image");
+  }
+  get Rol(){
+    return this.formRecicler.get("rol_id");
+  }
+  get Description(){
+    return this.formRecicler.get("description");
+  }
+
+ submit(){
+
+  let user = {
+    name: this.formRecicler.get(['name']).value,
+    email: this.formRecicler.get(['email']).value,
+    rol_id: this.formRecicler.get(['rol_id']).value,
+    description: this.formRecicler.get(['description']).value,
+    password: this.formRecicler.get(['password']).value
+  }
+  if(this.userId){
+    this.userService.putUser(user,this.userId).subscribe((response =>{
+      console.log(response)
+    }))
+  } else {
+    this.userService.postUser(user).subscribe((response =>{
+      console.log(response);
+    }))
+   }
   }
 
 }
