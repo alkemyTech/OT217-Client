@@ -1,49 +1,55 @@
-<div class="news-container">
-  <main class="section-wrapper">
-    <form class="form-container" [formGroup]="slides" autocomplete="off">
+<div class="position-container">
+  <div class="slides-container">
+    <main class="section-wrapper">
+      <form class="form-container" [formGroup]="slides" autocomplete="off">
+        <h1 class="title">{{ title }}</h1>
 
-      <h1 class="title">{{ title }}</h1>
+        <mat-form-field appearance="fill">
+          <mat-label>Titulo</mat-label>
+          <input class="inputs" matInput formControlName="name" />
+          <mat-error>4 Caracteres Mínimo</mat-error>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Titulo</mat-label>
-        <input class="inputs" matInput formControlName="name" />
-        <mat-error>4 Caracteres Mínimo</mat-error>
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Orden</mat-label>
+          <input
+            class="inputs"
+            type="number"
+            matInput
+            formControlName="order"
+          />
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Orden</mat-label>
-        <input class="inputs" type="number" matInput formControlName="order" />
-      </mat-form-field>
+        <div class="special-input">
+          <label class="input-label">Agrega una imagen al Slide</label>
+          <input
+            class="inputs"
+            type="file"
+            class="image"
+            formControlName="image"
+            accept=".png, .jpg, .jpeg"
+            (change)="toBase64($event)"
+          />
+        </div>
 
-      <div class="special-input">
-        <label class="input-label">Agrega una imagen al Slide</label>
-        <input
-          class="inputs"
-          type="file"
-          class="image"
-          formControlName="image"
-          accept=".png, .jpg, .jpeg"
-          (change)="toBase64($event)"
-        />
-      </div>
+        <div class="special-input">
+          <label class="input-label">Descripción de la Slide</label>
+          <ckeditor
+            class="content-editor file-input"
+            formControlName="description"
+            [editor]="Editor"
+          ></ckeditor>
+        </div>
 
-      <div class="special-input">
-        <label class="input-label">Descripción de la Slide</label>
-        <ckeditor
-          class="content-editor file-input"
-          formControlName="description"
-          [editor]="Editor"
-        ></ckeditor>
-      </div>
-
-      <button
-        mat-raised-button
-        class="form-button inputs"
-        (click)="slidesCommit()"
-        [disabled]="!slides.valid"
-      >
-        Enviar
-      </button>
-    </form>
-  </main>
+        <button
+          mat-raised-button
+          class="form-button inputs"
+          (click)="slidesCommit()"
+          [disabled]="!slides.valid"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+  </div>
 </div>

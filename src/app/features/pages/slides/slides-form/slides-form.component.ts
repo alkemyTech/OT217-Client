@@ -11,7 +11,7 @@ import { SlidesService } from "src/app/core/services/slides.service";
   styleUrls: ["./slides-form.component.scss"],
 })
 export class SlidesFormComponent implements OnInit {
-  slidesOrderNumber:number[] = []
+  slidesOrderNumber: number[] = [];
   cardImageBase64: string = "";
   slides: any;
   slidesId: string | null = "";
@@ -21,52 +21,12 @@ export class SlidesFormComponent implements OnInit {
 
   public Editor = ClassicEditor;
 
-  toBase64(event: any) {
-    const reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]);
-    reader.onload = () => {
-      this.cardImageBase64 = reader.result as string;
-    };
-  }
-
-  slidesCommit() {
-    let slidesCommit = {
-      name: this.slides.get(["name"]).value,
-      order: this.slides.get(["order"]).value,
-      description: this.slides.get(["description"]).value,
-      image: this.cardImageBase64,
-    };
-
-    if (this.slidesId) {
-      this.slidesService
-        .updateSlides(slidesCommit, this.slidesId)
-        .subscribe((response) => {
-          console.log(response);
-        });
-      this.slides.reset();
-    } else if (!this.slidesId) {
-      this.slidesService.postSlides(slidesCommit).subscribe((response) => {
-        console.log(response);
-      });
-      this.slides.reset();
-    }
-  }
-
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private slidesService: SlidesService
   ) {
     this.slidesId = this.route.snapshot.params.id;
-  }
-
-  getOrderNumber(){
-    this.slidesService.getSlides().subscribe((response)=>{
-      for(let item of response.data){
-        this.slidesOrderNumber.push(item.order)
-      }
-      console.log(this.slidesOrderNumber)
-    })
   }
 
   ngOnInit(): void {
@@ -95,6 +55,46 @@ export class SlidesFormComponent implements OnInit {
     }
 
     this.getOrderNumber();
-    
+  }
+
+  getOrderNumber() {
+    this.slidesService.getSlides().subscribe((response) => {
+      for (let item of response.data) {
+        this.slidesOrderNumber.push(item.order);
+      }
+      console.log(this.slidesOrderNumber);
+    });
+  }
+
+  toBase64(event: any) {
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = () => {
+      this.cardImageBase64 = reader.result as string;
+    };
+  }
+
+  // Slides Commit: Will POST or PATCH Slides elements to DataBase according if it's a new or modified element.
+  slidesCommit() {
+    let slidesCommit = {
+      name: this.slides.get(["name"]).value,
+      order: this.slides.get(["order"]).value,
+      description: this.slides.get(["description"]).value,
+      image: this.cardImageBase64,
+    };
+
+    if (this.slidesId) {
+      this.slidesService
+        .updateSlides(slidesCommit, this.slidesId)
+        .subscribe((response) => {
+          console.log(response);
+        });
+      this.slides.reset();
+    } else if (!this.slidesId) {
+      this.slidesService.postSlides(slidesCommit).subscribe((response) => {
+        console.log(response);
+      });
+      this.slides.reset();
+    }
   }
 }
