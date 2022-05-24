@@ -1,16 +1,18 @@
 <mat-card class="activity-card">
-  <div class="card-container">
+  <div class="card-container ">
     <mat-card-header>
       <mat-card-title class="card-name">{{ name }}</mat-card-title>
     </mat-card-header>
     <img
-      mat-card-image
-      class="card-image"
+      class="card-image col-10"
       src="{{ image }}"
       alt="Activity image"
     />
     <mat-card-content>
       <div class="card-description" [innerHTML]="description"></div>
+      <div class="text-center">
+      <button mat-raised-button class="primary btn-detail" [routerLink]="['/activities/'+id]">Ver mas</button>
+      </div>
     </mat-card-content>
   </div>
 </mat-card>
