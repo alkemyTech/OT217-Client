@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent
+  
   ],
   imports: [
     BrowserModule,
     CoreModule,
-    FeaturesModule
+    FeaturesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

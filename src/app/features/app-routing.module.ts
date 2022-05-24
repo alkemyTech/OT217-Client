@@ -2,7 +2,7 @@ import { ActivityFormComponent } from "./pages/activities/activity-form/activity
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-
+import { CreationActivitiesComponent } from "./pages/activities/creation-activities/creation-activities.component";
 const routes: Routes = [
   { 
     path: "actividades", 
@@ -12,6 +12,15 @@ const routes: Routes = [
     redirectTo: "actividades",
     pathMatch: "full",
   },
+  { 
+    path: "creationActividades", 
+    component: CreationActivitiesComponent 
+  },
+  { 
+    path: "creationActividades/:id", 
+    component: CreationActivitiesComponent 
+  },
+  
   {
     path: "**",
     redirectTo: "actividades",

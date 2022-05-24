@@ -11,7 +11,12 @@ import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.comp
 import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
-
+import { CreationActivitiesComponent } from './pages/activities/creation-activities/creation-activities.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { FormsModule } from "@angular/forms";
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button'
 @NgModule({
   declarations: [
     ActivityFormComponent,
@@ -23,6 +28,8 @@ import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.c
     TestimonialFormComponent,
     UserFormComponent,
     SlideInicioComponent,
+    CreationActivitiesComponent,
+    
   ],
   exports: [
     ActivityFormComponent,
@@ -35,6 +42,15 @@ import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.c
     UserFormComponent,
     RouterModule
   ],
-  imports: [CommonModule, AppRoutingModule, RouterModule],
+  imports: [
+    CommonModule,
+    AppRoutingModule, 
+    RouterModule,
+    CKEditorModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule
+  ],
 })
 export class FeaturesModule {}

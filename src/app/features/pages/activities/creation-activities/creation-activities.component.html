@@ -1,0 +1,29 @@
+<div class="vh-100 row m-0 align-items-center justify-content-center">
+    <div class="col-auto">
+        <form  #createACtivities="ngForm" (ngSubmit)="creteUpdate()" >
+            <mat-card >
+                <mat-card-title>Create Activities</mat-card-title>
+                <mat-card-actions>  
+                    <input type="text" matInput placeholder="Nombre" name="name" #name="ngModel"  [(ngModel)]="activities.name">
+                </mat-card-actions>
+                <mat-card-actions>
+                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"  name="description" #description="ngModel"  [(ngModel)]="activities.description" ></ckeditor>
+                </mat-card-actions>
+                <mat-card-actions>    
+                    <img *ngIf="activities.image" src={{activities.image}} class="widthImg shadow-lg p-3 mb-2 bg-white rounded " alt="">
+                </mat-card-actions>
+                <mat-card-actions>    
+                    
+                    <input type="file" name="image" (change)="fileChangeEvent($event)">
+                </mat-card-actions>
+                <mat-card-actions>            
+                    <button mat-flat-button class="colorButtomSuccess" type="submit" [disabled]="!createACtivities.form.valid">Enviar</button>
+            
+                </mat-card-actions>
+            </mat-card>
+        </form>
+        <mat-card-actions>            
+            <p *ngIf="text">Successfull</p>
+        </mat-card-actions>
+    </div>
+</div>
