@@ -1,5 +1,5 @@
 <main class="activity-page-container" data-aos="fade-up">
-  <h2 class="page-title text">Activity</h2>
+  <h2 class="title text">Activity</h2>
   <p class="page-description text">
     Mediante nuestros programas educativos, buscamos incrementar la capacidad
     intelectual, moral y afectiva de las personas de acuerdo con la cultura y
@@ -16,14 +16,14 @@
         description="{{ item.description }}"
       ></app-activity-card>
     </section>
-    <div class="card-paginator">
-      <mat-paginator
-        [length]="activities.length"
-        [pageSize]="page_size"
-        [pageSizeOptions]="pageSizeOptions"
-        (page)="handlePage($event)"
-      >
-      </mat-paginator>
-    </div>
+  </div>
+  <div class="card-paginator">
+    <mat-paginator
+      [length]="activities.length"
+      [pageSize]="page_size"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="handlePage($event)"
+    >
+    </mat-paginator>
   </div>
 </main>

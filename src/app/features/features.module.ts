@@ -3,7 +3,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "../material/material.module";
-import { ReactiveFormsModule } from "@angular/forms";
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
@@ -43,12 +44,12 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
-        ReactiveFormsModule,
+    CKEditorModule,
+    ReactiveFormsModule,
+    FormsModule
     
   ],
-  imports: [CommonModule, MaterialModule, AppRoutingModule, RouterModule,
-    ReactiveFormsModule,
-],
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
 })
 export class FeaturesModule {
 }
