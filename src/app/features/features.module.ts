@@ -3,8 +3,9 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "../material/material.module";
+import { ReactiveFormsModule } from "@angular/forms";
 
-
+import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
@@ -29,7 +30,8 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
-    PaginatePipe
+    PaginatePipe,
+    SlideInicioComponent,
   ],
   exports: [
     ActivityFormComponent,
@@ -41,8 +43,12 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
+        ReactiveFormsModule,
     
   ],
-  imports: [CommonModule, MaterialModule, AppRoutingModule, RouterModule],
+  imports: [CommonModule, MaterialModule, AppRoutingModule, RouterModule,
+    ReactiveFormsModule,
+],
 })
-export class FeaturesModule {}
+export class FeaturesModule {
+}

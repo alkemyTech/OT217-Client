@@ -1,1 +1,29 @@
-<p>login-form works!</p>
+<div class="container">
+    <div class="container">
+        <div class="formGroup formLogin">
+            <mat-card class="cardLogin">
+                <h1 class="title-login">
+                    Login
+                </h1>
+                <form [formGroup]="createdForm"  class="form-login">
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="text" formControlName="email"/>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" min="6" formControlName="password"/>
+                        </mat-form-field>
+                    </div>
+                </form>
+                <div class="divButLogin">
+                    <button mat-raised-button class="butLogin" color="primary" type="submit" (click)="submit()">Login</button>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+</div>
