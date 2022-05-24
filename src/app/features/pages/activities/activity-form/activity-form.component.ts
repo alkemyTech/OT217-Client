@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class ActivityFormComponent implements OnInit {
   title = 'base-ong-angular-client';
 
-  constructor() { }
-
+  constructor() {}
+   public listSlide:Array<any>  = []
   ngOnInit(): void {
-  }
-
-  public functiontest(){
-    console.log("Hola")
-  }
-
+ 
+  this.listSlide = [
+    {
+      image: ['https://placeimg.com/1080/500/animals','https://placeimg.com/1080/500/arch', 'https://placeimg.com/1080/500/nature'], 
+      title: ['titulo1','titulo2','titulo3'],
+      description: ['descripcion1','descripcion2','descripcion3']
+    }
+  ]
+}
 }

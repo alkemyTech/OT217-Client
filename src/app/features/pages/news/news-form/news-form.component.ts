@@ -43,12 +43,10 @@ export class NewsFormComponent implements OnInit {
       this.newsService
         .updateNews(newsCommit, this.newsId)
         .subscribe((response) => {
-          console.log(response);
         });
       this.news.reset();
     } else if (!this.newsId) {
       this.newsService.postNews(newsCommit).subscribe((response) => {
-        console.log(response);
       });
       this.news.reset();
     }
@@ -72,7 +70,6 @@ export class NewsFormComponent implements OnInit {
       this.title = "Modificar Novedad";
       this.newsService.getNewsId(this.newsId).subscribe((response) => {
         this.currentNews.push(response.data);
-        console.log(this.currentNews[0]);
         this.news = this.formBuilder.group({
           name: [
             this.currentNews[0].name,
