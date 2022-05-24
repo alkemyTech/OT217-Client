@@ -37,7 +37,6 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
   creteUpdate(){
     if(this.update){
       this.putActivities(this.id)
-      console.log(this.activities)
     }else{
       this.postActivities()
     }
