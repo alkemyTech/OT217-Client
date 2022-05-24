@@ -6,8 +6,7 @@ import { MaterialModule } from "../material/material.module";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-
-
+import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
@@ -32,7 +31,8 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
-    PaginatePipe
+    PaginatePipe,
+    SlideInicioComponent,
   ],
   exports: [
     ActivityFormComponent,
@@ -49,6 +49,7 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     FormsModule
     
   ],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule],
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
 })
-export class FeaturesModule {}
+export class FeaturesModule {
+}

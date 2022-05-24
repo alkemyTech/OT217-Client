@@ -16,14 +16,14 @@
         description="{{ item.description }}"
       ></app-activity-card>
     </section>
-    <div class="card-paginator">
-      <mat-paginator
-        [length]="activities.length"
-        [pageSize]="page_size"
-        [pageSizeOptions]="pageSizeOptions"
-        (page)="handlePage($event)"
-      >
-      </mat-paginator>
-    </div>
+  </div>
+  <div class="card-paginator">
+    <mat-paginator
+      [length]="activities.length"
+      [pageSize]="page_size"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="handlePage($event)"
+    >
+    </mat-paginator>
   </div>
 </main>
