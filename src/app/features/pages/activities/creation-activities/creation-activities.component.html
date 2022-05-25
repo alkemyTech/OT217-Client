@@ -2,7 +2,7 @@
     <div class="col-auto">
         <form  #createACtivities="ngForm" (ngSubmit)="creteUpdate()" >
             <mat-card >
-                <mat-card-title>Create Activities</mat-card-title>
+                <mat-card-title class="title-color">{{title}}</mat-card-title>
                 <mat-card-actions>  
                     <input type="text" matInput placeholder="Nombre" name="name" #name="ngModel"  [(ngModel)]="activities.name">
                 </mat-card-actions>
@@ -17,9 +17,8 @@
                     <input type="file" name="image" (change)="fileChangeEvent($event)">
                 </mat-card-actions>
                 <mat-card-actions>            
-                    <button mat-flat-button class="colorButtomSuccess" type="submit" [disabled]="!createACtivities.form.valid">Enviar</button>
-            
-                </mat-card-actions>
+                    <button mat-flat-button class="colorButtomSuccess" type="submit" [disabled]="!createACtivities.valid">Enviar</button>
+                 </mat-card-actions>
             </mat-card>
         </form>
         <mat-card-actions>            

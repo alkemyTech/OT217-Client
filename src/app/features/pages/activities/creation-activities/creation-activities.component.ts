@@ -19,13 +19,15 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
   public text: boolean = false
   public update: boolean= false
   public id: string=''
-
+  public existImg: boolean = false
+  public title: string=''
   constructor(
     private _HttpService: CreateService, 
     private _Listing: Listing,
     private _Update: Update,
     private sanitizer: DomSanitizer) {
     this.activities = new Activities('','','','','','','','','','','');
+    this.title= "Crear actividad"
   }
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
   creteUpdate(){
     if(this.update){
       this.putActivities(this.id)
+      
     }else{
       this.postActivities()
     }
@@ -59,6 +62,7 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
       this.activities.image= image.base
     })
     this.file.push(archivo)
+    this.existImg= true
 	}
   
   extraerBase64 = async($event: any) => new Promise((resolve, reject) => {
@@ -87,9 +91,9 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
     var actual = window.location+'';
     var split = actual.split("/");
     this.id = split[split.length-1];
-    console.log(this.id);
     if(this.id !== 'creationActividades' ){
       this.getActivitiesID(this.id);
+      this.title= " Actualizar la actividad "
     }
   }
 
@@ -109,16 +113,24 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
 
 
   putActivities(id: string){
-    this._Update.putActivities(this.activities, id).subscribe(
+    var activities
+    if(!this.existImg){
+      var {image , ...myUpdatedObject} = this.activities;
+      activities= myUpdatedObject;
+    }else{
+      activities= this.activities
+    }
+    this._Update.putActivities(activities, id).subscribe(
       response =>{
         this.text= true
-        console.log(response)
       },
       error =>{
         console.log(<any> error)
       }
     )
   }
+
+  
 
 
 

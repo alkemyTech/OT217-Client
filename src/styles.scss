@@ -38,13 +38,16 @@ $base-ong-angular-client-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root{
-  --success-Buttom:#9AC9FB
+  --success-Buttom:#9AC9FB;
+  --info-Buttom:#FAFA88;
 }
 .colorButtomSuccess{
-  color:#ffffffff;
-  background-color: var(--success-Buttom);
+  color:var(--success-Buttom);
+  background-color: var(--info-Buttom);
 }
-
+.title-color{
+  color: var(--success-Buttom);
+}
 .widthImg{
-  width: 400px;
+  width: 350px;
 }
