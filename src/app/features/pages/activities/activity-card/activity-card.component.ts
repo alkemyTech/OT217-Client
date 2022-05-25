@@ -9,7 +9,7 @@ export class ActivityCardComponent implements OnInit {
   @Input("name") name: any = "";
   @Input("description") description: any = "";
   @Input("image") image: any = "";
-
+  @Input("id") id!: string;
   constructor() {}
 
   ngOnInit(): void {}

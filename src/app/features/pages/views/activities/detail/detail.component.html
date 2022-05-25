@@ -1,0 +1,22 @@
+<main class="activity-page-container" data-aos="fade-up">
+  <div class="title-detail" *ngIf="activities">
+    <button mat-stroked-button routerLink="/actividades" class="btn-detail" >
+      <mat-icon>
+        keyboard_backspace
+      </mat-icon>
+    </button>
+  <h2 class="page-title m-0 text">{{activities.name}}</h2>
+  </div>
+  <div class="card-container mt-2">
+    <section *ngIf="activities" data-aos="fade-up" class="section-detail">
+      <mat-card class="detail-card">
+        <div [innerHTML]="activities.description" class="description-detail"></div>
+        <div>
+          <figure >
+            <img [src]="activities.image" class="img-detail">
+          </figure>
+        </div>
+      </mat-card>
+    </section>
+  </div>
+</main>
