@@ -5,15 +5,18 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
 import { OrganizationFormComponent } from "./pages/organization/edit/organization.component";
 import { OrganizationListComponent } from "./pages/organization/organization-list.component";
+import { BrowserModule } from "@angular/platform-browser";
+
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
   },
-  { 
-    path: "actividades", 
-    component: ActivityFormComponent },
+  {
+    path: "actividades",
+    component: ActivityFormComponent
+  },
   {
     path: "",
     redirectTo: "actividades",
@@ -37,6 +40,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, CommonModule, RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
