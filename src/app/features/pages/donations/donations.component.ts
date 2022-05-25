@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-donations",
@@ -7,6 +8,8 @@ import { Component, OnInit } from "@angular/core";
 })
 export class DonationsComponent implements OnInit {
   donation: number = 300;
+
+  constructor(private router:Router) {}
 
   setDonation($event: number) {
     this.donation = $event.valueOf();
@@ -33,9 +36,8 @@ export class DonationsComponent implements OnInit {
       default:
         break;
     }
+    this.router.navigate(["/gracias"])
   }
-
-  constructor() {}
 
   ngOnInit(): void {}
 }
