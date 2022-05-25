@@ -19,6 +19,7 @@ import { ActivityCardComponent } from './pages/activities/activity-card/activity
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
 import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
+import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 import { MatIconModule } from "@angular/material/icon";
 
@@ -38,6 +39,7 @@ import { MatIconModule } from "@angular/material/icon";
     SlideInicioComponent,
     DonationsComponent,
     SlidesModalComponent,
+    ThanksComponent,
     DetailComponent
   ],
   exports: [

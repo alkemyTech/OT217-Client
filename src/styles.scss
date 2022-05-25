@@ -1,11 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { margin: 0px; padding: 0px; height: 100%; }
-body { font-family: Roboto, sans-serif; }
+
+* { font-family: 'Roboto', sans-serif; }
 
 
 .title{
     color: #151515;
     font-weight: bolder;
     font-size: 36px;
+}
+
+.mat-slider-thumb {
+	background-color: #3894f7 !important;
+}
+
+.mat-slider-thumb-label {
+	background-color: #3894f7 !important;
+}
+
+.mat-slider-track-fill {
+	background-color: #3894f7 !important;
 }

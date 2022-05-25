@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSelectModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule
   ],
   exports: [
     MatFormFieldModule,
@@ -32,7 +34,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSelectModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule
   ]
 })
 export class MaterialModule { }
