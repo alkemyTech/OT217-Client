@@ -18,6 +18,8 @@ import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
+import { DonationsComponent } from './pages/donations/donations.component';
+import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
+    DonationsComponent,
+    SlidesModalComponent,
   ],
   exports: [
     ActivityFormComponent,
