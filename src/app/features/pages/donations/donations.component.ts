@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component} from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
   templateUrl: "./donations.component.html",
   styleUrls: ["./donations.component.scss"],
 })
-export class DonationsComponent implements OnInit {
+export class DonationsComponent{
   donation: number = 300;
 
   constructor(private router:Router) {}
@@ -38,6 +38,4 @@ export class DonationsComponent implements OnInit {
     }
     this.router.navigate(["/gracias"])
   }
-
-  ngOnInit(): void {}
 }
