@@ -1,14 +1,37 @@
-
 <div class="logo-container">
-<img class="logo-modal" src="../../../../../assets/LOGO-SOMOS MAS.png" alt="Logo Somos Mas">
+  <img
+    class="logo-modal"
+    src="../../../../../assets/LOGO-SOMOS MAS.png"
+    alt="Logo Somos Mas"
+  />
 </div>
 <div class="text-section">
-<h2 class="text">Este número de orden está ocupado</h2>
-<p>La Slide que lo ocupa tiene el titúlo: <span class="stress">{{data.name}}</span></p>
-<p>¿Deseas quitar este slide de la sección <span class="stress">Home</span>?</p>
+  <h2 class="text">Este número de orden está ocupado</h2>
+  <p>
+    La Slide que lo ocupa tiene el titúlo:
+    <span class="stress">{{ data.name }}</span> y su id es:
+    <span class="stress">{{ data.id }}</span>
+  </p>
+  <p>
+    ¿Deseas quitar este slide de la sección <span class="stress">Home</span>?
+  </p>
 </div>
 
 <div class="buttons">
-<button (click)="quitar(data, data.id)" mat-dialog-close class="quitar action-button" mat-raised-button>Quitar</button>
-<button  mat-dialog-close mat-raised-button class="mantener action-button">Cancelar</button>
+  <button
+    (click)="quitar(data, data.id)"
+    mat-dialog-close
+    class="quitar action-button"
+    mat-raised-button
+  >
+    Quitar
+  </button>
+  <button
+    (click)="modificar(data.id)"
+    mat-dialog-close
+    mat-raised-button
+    class="mantener action-button"
+  >
+    Modificar
+  </button>
 </div>

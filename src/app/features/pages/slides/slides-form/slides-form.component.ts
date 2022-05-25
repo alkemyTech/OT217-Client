@@ -13,7 +13,7 @@ import { SlidesModalComponent } from "../slides-modal/slides-modal.component";
   styleUrls: ["./slides-form.component.scss"],
 })
 export class SlidesFormComponent implements OnInit {
-  orderDuplicated: boolean = false;
+  slideDuplicates: boolean = false;
   slidesOrderNumber: Slides[] = [];
   cardImageBase64: string = "";
   slides: any;
@@ -38,7 +38,6 @@ export class SlidesFormComponent implements OnInit {
       this.title = "Modificar Slide";
       this.slidesService.getSlidesId(this.slidesId).subscribe((response) => {
         this.currentSlides.push(response.data);
-        console.log(this.currentSlides[0]);
         this.slides = this.formBuilder.group({
           name: [
             this.currentSlides[0].name,
@@ -63,9 +62,7 @@ export class SlidesFormComponent implements OnInit {
 
   getOrderNumber() {
     this.slidesService.getSlides().subscribe((response) => {
-      for (let item of response.data) {
-        this.slidesOrderNumber.push(item);
-      }
+      this.slidesOrderNumber = response.data;
     });
   }
 
@@ -77,7 +74,7 @@ export class SlidesFormComponent implements OnInit {
     };
   }
 
-  checkOrder() {
+  checkOrderDuplicates() {
     this.slidesOrderNumber.map((element) => {
       if (element.order == this.slides.get(["order"]).value) {
         this.dialog.open(SlidesModalComponent, {
@@ -85,9 +82,6 @@ export class SlidesFormComponent implements OnInit {
             ...element,
           },
         });
-        this.orderDuplicated = true;
-      } else {
-        this.orderDuplicated = false;
       }
     });
   }
@@ -101,22 +95,14 @@ export class SlidesFormComponent implements OnInit {
       image: this.cardImageBase64,
     };
 
-    if (this.orderDuplicated === true) {
-      
-    } else {
-      if (this.slidesId) {
-        this.slidesService
-          .updateSlides(slidesCommit, this.slidesId)
-          .subscribe((response) => {
-            console.log(response);
-          });
-        this.slides.reset();
-      } else if (!this.slidesId) {
-        this.slidesService.postSlides(slidesCommit).subscribe((response) => {
-          console.log(response);
-        });
-        this.slides.reset();
-      }
+    if (this.slidesId) {
+      this.slidesService
+        .updateSlides(slidesCommit, this.slidesId)
+        .subscribe((response) => {});
+      this.slides.reset();
+    } else if (!this.slidesId) {
+      this.slidesService.postSlides(slidesCommit).subscribe((response) => {});
+      this.slides.reset();
     }
   }
 }

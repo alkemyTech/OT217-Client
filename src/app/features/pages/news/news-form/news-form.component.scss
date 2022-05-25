@@ -1,35 +1,50 @@
-@media only screen and (max-width: 700px) {
+@media(max-width: 700px) {
   .news-container {
-    width: 80%;
-    padding: 30px;
-    margin: 30px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
   }
+
+  .form-container {
+    width: 100%;
+    padding: 0px;
+    padding-top: 0px;
+  }
+  
+  .position-container{
+    margin: 0px;
+  }
+
 }
 
 .position-container{
-  margin: 30px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("../../../../../assets/formbackground.png");
+  height: 100vh;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-  padding: 50px;
-  padding-top: 50px;
+  width: 90%;
+  padding: 10px;
+
 }
 
 .news-container {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  max-height: auto;
+  width: 70%;
+  height: auto;
   border-radius: 20px;
   border-color: #151515;
   box-shadow: 5px 5px 10px black;
+  background-color: #ffffff;
 }
 
 .form-button {
