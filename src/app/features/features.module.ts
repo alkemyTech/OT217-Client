@@ -20,6 +20,7 @@ import { ActivityCardComponent } from './pages/activities/activity-card/activity
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
 import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
+import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.c
     SlideInicioComponent,
     DonationsComponent,
     SlidesModalComponent,
+    ThanksComponent,
   ],
   exports: [
     ActivityFormComponent,
