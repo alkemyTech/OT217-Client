@@ -12,12 +12,12 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Orden</mat-label>
-          <input
-            class="inputs"
-            type="number"
-            matInput
-            formControlName="order"
-          />
+          <mat-select formControlName="order" (selectionChange)="checkOrder()">
+            <mat-option value="null">No Agregar al Slider</mat-option>
+            <mat-option value="1">1era Posición</mat-option>
+            <mat-option value="2">2da Posición</mat-option>
+            <mat-option value="3">3era Posición</mat-option>
+          </mat-select>
         </mat-form-field>
 
         <div class="special-input">

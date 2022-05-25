@@ -1,0 +1,49 @@
+.stress{
+    color: #63a8f1;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.action-button{
+    width: 80px;
+    height: 40px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quitar{
+    background: #DB5752;
+}
+
+.mantener{
+    background: #6eb0f7;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.text-section{
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+}
+
+.logo-modal{
+    height: 150px;
+    width: auto;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}

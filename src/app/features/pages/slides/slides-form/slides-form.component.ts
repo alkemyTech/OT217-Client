@@ -4,6 +4,8 @@ import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { SlidesService } from "src/app/core/services/slides.service";
+import { MatDialog } from "@angular/material/dialog";
+import { SlidesModalComponent } from "../slides-modal/slides-modal.component";
 
 @Component({
   selector: "app-slides-form",
@@ -11,7 +13,8 @@ import { SlidesService } from "src/app/core/services/slides.service";
   styleUrls: ["./slides-form.component.scss"],
 })
 export class SlidesFormComponent implements OnInit {
-  slidesOrderNumber: number[] = [];
+  orderDuplicated: boolean = false;
+  slidesOrderNumber: Slides[] = [];
   cardImageBase64: string = "";
   slides: any;
   slidesId: string | null = "";
@@ -24,7 +27,8 @@ export class SlidesFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private slidesService: SlidesService
+    private slidesService: SlidesService,
+    public dialog: MatDialog
   ) {
     this.slidesId = this.route.snapshot.params.id;
   }
@@ -49,7 +53,7 @@ export class SlidesFormComponent implements OnInit {
       this.slides = this.formBuilder.group({
         name: ["", [Validators.required, Validators.minLength(4)]],
         description: ["", Validators.required],
-        order: ["", Validators.required],
+        order: ["null", Validators.required],
         image: ["", Validators.required],
       });
     }
@@ -60,9 +64,8 @@ export class SlidesFormComponent implements OnInit {
   getOrderNumber() {
     this.slidesService.getSlides().subscribe((response) => {
       for (let item of response.data) {
-        this.slidesOrderNumber.push(item.order);
+        this.slidesOrderNumber.push(item);
       }
-      console.log(this.slidesOrderNumber);
     });
   }
 
@@ -74,6 +77,21 @@ export class SlidesFormComponent implements OnInit {
     };
   }
 
+  checkOrder() {
+    this.slidesOrderNumber.map((element) => {
+      if (element.order == this.slides.get(["order"]).value) {
+        this.dialog.open(SlidesModalComponent, {
+          data: {
+            ...element,
+          },
+        });
+        this.orderDuplicated = true;
+      } else {
+        this.orderDuplicated = false;
+      }
+    });
+  }
+
   // Slides Commit: Will POST or PATCH Slides elements to DataBase according if it's a new or modified element.
   slidesCommit() {
     let slidesCommit = {
@@ -83,18 +101,22 @@ export class SlidesFormComponent implements OnInit {
       image: this.cardImageBase64,
     };
 
-    if (this.slidesId) {
-      this.slidesService
-        .updateSlides(slidesCommit, this.slidesId)
-        .subscribe((response) => {
+    if (this.orderDuplicated === true) {
+      
+    } else {
+      if (this.slidesId) {
+        this.slidesService
+          .updateSlides(slidesCommit, this.slidesId)
+          .subscribe((response) => {
+            console.log(response);
+          });
+        this.slides.reset();
+      } else if (!this.slidesId) {
+        this.slidesService.postSlides(slidesCommit).subscribe((response) => {
           console.log(response);
         });
-      this.slides.reset();
-    } else if (!this.slidesId) {
-      this.slidesService.postSlides(slidesCommit).subscribe((response) => {
-        console.log(response);
-      });
-      this.slides.reset();
+        this.slides.reset();
+      }
     }
   }
 }
