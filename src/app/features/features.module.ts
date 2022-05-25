@@ -20,6 +20,7 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
 import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
     ReactiveFormsModule,
     DetailComponent
   ],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
 })
 export class FeaturesModule {
 }
