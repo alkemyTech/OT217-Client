@@ -18,6 +18,7 @@ import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
+import { DonationsComponent } from './donations/donations.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
+    DonationsComponent,
   ],
   exports: [
     ActivityFormComponent,
