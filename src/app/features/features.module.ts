@@ -2,6 +2,10 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
+import { MaterialModule } from "../material/material.module";
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
@@ -10,9 +14,14 @@ import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
 import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
 import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
-import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
 import { FormContactComponent } from './pages/form-contact/form-contact.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
+import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
+import { PaginatePipe } from "../shared/pipes/paginate.pipe";
+import { DonationsComponent } from './pages/donations/donations.component';
+import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
+import { ThanksComponent } from './pages/donations/thanks/thanks.component';
+import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 
 @NgModule({
   declarations: [
@@ -24,8 +33,15 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
+    ActivitiesPageComponent,
+    ActivityCardComponent,
+    PaginatePipe,
     SlideInicioComponent,
     FormContactComponent,
+    DonationsComponent,
+    SlidesModalComponent,
+    ThanksComponent,
+    DetailComponent
   ],
   exports: [
     ActivityFormComponent,
@@ -38,6 +54,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     UserFormComponent,
     RouterModule,
   ],
-  imports: [CommonModule, AppRoutingModule, RouterModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,DetailComponent]
 })
-export class FeaturesModule {}
+export class FeaturesModule {
+}
