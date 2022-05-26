@@ -66,7 +66,8 @@ const routes: Routes = [
     redirectTo: "actividades",
     pathMatch: "full",
   },
-];
+  
+]
 
 @NgModule({
   declarations: [],
