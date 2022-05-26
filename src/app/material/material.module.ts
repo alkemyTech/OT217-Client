@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatIconModule } from "@angular/material/icon";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatButtonModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    MatIconModule
   ],
   exports: [
     MatFormFieldModule,
