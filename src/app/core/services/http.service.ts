@@ -16,10 +16,7 @@ export class HttpService {
   public get<T>(url: string, activateHeader:boolean = false ):Observable<T> {
     return this.http.get<T>(url, activateHeader ? { headers: this._headers }: {});
   }
-
-
-  public postUser(url:string, body:any){
-    return this.http.post(url, body);
-  }
 }
+
+
 
