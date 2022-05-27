@@ -1,3 +1,12 @@
+<main>
+  <form>
+    <div class="mb-3 row">
+      <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Buscar:</label>
+      <div class="col-xs-3 col-sm-auto">
+        <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter">
+      </div>
+    </div>
+  </form>
 <table class="table table-hover caption-top">
   <caption>
     Lista de Slides
@@ -19,6 +28,7 @@
         <div class="image-title">
           <img class="slide-image" src="{{ slide.image }}" />
           <h4 class="slide-table">{{ slide.name }}</h4>
+          <ngb-highlight [result]="slide.name" [term]="filter.value"></ngb-highlight>
         </div>
       </td>
       <td class="align-middle"><div [innerHTML]="slide.description"></div></td>
@@ -31,3 +41,4 @@
     </tr>
   </tbody>
 </table>
+</main>
