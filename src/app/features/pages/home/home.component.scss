@@ -37,6 +37,9 @@ margin-bottom: 10px;
   margin-left: 5%;
 }
 
+header, section, footer, aside, nav{
+  display: block;
+}
 
 //menu items, logo and links
 
@@ -528,14 +531,91 @@ a, a:hover {
 	}
 }
 
+//aside
+
+aside {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-barra{
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+li{
+  margin-top: 10px;
+}
+
+#logo-footer{
+  width: 50%;
+}
+
+#mt-5{
+  display: flex;
+  flex-direction: column;
+}
+
+#columna {
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+  padding-bottom: 2800px;
+  background-color: #9ac9fb;
+}
+
+#columna-container {
+  display: flex;
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1560px) and (min-width: 992px) {
+  #columna {
+    display: none;
+  }
+
+  #columna-container {
+    display: none;
+  }
+
+
+
+}
+
+@media screen and (max-width: 991px) {
+ .principal{
+   width: 70%;
+   float: left;
+ }
+
+}
+
+@media screen and (max-width: 420px) {
+  li{
+    font-size: 18px;
+    text-align: center;
+  }
+ 
+ }
+
 //footer
 
 footer{
   background-color: #9AC9FB;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
-#row{
+#row2{
   display: flex;
   justify-content:space-around;
 }
