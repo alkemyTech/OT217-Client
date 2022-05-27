@@ -23,6 +23,7 @@ import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.c
 import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 import { MatIconModule } from "@angular/material/icon";
+import { UserComponent } from './pages/users/user/user.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatIconModule } from "@angular/material/icon";
     DonationsComponent,
     SlidesModalComponent,
     ThanksComponent,
-    DetailComponent
+    DetailComponent,
+    UserComponent
   ],
   exports: [
     ActivityFormComponent,

@@ -1,0 +1,21 @@
+<div class="containter-fluid">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Imagen</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Agregar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of user">
+      <tr>
+        <th scope="row"><img src="{{user.imagen}}" class="w-25 h-25"></th>
+        <td>{{user.nombre}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.agregar}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -10,6 +10,7 @@ import { ActivityFormComponent } from "./pages/activities/activity-form/activity
 import { DonationsComponent } from "./pages/donations/donations.component";
 import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
+import { UserComponent } from "./pages/users/user/user.component";
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: "backoffice/slides/:id",
     component: SlidesFormComponent,
+  },
+  {
+    path: "backoffice/users",
+    component: UserComponent,
   },
   {
     path: "activity",
