@@ -56,7 +56,8 @@ ul {
 }
 
 .menu ul li {
-  display: inline;
+  display: flex;
+  justify-content: space-around;
   padding: 20px;
   color: black;
 }
@@ -73,6 +74,10 @@ ul {
 .logo{
   width: 40%;
   list-style-type: none;
+}
+
+.principal{
+  width: 100%;
 }
 
 //navbar
@@ -92,7 +97,7 @@ ul {
 
 .navbar-nav{
   display: flex; 
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .btn-warning {
@@ -527,12 +532,18 @@ a, a:hover {
 
 footer{
   background-color: #9AC9FB;
+  width: 100%;
 }
 
-
+#row{
+  display: flex;
+  justify-content:space-around;
+}
 
 .logo-footer{
-  width: 15%;
+  width: 7%;
+  display: flex;
+  justify-content: space-around;
 }
 
 #facebook-logo, #twitter-logo, #instagram-logo, #linkedin-logo {
