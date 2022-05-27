@@ -1,0 +1,42 @@
+.slide-image{
+    height: 6rem;
+    width: 8rem;
+}
+
+.edit{
+    background: #9AC9FB;
+    color: #151515;
+}
+
+.delete{
+    background: #DB5752;
+    color: #ffffff;
+}
+
+.action-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    margin: 10px;
+    width: 5rem;
+    height: 2.3rem;
+}
+
+.slide-order{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.slide-table{
+    font-weight: bold;
+}
+
+.image-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}

@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "../material/material.module";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { SlideInicioComponent } from './pages/slides/slide-inicio/slide-inicio.component';
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
@@ -22,6 +23,7 @@ import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
 import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
+import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
     DonationsComponent,
     SlidesModalComponent,
     ThanksComponent,
-    DetailComponent
+    DetailComponent,
+    SlidesListComponent
   ],
   exports: [
     ActivityFormComponent,
@@ -54,7 +57,7 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
     UserFormComponent,
     RouterModule,
   ],
-  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,DetailComponent]
+  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
 })
 export class FeaturesModule {
 }
