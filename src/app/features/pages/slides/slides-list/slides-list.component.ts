@@ -1,10 +1,9 @@
 import { Component, OnInit, PipeTransform } from "@angular/core";
 import { SlidesService } from "src/app/core/services/slides.service";
 import { Slides } from "src/app/shared/models/Slides";
-import { FormControl } from "@angular/forms";
+import {MatTableDataSource} from '@angular/material/table';
+import { Router } from "@angular/router";
 
-import { Observable } from "rxjs";
-import { map, startWith } from "rxjs/operators";
 
 @Component({
   selector: "app-slides-list",
@@ -13,6 +12,7 @@ import { map, startWith } from "rxjs/operators";
 })
 export class SlidesListComponent implements OnInit {
   slidesDataTable: Slides[] = [];
+  dataSource = new MatTableDataSource(this.slidesDataTable);
 
   ngOnInit(): void {
     this.slidesService.getSlides().subscribe((response) => {
@@ -20,20 +20,11 @@ export class SlidesListComponent implements OnInit {
     });
   }
 
-  search(text: string): Slides[] {
-    return this.slidesDataTable.filter((slide) => {
-      const term = text.toLowerCase();
-      return slide.name.toLowerCase().includes(term);
-    });
+  edit(slideId:number){
+    let idUrl = String(slideId)
+    this.router.navigate([`/backoffice/slides/${idUrl}`])
   }
 
-  slides$: Observable<Slides[]>;
-  filter = new FormControl("");
+  constructor(private slidesService: SlidesService, private router:Router) {}
 
-  constructor(private slidesService: SlidesService) {
-    this.slides$ = this.filter.valueChanges.pipe(
-      startWith(""),
-      map((text) => this.search(text))
-    );
-  }
 }

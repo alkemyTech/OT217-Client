@@ -38,7 +38,7 @@ const routes: Routes = [
     component: NewsFormComponent,
   },
   {
-    path: "backoffice/slides",
+    path: "backoffice/newslide",
     component: SlidesFormComponent,
   },
   {

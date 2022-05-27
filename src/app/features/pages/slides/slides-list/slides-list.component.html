@@ -1,44 +1,46 @@
-<main>
-  <form>
-    <div class="mb-3 row">
-      <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Buscar:</label>
-      <div class="col-xs-3 col-sm-auto">
-        <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter">
-      </div>
-    </div>
-  </form>
-<table class="table table-hover caption-top">
-  <caption>
-    Lista de Slides
-  </caption>
-  <thead>
-    <tr>
-      <th scope="col">Orden</th>
-      <th scope="col">Titulo</th>
-      <th scope="col">Contenido</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let slide of slidesDataTable; index as i">
-      <th class="align-middle" scope="row">
-        <div class="slide-order">{{ slide.order }}</div>
-      </th>
-      <td class="align-middle">
-        <div class="image-title">
-          <img class="slide-image" src="{{ slide.image }}" />
-          <h4 class="slide-table">{{ slide.name }}</h4>
-          <ngb-highlight [result]="slide.name" [term]="filter.value"></ngb-highlight>
-        </div>
-      </td>
-      <td class="align-middle"><div [innerHTML]="slide.description"></div></td>
-      <td>
-        <div class="action-buttons">
-          <button mat-raised-button class="edit">Editar</button>
-          <button mat-raised-button class="delete">Eliminar</button>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</main>
+<div>
+  <div class="text-container">
+    <h1 class="text-element">Lista de Slides</h1>
+    <p class="text-element">
+      En esta sección puedes crear una Slide nueva o modificar una ya existente
+    </p>
+    <button mat-raised-button class="create" routerLink="/backoffice/newslide">Crear Slide Nueva</button>
+  </div>
+  <div class="table-container">
+  <table class="table table-hover caption-top">
+    <caption>
+      Lista de Slides
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Orden</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Contenido</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let slide of slidesDataTable; index as i">
+        <th class="align-middle" scope="row">
+          <div class="slide-order">{{ slide.order }}</div>
+        </th>
+        <td class="align-middle">
+          <div class="image-title">
+            <img class="slide-image" src="{{ slide.image }}" />
+            <h4 class="slide-table">{{ slide.name }}</h4>
+          </div>
+        </td>
+        <td class="align-middle">
+          <div [innerHTML]="slide.description"></div>
+        </td>
+        <td>
+          <div class="action-buttons">
+            <button mat-raised-button class="edit" (click)="edit(slide.id)">Editar</button>
+            <button mat-raised-button class="delete">Eliminar</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
