@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { Component, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { ActivitiesPageComponent } from "./pages/activities/activities-page/activities-page.component";
@@ -6,7 +6,7 @@ import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
-
+import { SlideHomeComponent } from "./pages/slides/slide-home/slide-home.component";
 const routes: Routes = [
   {
     path: "actividades",
@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterFormComponent,
+  },
+  {
+    path: "backoffice/Home/:id",
+    component:  SlideHomeComponent,
   },
   {
     path: "",
