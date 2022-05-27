@@ -3,7 +3,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Activities } from 'src/app/features/models';
 import { HttpService } from 'src/app/core/services/http.service';
 import { CreateService } from 'src/app/core/services/create.service';
-import { Listing } from 'src/app/core/services/listing.service';
+import { Listing } from 'src/app/core/services/activities.service';
 import { Update } from 'src/app/core/services/update.service';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -12,10 +12,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./creation-activities.component.scss'],
   providers:[ CreateService, Listing, Update]
 })
-export class CreationActivitiesComponent implements OnInit ,DoCheck {
+export class CreationActivitiesComponent implements OnInit  {
   public Editor = ClassicEditor;
   public activities: Activities
-  public  file: any = []
   public text: boolean = false
   public update: boolean= false
   public id: string=''
@@ -33,9 +32,7 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
   ngOnInit(): void {
     this.getUrl()
   }
-  ngDoCheck(): void {
-  }
- 
+  
   creteUpdate(){
     if(this.update){
       this.putActivities(this.id)
@@ -51,17 +48,17 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
         this.text= true
       },
       error =>{
-        console.log(<any> error)
       }
     )
   }
 
   fileChangeEvent(fileInput: any){
     const archivo = fileInput.target.files[0];
-    this.extraerBase64(archivo).then((image: any) => {
-      this.activities.image= image.base
-    })
-    this.file.push(archivo)
+    this.extraerBase64(archivo)
+      .then((image: any) =>{
+          this.activities.image= image.base
+        }
+      );
     this.existImg= true
 	}
   
@@ -106,7 +103,6 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
         this.activities= actividades
         },
         error =>{
-          console.log(<any> error)
         }
     )
   }
@@ -125,7 +121,6 @@ export class CreationActivitiesComponent implements OnInit ,DoCheck {
         this.text= true
       },
       error =>{
-        console.log(<any> error)
       }
     )
   }

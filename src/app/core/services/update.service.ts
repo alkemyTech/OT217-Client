@@ -17,11 +17,6 @@ export class Update{
     this.url = Global.url
   }
 
-
- /* putActivities(id: string): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put( this.url+'activities/'+id,{headers:headers})
-  }*/
   putActivities(activities: any, id: string): Observable<any>{
     let params = JSON.stringify(activities)
     let headers = new HttpHeaders().set('Content-Type','application/json');
