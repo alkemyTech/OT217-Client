@@ -5,12 +5,10 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./activity-form.component.html",
   styleUrls: ["./activity-form.component.scss"],
 })
-export class ActivityFormComponent implements OnInit {
+export class ActivityFormComponent {
   title = "base-ong-angular-client";
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
 
-  function2() {}
 }
