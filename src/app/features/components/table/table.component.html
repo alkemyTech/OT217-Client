@@ -1,0 +1,48 @@
+<div class="table-container">
+    <table mat-table [dataSource]="dataArray" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="firstCol">
+        <th mat-header-cell *matHeaderCellDef>{{firstCol}}</th>
+        <td mat-cell *matCellDef="let slide">{{ slide.order }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="secondCol">
+        <th mat-header-cell *matHeaderCellDef>{{secondCol}}</th>
+        <td mat-cell *matCellDef="let slide">
+          <div class="image-title">
+            <img class="slide-image" src="{{ slide.image }}" alt="Slide Image" />
+            <span class="slide-title">{{ slide.name }}</span>
+          </div>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="thirdCol">
+        <th mat-header-cell *matHeaderCellDef>{{thirdCol}}</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [innerHTML]="element.description"
+        ></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fourthCol">
+        <th mat-header-cell *matHeaderCellDef>{{fourthCol}}</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button class="edit" routerLink="{{editUrl}}/{{element.id}}">
+            Editar
+          </button>
+          <button
+            mat-raised-button
+            class="delete"
+            (click)="this.deleteElement(element.id)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  

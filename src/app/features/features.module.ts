@@ -24,6 +24,7 @@ import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.c
 import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SlidesListComponent } from './pages/slides/slides-list/slides-list.comp
     SlidesModalComponent,
     ThanksComponent,
     DetailComponent,
-    SlidesListComponent
+    SlidesListComponent,
+    TableComponent
   ],
   exports: [
     ActivityFormComponent,

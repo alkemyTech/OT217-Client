@@ -1,55 +1,9 @@
-<div class="header-container">
-  <h1 class="text-element">Lista de Slides</h1>
-  <p class="text-element">
-    En esta sección puedes crear una Slide nueva o modificar una ya existente
-  </p>
-  <button mat-raised-button class="create" routerLink="/backoffice/newslide">
-    Crear Slide Nueva
-  </button>
-</div>
-<div class="table-container">
-  <table mat-table [dataSource]="slidesDataTable" class="mat-elevation-z8">
-    <ng-container matColumnDef="order">
-      <th mat-header-cell *matHeaderCellDef>Orden</th>
-      <td mat-cell *matCellDef="let slide">{{ slide.order }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="image">
-      <th mat-header-cell *matHeaderCellDef>Imagen</th>
-      <td mat-cell *matCellDef="let slide">
-        <div class="image-title">
-          <img class="slide-image" src="{{ slide.image }}" alt="Slide Image" />
-          <span class="slide-title">{{ slide.name }}</span>
-        </div>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Descripción</th>
-      <td
-        mat-cell
-        *matCellDef="let element"
-        [innerHTML]="element.description"
-      ></td>
-    </ng-container>
-
-    <ng-container matColumnDef="buttons">
-      <th mat-header-cell *matHeaderCellDef>Acciones</th>
-      <td mat-cell *matCellDef="let slide">
-        <button mat-raised-button class="edit" (click)="edit(slide.id)">
-          Editar
-        </button>
-        <button
-          mat-raised-button
-          class="delete"
-          (click)="deleteElement(slide.id)"
-        >
-          Eliminar
-        </button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-</div>
+<app-table
+[dataArray]="slidesDataTable"
+[firstCol]="'Orden'"
+[secondCol]="'Slide'"
+[thirdCol]="'description'"
+[fourthCol]="'Acciones'"
+[editUrl]="'/backoffice/slides/'"
+[deleteElement]="deleteElement"
+></app-table>

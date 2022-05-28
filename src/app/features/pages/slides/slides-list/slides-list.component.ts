@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SlidesService } from "src/app/core/services/slides.service";
 import { Slides } from "src/app/shared/models/Slides";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-slides-list",
@@ -14,11 +13,7 @@ export class SlidesListComponent implements OnInit {
   ngOnInit(): void {}
   displayedColumns: string[] = ["order", "image", "description", "buttons"];
 
-  edit(slideId: number) {
-    this.router.navigate([`/backoffice/slides/${slideId}`]);
-  }
-
-  constructor(private slidesService: SlidesService, private router: Router) {
+  constructor(private slidesService: SlidesService) {
     this.populateArray();
   }
 
@@ -28,11 +23,10 @@ export class SlidesListComponent implements OnInit {
     });
   }
 
-  deleteElement(slideId: number) {
-    this.slidesService.deleteSlidesId(String(slideId)).subscribe(() =>{
+  deleteElement = (args: any): void => {
+    let id = String(args);
+    this.slidesService.deleteSlidesId(id).subscribe(() => {
       this.populateArray();
+    });
     }
-    );
-    
-  }
 }
