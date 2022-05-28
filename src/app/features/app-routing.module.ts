@@ -10,6 +10,7 @@ import { ActivityFormComponent } from "./pages/activities/activity-form/activity
 import { DonationsComponent } from "./pages/donations/donations.component";
 import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
+import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: "gracias",
     component: ThanksComponent,
+  },
+  {
+    path: "backoffice/organization/edit",
+    component: OrganizationEditComponent,
   },
   {
     path: "backoffice/news",
@@ -66,7 +71,7 @@ const routes: Routes = [
     redirectTo: "actividades",
     pathMatch: "full",
   },
-  
+
 ]
 
 @NgModule({
@@ -74,4 +79,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

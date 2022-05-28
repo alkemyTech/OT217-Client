@@ -23,6 +23,8 @@ import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.c
 import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 import { CardComponent } from "./pages/card/card.component";
+import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { CardComponent } from "./pages/card/card.component";
     ThanksComponent,
     DetailComponent,
     CardComponent,
+    OrganizationEditComponent
 
   ],
   exports: [
