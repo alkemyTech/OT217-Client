@@ -18,7 +18,7 @@ import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
-
+import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 @NgModule({
   declarations: [
     ActivityFormComponent,
@@ -33,6 +33,7 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
+    DashBoardBackofficeComponent 
   ],
   exports: [
     ActivityFormComponent,
@@ -46,7 +47,8 @@ import { PaginatePipe } from "../shared/pipes/paginate.pipe";
     RouterModule,
     CKEditorModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DashBoardBackofficeComponent 
     
   ],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]

@@ -12,11 +12,18 @@ body { margin: 0; font-family: Roboto, sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root{
-  --success-Buttom:#9AC9FB
+  --success-Buttom:#9AC9FB;
+  --details-Buttom:#FAFA88;
 }
 .colorButtomSuccess{
   color:#ffffffff;
   background-color: var(--success-Buttom);
+}
+
+.colorButtomDetails{
+  color:#151515 !important;
+  background-color: var(--details-Buttom) !important;
+  font-weight: bold !important;
 }
 .textBackoffice{
   color:  var(--success-Buttom);
@@ -32,4 +39,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .welcomBackoffice{
   font-size: 3rem;
+}
+
+.wisthIcons{
+  width: 50px;
+  height: 50px;
 }
