@@ -54,7 +54,7 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
     UserFormComponent,
     RouterModule,
   ],
-  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,DetailComponent]
+  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
 })
 export class FeaturesModule {
 }

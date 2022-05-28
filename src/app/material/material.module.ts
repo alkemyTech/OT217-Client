@@ -37,7 +37,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatButtonModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }
