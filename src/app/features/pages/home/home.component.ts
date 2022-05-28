@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       path: "/actividades",
       titulo: "Actividades"
     },
-   
+
     {
       path: "/novedades",
       titulo: "Novedades"
