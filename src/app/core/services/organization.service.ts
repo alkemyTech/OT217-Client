@@ -14,7 +14,6 @@ export class OrganizationService {
 
 
   topOrganization(): Observable<any> {
-    //return this._http.get(this.organizationApiUrl);
     return this._http.get(this.organizationApiUrl);
   }
 }
