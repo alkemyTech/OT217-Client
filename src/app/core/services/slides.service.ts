@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { PublicPostService } from './public/public-post.service';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SlidesService {
-
-  constructor(private http: HttpClient) { }
-
   url:string = "https://ongapi.alkemy.org/api/slides";
+
+  constructor(private https: PublicPostService, private http:HttpClient) { }
 
   getSlides():Observable<any>{
     return this.http.get(this.url);
   }
 
-  postSlides(slides:any):Observable<any>{
-    return this.http.post(this.url,slides);
+  postSlides(endpoint:string, slides:any):Observable<any>{
+    return this.https.postSlides(endpoint, slides);
   }
 
   updateSlides(slides:any, id:string):Observable<any>{
