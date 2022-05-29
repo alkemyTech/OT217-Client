@@ -1,38 +1,37 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Activities } from 'src/app/features/models';
-import { HttpService } from 'src/app/core/services/http.service';
 import { CreateService } from 'src/app/core/services/create.service';
-import { Listing } from 'src/app/core/services/activities.service';
-import { Update } from 'src/app/core/services/update.service';
+import { ActivitiesServices } from 'src/app/core/services/activities.service';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-creation-activities',
   templateUrl: './creation-activities.component.html',
   styleUrls: ['./creation-activities.component.scss'],
-  providers:[ CreateService, Listing, Update]
+  providers:[ CreateService, ActivitiesServices]
 })
-export class CreationActivitiesComponent implements OnInit  {
+export class CreationActivitiesComponent implements OnInit{
   public Editor = ClassicEditor;
-  public activities: Activities
+  public activities: Activities[]=[]
   public text: boolean = false
   public update: boolean= false
   public id: string=''
   public existImg: boolean = false
   public title: string=''
+  public name: string =''
+  public description: string =''
+  public image: string =''
   constructor(
     private _HttpService: CreateService, 
-    private _Listing: Listing,
-    private _Update: Update,
+    private _ActivitiesServices: ActivitiesServices,
     private sanitizer: DomSanitizer) {
-    this.activities = new Activities('','','','','','','','','','','');
     this.title= "Crear actividad"
+
   }
 
   ngOnInit(): void {
     this.getUrl()
   }
-  
   creteUpdate(){
     if(this.update){
       this.putActivities(this.id)
@@ -43,7 +42,8 @@ export class CreationActivitiesComponent implements OnInit  {
 
   }
   postActivities(){
-    this._HttpService.postActivities(this.activities).subscribe(
+    var activities = new Activities(this.name, this.description,this.image)
+    this._HttpService.postActivities(activities).subscribe(
       response =>{
         this.text= true
       },
@@ -56,7 +56,7 @@ export class CreationActivitiesComponent implements OnInit  {
     const archivo = fileInput.target.files[0];
     this.extraerBase64(archivo)
       .then((image: any) =>{
-          this.activities.image= image.base
+          this.image= image.base
         }
       );
     this.existImg= true
@@ -97,10 +97,13 @@ export class CreationActivitiesComponent implements OnInit  {
   getActivitiesID(id: string){
     var actividades: any
     this.update = true
-    this._Listing.getActivities(id).subscribe(
+    this._ActivitiesServices.getActivities(id).subscribe(
       response => {
         actividades = response.data
-        this.activities= actividades
+        this.activities[0]= actividades
+        this.name= response.data.name
+        this.description= response.data.description
+        this.image= response.data.image
         },
         error =>{
         }
@@ -109,14 +112,15 @@ export class CreationActivitiesComponent implements OnInit  {
 
 
   putActivities(id: string){
-    var activities
+    var activities = new Activities(this.name, this.description,this.image)
+    var activitiesput
     if(!this.existImg){
-      var {image , ...myUpdatedObject} = this.activities;
-      activities= myUpdatedObject;
+      var {image , ...myUpdatedObject} = activities;
+      activitiesput= myUpdatedObject
     }else{
-      activities= this.activities
+      activitiesput= activities
     }
-    this._Update.putActivities(activities, id).subscribe(
+    this._ActivitiesServices.putActivities(activitiesput, id).subscribe(
       response =>{
         this.text= true
       },
@@ -124,10 +128,4 @@ export class CreationActivitiesComponent implements OnInit  {
       }
     )
   }
-
-  
-
-
-
-
 }

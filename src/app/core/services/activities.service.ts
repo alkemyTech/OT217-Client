@@ -6,7 +6,7 @@ import { Global } from "./global";
 @Injectable({
   providedIn: "root",
 })
-export class Listing{
+export class ActivitiesServices{
   private _groupId!: string;
   private _headers!: HttpHeaders;
   public url : string;
@@ -20,5 +20,11 @@ export class Listing{
   getActivities(id: string): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get( this.url+'activities/'+id,{headers:headers})
+  }
+
+  putActivities(activities: any, id: string): Observable<any>{
+    let params = JSON.stringify(activities)
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this.http.put(this.url+'activities/'+id, params, {headers:headers})
   }
 }
