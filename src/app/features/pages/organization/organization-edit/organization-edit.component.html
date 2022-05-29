@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="myForm" novalidate>
   <mat-card>
     <mat-card-header>
       <mat-card-title>
@@ -6,60 +6,78 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
+
       <div class="row">
         <div class="col-sm-6">
           <mat-form-field>
-            <input matInput placeholder="Nombre" />
+            <input matInput placeholder="Nombre" class="form-control" name="name" formControlName="name" />
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Logo" />
-          </mat-form-field>
+          <div class="col-12">
+            <input id="boton-file" type="file" formControlName="logo" color="primary" (change)="onFileChange($event)">
+          </div>
         </div>
 
       </div>
       <div class="row">
         <div class="col-sm-6">
+
           <mat-form-field>
-            <input matInput placeholder="Descripcion" />
+
+            <input matInput placeholder="Descripción" class="form-control" name="description"
+              formControlName="description" />
           </mat-form-field>
         </div>
         <div class="col-sm-6">
           <mat-form-field>
-            <input matInput placeholder="Descripcion 2" />
+            <input matInput placeholder="Descripción 2" class="form-control" name="description2"
+              formControlName="description2" />
           </mat-form-field>
         </div>
         <div class="col-sm-6">
           <mat-form-field>
-            <input matInput placeholder="Url facebook Ej: http://www.facebook.com " />
+            <input matInput placeholder="Url facebook Ej: http://www.facebook.com " class="form-control"
+              name="urlfacebook" formControlName="urlfacebook" />
           </mat-form-field>
         </div>
         <div class="col-sm-6">
           <mat-form-field>
-            <input matInput placeholder="Url twitter Ej: http://www.twitter.com " />
+            <input matInput placeholder="Url twitter Ej: http://www.twitter.com " class="form-control" name="urltwitter"
+              formControlName="urltwitter" />
           </mat-form-field>
         </div>
         <div class="col-sm-6">
           <mat-form-field>
-            <input matInput placeholder="Url Instagram Ej: http://www.instagram.com " />
+            <input matInput placeholder="Url Instagram Ej: http://www.instagram.com" class="form-control"
+              name="urlinstagram" formControlName="urlinstagram" />
           </mat-form-field>
         </div>
         <div class="col-sm-6">
           <mat-form-field>
-            <input matInput placeholder="Url linkedin Ej: http://www.linkedin.com " />
+            <input matInput placeholder="Url linkedin Ej: http://www.linkedin.com" class="form-control"
+              name="urllinkedin" formControlName="urllinkedin" />
           </mat-form-field>
         </div>
 
       </div>
     </mat-card-content>
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!myForm.valid">Enviar</button>
+    </div>
     <mat-card-actions>
       <button color="primary" mat-raised-button>
         Guardar
       </button>
     </mat-card-actions>
   </mat-card>
+
 </form>
+
+
+<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+
+
 
 
 <!-- CSS BOOTSTRAP -->
@@ -80,3 +98,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
   integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
 </script>
+<script src="https://cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
