@@ -1,6 +1,6 @@
+import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "../material/material.module";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -22,6 +22,7 @@ import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
 import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
+import { CardComponent } from "./pages/card/card.component";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
     DonationsComponent,
     SlidesModalComponent,
     ThanksComponent,
-    DetailComponent
+    DetailComponent,
+    CardComponent,
+
   ],
   exports: [
     ActivityFormComponent,
@@ -54,7 +57,7 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
     UserFormComponent,
     RouterModule,
   ],
-  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,]
 })
 export class FeaturesModule {
 }
