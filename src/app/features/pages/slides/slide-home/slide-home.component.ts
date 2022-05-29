@@ -3,13 +3,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {OrganizationService} from'src/app/core/services/organization.service';
 import {SlidesService} from 'src/app/core/services/slides.service'
 import { DomSanitizer } from '@angular/platform-browser';
-
-interface Slide{
-  id: string;
-  description: string;
-  image: string
-}
-
+import { SlideArray} from './model'
 
 @Component({
   selector: 'app-slide-home',
@@ -17,7 +11,7 @@ interface Slide{
   styleUrls: ['./slide-home.component.scss'],
   providers: [OrganizationService, SlidesService]
 })
-export class SlideHomeComponent implements OnInit, DoCheck {
+export class SlideHomeComponent implements OnInit{
   public Editor = ClassicEditor;
   public textWelcome: string
   public idActual: string= ''
@@ -27,13 +21,9 @@ export class SlideHomeComponent implements OnInit, DoCheck {
   public selecSlide3: any
   public view=false;
   public organization: any
-  public slideArray= [{
-    id: String,
-    description: String,
-    image: String,
-    name: String   
-  }]
+  public slideArray: SlideArray[]=[]
   public uploadImage=[false,false,false]
+
   constructor(
     private _OrganizationService: OrganizationService,
     private _slideService: SlidesService,
@@ -46,12 +36,6 @@ export class SlideHomeComponent implements OnInit, DoCheck {
     this.getUrl();
     this.getSlide();
   }
-
-  ngDoCheck(): void {
-    
-  }
-
-  
 
   getUrl(){
     var actual = window.location+'';
@@ -66,7 +50,6 @@ export class SlideHomeComponent implements OnInit, DoCheck {
         this.textWelcome = response.data.welcome_text; 
         this.organization = response.data
       },error=>{
-        console.log(<any>error);
       }
     )
   }
@@ -108,7 +91,6 @@ export class SlideHomeComponent implements OnInit, DoCheck {
        this.slides= response.data
        this.getOrderSlide()
       },error=>{
-        console.log(<any>error);
       }
     )
 
@@ -132,7 +114,7 @@ export class SlideHomeComponent implements OnInit, DoCheck {
     this.extraerBase64(archivo).then((image: any) => {
       this.slideArray[position].image= image.base
       this.uploadImage[position] = true
-    })
+    });
 	}
 
   extraerBase64 = async($event: any) => new Promise((resolve, reject) => {
@@ -165,7 +147,6 @@ export class SlideHomeComponent implements OnInit, DoCheck {
 			response => {
 			},
 			error => {
-				console.log(<any>error);
 			}
 		);
   }
@@ -185,7 +166,6 @@ export class SlideHomeComponent implements OnInit, DoCheck {
         response => {
         },
         error => {
-          console.log(<any>error);
         }
       );
     }

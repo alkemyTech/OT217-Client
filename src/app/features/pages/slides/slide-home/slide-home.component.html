@@ -12,7 +12,6 @@
                 <p> <b>Slide 1: </b></p>
                 <div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     <mat-form-field appearance="fill" class="col" >
-                        <mat-label>Elija un slide</mat-label >
                         <mat-select [(value)]="selecSlide1"  >
                             <mat-option [value]="option.id" *ngFor="let option of slides">
                                 <button class="btn widthButtom" (click)="changeDate(option.id, 0)"  > {{ option.name }} </button> 
@@ -31,7 +30,6 @@
                     <p> <b>Slide 2: </b></p>
                     <div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                         <mat-form-field appearance="fill" class="col" >
-                            <mat-label>Favorite Food</mat-label >
                             <mat-select [(value)]="selecSlide2">
                                 <mat-option [value]="option.id" *ngFor="let option of slides">
                                     <button class="btn widthButtom" (click)="changeDate(option.id, 1)"  > {{ option.name }} </button>
@@ -51,7 +49,6 @@
                     <p> <b>Slide 3: </b></p>
                     <div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                         <mat-form-field appearance="fill" class="col" >
-                            <mat-label>Favorite Food</mat-label >
                             <mat-select [(value)]="selecSlide3">
                                 <mat-option [value]="option.id" *ngFor="let option of slides">
                                     <button class="btn widthButtom" (click)="changeDate(option.id, 2)"  > {{ option.name }} </button>
