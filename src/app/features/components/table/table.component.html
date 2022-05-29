@@ -1,21 +1,27 @@
+<div class="section-title">
+  <h1 class="title">{{ title }}</h1>
+  <p>
+    En esta panatalla puedes ver todos los elementos {{ title }}, y puedes
+    modificarlos o eliminarlos
+  </p>
+</div>
 <div class="table-container">
   <table mat-table [dataSource]="dataArray" class="mat-elevation-z8">
-
     <ng-container matColumnDef="firstCol">
       <th mat-header-cell *matHeaderCellDef>{{ firstCol }}</th>
       <td mat-cell *matCellDef="let element">
         <span class="slide-title">{{ element.name }}</span>
         <div *ngIf="imageTrue">
-        <div class="image-title">
-          <img
-            class="slide-image"
-            src="{{ element.image }}"
-            alt="Slide Image"
-          />
-        </div>
+          <div class="image-title">
+            <img
+              class="slide-image"
+              src="{{ element.image }}"
+              alt="Slide Image"
+            />
+          </div>
         </div>
       </td>
-<!--       <th mat-header-cell *matHeaderCellDef>{{ firstCol }}</th>
+      <!--       <th mat-header-cell *matHeaderCellDef>{{ firstCol }}</th>
       <td mat-cell *matCellDef="let element">
         <div *ngIf="orderTrue">
           {{ element.order }}
@@ -31,10 +37,10 @@
           {{ element.order }}
         </div>
         <div *ngIf="createdTrue">
-          {{dateFormatter(element.created_at)}}
+          {{ dateFormatter(element.created_at) }}
         </div>
         <div *ngIf="emailTrue">
-          {{element.email}}
+          {{ element.email }}
         </div>
       </td>
     </ng-container>

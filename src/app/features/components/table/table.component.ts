@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./table.component.scss"],
 })
 export class TableComponent implements OnInit {
+  //Title to display
+  @Input() title: string = "";
   // Array to populate Table
   @Input() dataArray: any;
   // Definition of column names
