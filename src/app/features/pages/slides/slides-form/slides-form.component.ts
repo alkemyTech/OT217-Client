@@ -52,7 +52,7 @@ export class SlidesFormComponent implements OnInit {
       this.slides = this.formBuilder.group({
         name: ["", [Validators.required, Validators.minLength(4)]],
         description: ["", Validators.required],
-        order: ["null", Validators.required],
+        order: ["0", Validators.required],
         image: ["", Validators.required],
       });
     }
