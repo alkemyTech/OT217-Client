@@ -24,6 +24,7 @@ import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 import { CardComponent } from "./pages/card/card.component";
 import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
+import { MembersComponent } from "./pages/members/members.component";
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
     ThanksComponent,
     DetailComponent,
     CardComponent,
-    OrganizationEditComponent
+    OrganizationEditComponent,
+    MembersComponent
 
   ],
   exports: [
