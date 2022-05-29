@@ -1,20 +1,28 @@
 <div class="containter-fluid">
+  <h1 class="text-center titulo">{{creacion}}</h1>
+  <div class="d-grid gap-1 col-12 mx-auto w-50">
+    <button class="btn editar text-light" type="button" routerLink="/backoffice/users/create">Crear un nuevo Usuario</button>
+  </div>
+</div>
+<div class="containter-fluid">
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Imagen</th>
         <th scope="col">Nombre</th>
         <th scope="col">Email</th>
-        <th scope="col">Agregar</th>
-        <th scope="col">Eliminar</th>
+        <th scope="col" class="text-end">Editar/Eliminar</th>
       </tr>
     </thead>
-    <tbody *ngFor="let user of user">
+    <tbody *ngFor="let user of users">
       <tr>
-        <th scope="row"><img src="{{user.imagen}}" class="w-25 h-25"></th>
-        <td>{{user.nombre}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.agregar}}</td>
+        <td class="align-middle">{{user.name}}</td>
+        <td class="align-middle">{{user.email}}</td>
+        <td class="align-middle">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn editar me-md-2 text-light" (click)="onEdit(user)" >Editar</button>
+          <button class="btn eliminar text-light" (click)="onDelete(user)">Eliminar</button>
+        </div>
+      </td>
       </tr>
     </tbody>
   </table>

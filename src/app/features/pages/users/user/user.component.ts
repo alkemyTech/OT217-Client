@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { USERS } from './user-mock';
-import { Users } from './User'; 
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
+import { Users } from 'src/app/shared/model/Users'; 
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-user',
@@ -9,10 +11,31 @@ import { Users } from './User';
 })
 export class UserComponent implements OnInit {
 
-  user:Users[] = USERS;
-  constructor() { }
+  users:Users[] = [];
+  creacion:string = "Aqui usted puede crear un nuevo Usuario";
+ 
+
+  constructor(private userService:UserService, private route:Router) { }
 
   ngOnInit(): void {
+    this.cargarData();
   }
+
+  cargarData():void {
+    this.userService.getUser().subscribe(response =>
+     this.users = response.data)
+  }
+
+  onDelete(user:Users){
+    this.userService.deleteUser(user).subscribe(()=>(
+    this.users = this.users.filter( u => u.id !== user.id)
+    ))
+  }
+
+  onEdit(user:Users){
+    this.route.navigate([`/backoffice/users/${user.id}`])
+}
+
+
 
 }
