@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { SlidesService } from "src/app/core/services/slides.service";
-import { Slides } from "src/app/shared/models/Slides";
-import { Router } from "@angular/router";
+
 
 @Component({
   selector: "app-table",

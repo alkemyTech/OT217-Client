@@ -1,17 +1,21 @@
 <div class="table-container">
     <table mat-table [dataSource]="dataArray" class="mat-elevation-z8">
 
-      <ng-container matColumnDef="firstCol">
-        <th mat-header-cell *matHeaderCellDef>{{firstCol}}</th>
-        <td mat-cell *matCellDef="let slide">{{ slide.order }}</td>
-      </ng-container>
+  @Input() firstCol: string = "First Column";
+        <div *ngIf="firstCol">
+            <ng-container matColumnDef="firstCol">
+                <th mat-header-cell *matHeaderCellDef>{{firstCol}}</th>
+                <td mat-cell *matCellDef="let element">{{ element.order }}</td>
+              </ng-container>
+        </div>
+
   
       <ng-container matColumnDef="secondCol">
         <th mat-header-cell *matHeaderCellDef>{{secondCol}}</th>
-        <td mat-cell *matCellDef="let slide">
+        <td mat-cell *matCellDef="let element">
           <div class="image-title">
-            <img class="slide-image" src="{{ slide.image }}" alt="Slide Image" />
-            <span class="slide-title">{{ slide.name }}</span>
+            <img class="slide-image" src="{{ element.image }}" alt="Slide Image" />
+            <span class="slide-title">{{ element.name }}</span>
           </div>
         </td>
       </ng-container>
