@@ -58,6 +58,7 @@ import { TableComponent } from './components/table/table.component';
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
+    FormContactComponent
   ],
   imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule]
 })
