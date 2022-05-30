@@ -26,4 +26,8 @@ export class SlidesService {
   getSlidesId(id:string):Observable<any>{
     return this.http.get(this.url+`/${id}`);
   }
+
+  deleteSlidesId(id:string):Observable<any>{
+    return this.http.delete(this.url+`/${id}`);
+  }
 }
