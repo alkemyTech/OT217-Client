@@ -57,7 +57,7 @@ import { CardComponent } from "./pages/card/card.component";
     UserFormComponent,
     RouterModule,
   ],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,]
+  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,]
 })
 export class FeaturesModule {
 }
