@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Validators, FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
+import { PublicapiServiceService } from "src/app/core/services/publicapi-service.service";
 import { UserService } from "src/app/core/services/user.service";
 
 @Component({
@@ -16,7 +17,8 @@ export class UserFormComponent {
   constructor(
     private FormBuilder: FormBuilder,
     private userService: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service:PublicapiServiceService
   ) {
     this.formRecicler = this.FormBuilder.group({
       name: ["", [Validators.required, Validators.minLength(4)]],
@@ -27,6 +29,7 @@ export class UserFormComponent {
       description: ["", [Validators.required, Validators.minLength(10)]],
     });
     this.userId = this.route.snapshot.params.id;
+    this.mostrarmetodoGet(1544)
   }
 
   get Name() {
@@ -75,4 +78,10 @@ export class UserFormComponent {
       this.archivoImage = reader.result as string;
     };
   }
+  mostrarmetodoGet(id:any){
+    this.service.metodoGet(id).subscribe((response => {
+      console.log(response)
+    }))
+  }
+
 }

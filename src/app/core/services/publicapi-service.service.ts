@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PublicapiServiceService {
 
-  baseUrl:string = "https://ongapi.alkemy.org/api/"
+  baseUrl:string = "https://ongapi.alkemy.org/api/users/"
 
   rutaendpoint = (id:any) =>{
     return this.baseUrl + id;
@@ -16,7 +16,7 @@ export class PublicapiServiceService {
   constructor(private http:HttpClient) { }
 
 
-  metodoGet(id:any, users:any):Observable<any>{
-    return this.http.get(this.rutaendpoint(id || null),users)
+  metodoGet(id:any):Observable<any>{
+    return this.http.get(this.rutaendpoint(id || null))
   }
 }
