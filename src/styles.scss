@@ -72,3 +72,33 @@ html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
 .widthImg{
   width: 350px;
 }
+
+.colorButtomSuccess{
+  color:#ffffffff;
+  background-color: var(--success-Buttom);
+}
+
+.colorButtomDetails{
+  color:#151515 !important;
+  background-color: var(--info-Buttom) !important;
+  font-weight: bold !important;
+}
+.textBackoffice{
+  color:  var(--success-Buttom);
+}
+
+.widthImg{
+  width: 400px;
+}
+
+.iconBackoffice{
+  width: 70px !important;
+}
+
+.welcomBackoffice{
+  font-size: 3rem;
+}
+
+.wisthIcons{
+  font-size: 3rem;
+}

@@ -8,6 +8,7 @@ import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.comp
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
+import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { DonationsComponent } from "./pages/donations/donations.component";
 import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
@@ -76,6 +77,11 @@ const routes: Routes = [
     path: "",
     redirectTo: "actividades",
     pathMatch: "full",
+  },
+  
+  { 
+    path: "backoffice", 
+    component: DashBoardBackofficeComponent
   },
   { 
     path: "creationActividades", 

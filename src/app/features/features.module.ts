@@ -19,6 +19,7 @@ import { FormContactComponent } from './pages/form-contact/form-contact.componen
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
+import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
 import { ThanksComponent } from './pages/donations/thanks/thanks.component';
@@ -43,6 +44,7 @@ import { CardComponent } from "./pages/card/card.component";
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
+    DashBoardBackofficeComponent, 
     CreationActivitiesComponent,
     FormContactComponent,
     DonationsComponent,
@@ -65,7 +67,8 @@ import { CardComponent } from "./pages/card/card.component";
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
-    FormContactComponent
+    FormContactComponent,
+    DashBoardBackofficeComponent 
   ],
   imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,MatIconModule]
 })
