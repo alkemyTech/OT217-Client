@@ -19,6 +19,7 @@ import { FormContactComponent } from './pages/form-contact/form-contact.componen
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
+import { SlideHomeComponent } from './pages/slides/slide-home/slide-home.component';
 import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
@@ -44,6 +45,7 @@ import { CardComponent } from "./pages/card/card.component";
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
+    SlideHomeComponent,
     DashBoardBackofficeComponent, 
     CreationActivitiesComponent,
     FormContactComponent,

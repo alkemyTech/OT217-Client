@@ -40,6 +40,7 @@ $base-ong-angular-client-theme: mat.define-light-theme((
   --info-Buttom:#FAFA88;
 }
 
+
 html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
 
 * { font-family: 'Roboto', sans-serif; }
@@ -48,6 +49,12 @@ html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
     color: #151515;
     font-weight: bolder;
     font-size: 36px;
+}
+.widthButtom{
+    width: 100%;
+}
+.widthImgImgSlideHome{
+    width: 200px !important;
 }
 
 .mat-slider-thumb {
@@ -83,6 +90,7 @@ html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
   background-color: var(--info-Buttom) !important;
   font-weight: bold !important;
 }
+
 .textBackoffice{
   color:  var(--success-Buttom);
 }
@@ -101,4 +109,9 @@ html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
 
 .wisthIcons{
   font-size: 3rem;
+}
+
+.colorButtomSuccess{
+  color:#ffffffff;
+  background-color: #9AC9FB !important;
 }
