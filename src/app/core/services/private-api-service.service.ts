@@ -21,6 +21,6 @@ export class PrivateApiServiceService {
   }
 
   postSlides<T>(url:string, body:any):Observable<any>{
-    return this.http.post(url,body, { headers: this.headers});
+    return this.http.post(url,body, { headers: this.headers}); //HOLA
   }
 }
