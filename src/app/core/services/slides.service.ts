@@ -1,5 +1,4 @@
-
-
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PublicApiService } from './public-api.service';
@@ -9,32 +8,23 @@ import { PublicApiService } from './public-api.service';
 })
 export class SlidesService extends PublicApiService {
 
-  public constructor(public publicApiService:PublicApiService) {
-    super(publicApiService.http);
+  public constructor(http:HttpClient) {
+    super(http);
   }
 
-  postSlides<Slides>(slides:any):Observable<any>{
-    return this.http.post(this.url,slides);
+  postSlides<Slides>(slides:Slides):Observable<Slides>{
+    return this.post<Slides>(slides);
   }
 
-  // constructor(private http: HttpClient) { }
-/* 
-  url:string = "https://ongapi.alkemy.org/api/slides";
-
-  getSlides():Observable<any>{
-    return this.http.get(this.url);
-  } */
-
-/* 
-  updateSlides(slides:any, id:string):Observable<any>{
-    return this.http.put(this.url + `/${id}`,slides);
+  getSlides<Slides>():Observable<Slides>{
+    return this.get<Slides>();
   }
 
-  getSlidesId(id:string):Observable<any>{
-    return this.http.get(this.url+`/${id}`);
+  putSlides<Slides>(slides:Slides, id:string):Observable<Slides>{
+    return this.put<Slides>(this.url+id,slides);
   }
 
-  deleteSlidesId(id:string):Observable<any>{
-    return this.http.delete(this.url+`/${id}`);
-  } */
+  getSlidesById<Slides>(id:string):Observable<Slides>{
+    return this.http.get<Slides>(this.url+id);
+  }  
 }
