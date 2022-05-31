@@ -23,6 +23,7 @@ export class SlideHomeComponent implements OnInit{
   public organization: any
   public slideArray: SlideArray[]=[]
   public uploadImage=[false,false,false]
+  public text: string=''
 
   constructor(
     private _OrganizationService: OrganizationService,
@@ -143,12 +144,17 @@ export class SlideHomeComponent implements OnInit{
     this.organization.welcome_text = this.textWelcome
     var {logo , ...myUpdatedObject} = this.organization;
     this.organization=myUpdatedObject;
-    this._OrganizationService.putOrganization(this.organization,this.idActual).subscribe(
-			response => {
-			},
-			error => {
-			}
-		);
+    if(this.textWelcome.length > 20){
+      this._OrganizationService.putOrganization(this.organization,this.idActual).subscribe(
+        response => {
+        },
+        error => {
+        }
+      );
+      this.text=''
+    }else{
+      this.text="Son minimo 20 caracteres"
+    }
   }
 
 

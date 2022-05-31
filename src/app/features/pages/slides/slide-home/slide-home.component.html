@@ -3,8 +3,8 @@
         <h1>Editar informacion de inicio</h1>
         <div class="container shadow-sm p-3 mb-5 bg-body rounded">
             <p> <b>Texto de bienvenida: </b></p>
-            <textarea class="form-control"  id="floatingTextarea" name="textWelcome" #textWelcom="ngModel" [(ngModel)]="textWelcome"  > </textarea>
-            
+            <textarea class="form-control"  id="floatingTextarea" minlength="20" name="textWelcome" #textWelcom="ngModel" [(ngModel)]="textWelcome" required > </textarea>
+            <label *ngIf="text"> {{text}}</label>
         </div>
 
         <div *ngIf="view" >
@@ -20,7 +20,7 @@
                     </mat-form-field>
                     
                     <ckeditor [editor]="Editor"  class="col mb-2" name="description" #description0="ngModel" [(ngModel)]="slideArray[0].description" ></ckeditor>
-                    <input type="file" name="" id="" class="col mb-2" (change)="fileChangeEvent($event, 0)">
+                    <input type="file" name="" id="" class="col mb-2" (change)="fileChangeEvent($event, 0)" accept=".png, .jpg, ">
                     <img src={{slideArray[0].image}} alt="" class="col widthImg">                    
                 </div>
             </div>
