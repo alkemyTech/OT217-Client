@@ -22,7 +22,7 @@ export class SlidesModalComponent implements OnInit {
       order: 0,
     };
     this.slidesService
-      .updateSlides(quitarSlide, String(id))
+      .putSlides(quitarSlide, String(id))
       .subscribe((response) => {});
   }
 

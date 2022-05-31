@@ -14,8 +14,8 @@ export abstract class PublicApiService {
     return this.http.post<T>(this.url, body);
   }
 
-  public get<T>(): Observable<T> {
-    return this.http.get<T>(this.url);
+  public get<T>(endpoint:string): Observable<T> {
+    return this.http.get<T>(this.url+endpoint);
   }
 
   public put<T>(body: any, id: string): Observable<T> {
@@ -23,7 +23,7 @@ export abstract class PublicApiService {
   }
 
   public getById<T>(id: string): Observable<T> {
-    return this.http.get<T>(this.url + id);
+    return this.http.get<T>(this.url+id);
   }
 
   public delete<T>(id: string): Observable<T> {
