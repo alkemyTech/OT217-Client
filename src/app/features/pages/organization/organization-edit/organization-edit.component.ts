@@ -4,9 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { OrganizationService } from "src/app/core/services/organization.service";
 
-
-
-
 @Component({
   selector: 'app-organization-edit',
   templateUrl: './organization-edit.component.html',
@@ -27,8 +24,6 @@ export class OrganizationEditComponent implements OnInit {
   urlinstagramInput: any;
   urllinkedinInput: any;
 
-
-
   constructor(private fb: FormBuilder, public dialog: MatDialog, private organizationService: OrganizationService) {
 
     this.myForm = this.fb.group({
@@ -43,12 +38,8 @@ export class OrganizationEditComponent implements OnInit {
     });
   }
 
-
-
   ngOnInit(): void {
     this.organizationService.topOrganization().subscribe((result: any) => {
-      this.listaDatos = result.data;
-      console.log(result.data);
       this.nameInput = result.data.name;
       this.descriptionInput = result.data.long_description;
       this.description2Input = result.data.short_description;
@@ -59,26 +50,8 @@ export class OrganizationEditComponent implements OnInit {
     });
   }
 
-  ckeditorContent: any;
-
-
-
-  addDescription() {
-
-  };
-
-
-
-
-
-
-
   onFileChange(event: any) {
     const reader = new FileReader();
-
-
-
-
 
     if (event.target.files && event.target.files.length) {
       const [file] = event.target.files;

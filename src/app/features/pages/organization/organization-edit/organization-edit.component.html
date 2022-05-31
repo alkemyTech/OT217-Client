@@ -1,64 +1,67 @@
-<form [formGroup]="myForm" novalidate>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        Formulario de edición de datos de la organización
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Nombre" [(ngModel)]="nameInput" class="form-control" name="name"
-              formControlName="name" />
-          </mat-form-field>
-        </div>
-        <div class="col-sm-6">
-          <div class="col-12">
-            <input id="boton-file" type="file" accept=".png, .jpg, .jpeg" formControlName="logo" color="primary"
-              (change)="onFileChange($event)">
+<div class="container">
+  <form [formGroup]="myForm" novalidate>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Formulario de edición de datos de la organización
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field>
+              <input matInput placeholder="Nombre" [(ngModel)]="nameInput" class="form-control" name="name"
+                formControlName="name" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <div class="col-12">
+              <input id="boton-file" type="file" accept=".png, .jpg, .jpeg" formControlName="logo" color="primary"
+                (change)="onFileChange($event)">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Descripción" [(ngModel)]="descriptionInput" class="form-control"
-              name="description" formControlName="description" />
-          </mat-form-field>
-        </div>
-        <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Url facebook Ej: http://www.facebook.com " [(ngModel)]="urlfacebookInput"
-              class="form-control" name="urlfacebook" formControlName="urlfacebook" />
-          </mat-form-field>
-        </div>
-        <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Url twitter Ej: http://www.twitter.com " [(ngModel)]="urltwitterInput"
-              class="form-control" name="urltwitter" formControlName="urltwitter" />
-          </mat-form-field>
-        </div>
-        <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Url Instagram Ej: http://www.instagram.com" [(ngModel)]="urlinstagramInput"
-              class="form-control" name="urlinstagram" formControlName="urlinstagram" />
-          </mat-form-field>
-        </div>
-        <div class="col-sm-6">
-          <mat-form-field>
-            <input matInput placeholder="Url linkedin Ej: http://www.linkedin.com" [(ngModel)]="urllinkedinInput"
-              class="form-control" name="urllinkedin" formControlName="urllinkedin" />
-          </mat-form-field>
-          <div class="form-group">
-            <label for="descrption2">Descripción corta</label>
-            <ckeditor [editor]="Editor" formControlName="description2" [(ngModel)]="description2Input"></ckeditor>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field>
+              <input matInput placeholder="Descripción" [(ngModel)]="descriptionInput" class="form-control"
+                name="description" formControlName="description" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <input matInput placeholder="Url facebook Ej: http://www.facebook.com " [(ngModel)]="urlfacebookInput"
+                class="form-control" name="urlfacebook" formControlName="urlfacebook" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <input matInput placeholder="Url twitter Ej: http://www.twitter.com " [(ngModel)]="urltwitterInput"
+                class="form-control" name="urltwitter" formControlName="urltwitter" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <input matInput placeholder="Url Instagram Ej: http://www.instagram.com" [(ngModel)]="urlinstagramInput"
+                class="form-control" name="urlinstagram" formControlName="urlinstagram" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <input matInput placeholder="Url linkedin Ej: http://www.linkedin.com" [(ngModel)]="urllinkedinInput"
+                class="form-control" name="urllinkedin" formControlName="urllinkedin" />
+            </mat-form-field>
+            <div class="form-group">
+              <label for="descrption2">Descripción corta</label>
+              <ckeditor [editor]="Editor" formControlName="description2" [(ngModel)]="description2Input"></ckeditor>
+            </div>
           </div>
         </div>
+      </mat-card-content>
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button"
+          [disabled]="!myForm.valid">Enviar</button>
       </div>
-    </mat-card-content>
-    <div class="form-element">
-      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!myForm.valid">Enviar</button>
-    </div>
-  </mat-card>
-</form>
+    </mat-card>
+  </form>
+</div>
