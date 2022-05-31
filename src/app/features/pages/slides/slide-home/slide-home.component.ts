@@ -168,7 +168,7 @@ export class SlideHomeComponent implements OnInit{
         var {image, ...myUpdatedObject} = this.slideArray[i];
         objectUpdate=myUpdatedObject;
       }
-      this._slideService.updateSlides(objectUpdate,this.slideArray[i].id.toString()).subscribe(
+      this._slideService.putSlides(objectUpdate,this.slideArray[i].id.toString()).subscribe(
         response => {
         },
         error => {
