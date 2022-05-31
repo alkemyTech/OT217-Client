@@ -30,6 +30,7 @@ import { UserComponent } from './pages/users/user/user.component';
 import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from "./pages/card/card.component";
+import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CardComponent } from "./pages/card/card.component";
     SlidesListComponent,
     TableComponent,
     CardComponent,
+    ActivitiesListComponent,
 
   ],
   exports: [
