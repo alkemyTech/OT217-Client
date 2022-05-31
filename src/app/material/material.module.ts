@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -12,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+
 
 
 @NgModule({
@@ -41,7 +41,7 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatSliderModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
   ]
 })
 export class MaterialModule { }
