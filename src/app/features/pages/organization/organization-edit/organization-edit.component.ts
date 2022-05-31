@@ -17,7 +17,7 @@ export class OrganizationEditComponent implements OnInit {
   public Editor = ClassicEditor;
   myForm: FormGroup;
   urlImg: string = "";
-  public myreg = ('^(https?:\/\/)*[a-z0-9-]+(\.[a-z0-9-]+)+(\/[a-z0-9-]+)*\/?$');
+  public myreg = ('^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$');
   public listaDatos: Array<any> = [];
   nameInput!: any;
   descriptionInput: any;
@@ -38,8 +38,8 @@ export class OrganizationEditComponent implements OnInit {
       description2: ['', [Validators.required]],
       urlfacebook: ['', [Validators.pattern(this.myreg), Validators.required]],
       urltwitter: ['', [Validators.pattern(this.myreg), Validators.required]],
-      urlinstagram: ['', [Validators.pattern(this.myreg), Validators.required, Validators.minLength(25)]],
-      urllinkedin: ['', [Validators.pattern(this.myreg), Validators.required, Validators.minLength(24)]]
+      urlinstagram: ['', [Validators.pattern(this.myreg), Validators.required]],
+      urllinkedin: ['', [Validators.pattern(this.myreg), Validators.required]]
     });
   }
 
