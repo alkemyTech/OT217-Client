@@ -36,17 +36,22 @@ export class SlidesFormComponent implements OnInit {
   ngOnInit(): void {
     if (this.slidesId) {
       this.title = "Modificar Slide";
-      this.slidesService.getSlidesById<any>(this.slidesId).subscribe((response) => {
-        this.currentSlides.push(response.data);
-        this.slides = this.formBuilder.group({
-          name: [
-            this.currentSlides[0].name,
-            [Validators.required, Validators.minLength(4)],
-          ],
-          order: [this.currentSlides[0].order, Validators.required],
-          description: [this.currentSlides[0].description, Validators.required],
+      this.slidesService
+        .getSlidesById<any>(this.slidesId)
+        .subscribe((response) => {
+          this.currentSlides.push(response.data);
+          this.slides = this.formBuilder.group({
+            name: [
+              this.currentSlides[0].name,
+              [Validators.required, Validators.minLength(4)],
+            ],
+            order: [this.currentSlides[0].order, Validators.required],
+            description: [
+              this.currentSlides[0].description,
+              Validators.required,
+            ],
+          });
         });
-      });
     } else {
       this.title = "Crear Slide";
       this.slides = this.formBuilder.group({

@@ -13,7 +13,7 @@ export class SlidesModalComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Slides,
     private slidesService: SlidesService,
-    private router:Router,
+    private router: Router
   ) {}
 
   quitar(slide: Slides, id: number) {
@@ -26,8 +26,8 @@ export class SlidesModalComponent implements OnInit {
       .subscribe((response) => {});
   }
 
-  modificar(data:number) {
-    this.router.navigate(['/backoffice/slides/', data])
+  modificar(data: number) {
+    this.router.navigate(["/backoffice/slides/", data]);
   }
 
   ngOnInit(): void {}

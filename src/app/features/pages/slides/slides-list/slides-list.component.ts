@@ -28,5 +28,5 @@ export class SlidesListComponent implements OnInit {
     this.slidesService.deleteSlides(id).subscribe(() => {
       this.populateArray();
     });
-    }
+  };
 }
