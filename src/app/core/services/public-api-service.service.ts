@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PublicPostService {
+export class PublicApiServiceService {
+
   url:string = "https://ongapi.alkemy.org/api/";
   generateRoute = (endpoint:string) =>{
     return this.url + endpoint
@@ -13,7 +14,8 @@ export class PublicPostService {
 
   constructor(private http:HttpClient) { }
 
-  postSlides(endpoint:string, slides:any):Observable<any>{
-    return this.http.post(this.generateRoute(endpoint),slides);
+  postSlides(endpoint:string, body:any):Observable<any>{
+    return this.http.post(this.generateRoute(endpoint),body);
   }
+
 }
