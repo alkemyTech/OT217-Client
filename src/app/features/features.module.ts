@@ -14,6 +14,7 @@ import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
 import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
 import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
+import { CreationActivitiesComponent } from './pages/activities/creation-activities/creation-activities.component';
 import { FormContactComponent } from './pages/form-contact/form-contact.component';
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
@@ -42,6 +43,7 @@ import { CardComponent } from "./pages/card/card.component";
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
+    CreationActivitiesComponent,
     FormContactComponent,
     DonationsComponent,
     SlidesModalComponent,

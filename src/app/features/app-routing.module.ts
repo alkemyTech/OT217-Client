@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
+import { CreationActivitiesComponent } from "./pages/activities/creation-activities/creation-activities.component";
 import { ActivitiesPageComponent } from "./pages/activities/activities-page/activities-page.component";
 import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
 import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
@@ -76,6 +77,15 @@ const routes: Routes = [
     redirectTo: "actividades",
     pathMatch: "full",
   },
+  { 
+    path: "creationActividades", 
+    component: CreationActivitiesComponent 
+  },
+  { 
+    path: "creationActividades/:id", 
+    component: CreationActivitiesComponent 
+  },
+  
   {
     path: "**",
     redirectTo: "actividades",
