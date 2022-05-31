@@ -31,4 +31,5 @@ export class SlidesService extends PublicApiService {
   deleteSlides<Slides>(id:string):Observable<Slides>{
     return this.delete<Slides>("slides/" +id);
   }
+  
 }

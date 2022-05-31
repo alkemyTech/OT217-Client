@@ -1,12 +1,15 @@
-import { NgModule } from "@angular/core";
+import { Component, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
+import { CreationActivitiesComponent } from "./pages/activities/creation-activities/creation-activities.component";
 import { ActivitiesPageComponent } from "./pages/activities/activities-page/activities-page.component";
 import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
 import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
+import { SlideHomeComponent } from "./pages/slides/slide-home/slide-home.component";
+import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { DonationsComponent } from "./pages/donations/donations.component";
 import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
@@ -72,10 +75,28 @@ const routes: Routes = [
     component: RegisterFormComponent,
   },
   {
+    path: "backoffice/Home/:id",
+    component:  SlideHomeComponent,
+  },
+  {
     path: "",
     redirectTo: "actividades",
     pathMatch: "full",
   },
+  
+  { 
+    path: "backoffice", 
+    component: DashBoardBackofficeComponent
+  },
+  { 
+    path: "creationActividades", 
+    component: CreationActivitiesComponent 
+  },
+  { 
+    path: "creationActividades/:id", 
+    component: CreationActivitiesComponent 
+  },
+  
   {
     path: "**",
     redirectTo: "actividades",
