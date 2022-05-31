@@ -35,12 +35,33 @@ $base-ong-angular-client-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root{
   --success-Buttom:#9AC9FB;
   --info-Buttom:#FAFA88;
 }
+
+html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
+
+* { font-family: 'Roboto', sans-serif; }
+
+.title{
+    color: #151515;
+    font-weight: bolder;
+    font-size: 36px;
+}
+
+.mat-slider-thumb {
+	background-color: #3894f7 !important;
+}
+
+.mat-slider-thumb-label {
+	background-color: #3894f7 !important;
+}
+
+.mat-slider-track-fill {
+	background-color: #3894f7 !important;
+}
+
 .colorButtomSuccess{
   color:var(--success-Buttom);
   background-color: var(--info-Buttom);
