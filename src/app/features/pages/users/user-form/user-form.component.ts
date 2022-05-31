@@ -79,7 +79,7 @@ export class UserFormComponent {
     };
   }
   mostrarmetodoGet(id:any){
-    this.service.metodoGet(id).subscribe((response => {
+    this.service.getById(id).subscribe((response => {
       console.log(response)
     }))
   }
