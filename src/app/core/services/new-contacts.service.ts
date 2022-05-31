@@ -1,32 +1,33 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { contacts } from "src/app/shared/models/contact";
+import { Contacts } from "src/app/shared/models/contact";
+import { PublicapiserviceService } from "./publicapiservice.service";
 
 @Injectable({
   providedIn: "root",
 })
-export class NewContactsService {
-  baseUrl: string = "https://ongapi.alkemy.org/api/contacts";
-
-  constructor(private http: HttpClient) {}
-
-  getContacts(id: number): Observable<contacts> {
-    const url = this.baseUrl + id;
-    return this.http.get<contacts>(url);
+export class NewContactsService extends PublicapiserviceService {
+  constructor(http: HttpClient) {
+    super(http);
   }
 
-  postContacts(contact: contacts): Observable<contacts> {
-    return this.http.post<contacts>(this.baseUrl, contact);
+  getContacts<Contacts>(): Observable<Contacts> {
+    return this.get<Contacts>("contacts");
   }
 
-  putContacts(contact: contacts): Observable<contacts> {
-    const url = this.baseUrl + contact.id;
-    return this.http.put<contacts>(url, contact);
+  postContacts<Contacts>(contacts: Contacts): Observable<Contacts> {
+    return this.post<Contacts>(contacts);
   }
 
-  deleteContacts(id: number): Observable<any> {
-    const url = this.baseUrl + id;
-    return this.http.delete(url);
+  putContacts<Contacts>(contacts: any, id: string): Observable<Contacts> {
+    return this.put<Contacts>(id, contacts);
+  }
+
+  getContactsById<Contacts>(id: string): Observable<Contacts> {
+    return this.getById<Contacts>("contacts/" + id);
+  }
+  deleteContacts<Contacts>(id: string): Observable<Contacts> {
+    return this.delete<Contacts>("contacts/" + id);
   }
 }
