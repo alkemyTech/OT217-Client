@@ -1,0 +1,33 @@
+main{
+    background-image: url("../../../../../assets/thanksbackground.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    color: #5ca9fc;
+    font-size: 32px;
+    font-weight: bolder;
+    margin: 0px 0px 10px 0px;
+}
+
+.paragraph{
+    color: #151515;
+}
+
+.text{
+    text-align: center;
+}
+
+.logo-thanks{
+    height: 150px;
+    width: auto;
+    padding-bottom: 0px;
+}
