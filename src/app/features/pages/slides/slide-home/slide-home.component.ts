@@ -87,7 +87,7 @@ export class SlideHomeComponent implements OnInit{
     this.view= true
   }
   getSlide(){
-    this._slideService.getSlide().subscribe(
+    this._slideService.getSlides().subscribe(
       response =>{
        this.slides= response.data
        this.getOrderSlide()
@@ -168,7 +168,7 @@ export class SlideHomeComponent implements OnInit{
         var {image, ...myUpdatedObject} = this.slideArray[i];
         objectUpdate=myUpdatedObject;
       }
-      this._slideService.putSlide(objectUpdate,this.slideArray[i].id).subscribe(
+      this._slideService.updateSlides(objectUpdate,this.slideArray[i].id.toString()).subscribe(
         response => {
         },
         error => {
