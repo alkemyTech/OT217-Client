@@ -1,0 +1,81 @@
+.slide-image {
+    height: 6rem;
+    width: 8rem;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    text-align: center !important;
+    font-weight: Bold !important;
+    font-size: 18px !important;
+  }
+  
+  td.mat-cell {
+    text-align: center !important;
+    padding-right: 0px !important;
+  }
+  
+  .slide-title{
+    font-weight: bold;
+    color: #151515;
+  }
+  
+  .edit {
+    background: #9ac9fb;
+    color: #151515;
+  }
+  
+  .delete {
+    background: #db5752;
+    color: #ffffff;
+  }
+  
+  .create {
+    background: #9ac9fb;
+    color: #151515;
+    width: 100%;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    margin: 10px;
+    width: 5rem;
+    height: 2.3rem;
+  }
+  
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .table-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 10px;
+  }
+  
+  .section-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

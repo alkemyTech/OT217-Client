@@ -1,0 +1,25 @@
+<main class="activity-page-container" data-aos="fade-up">
+  <div class="title-detail" *ngIf="card">
+  <h2 class="page-title m-0 text">{{card.name}}</h2>
+    <button mat-stroked-button routerLink=".." class="btn-detail" >
+      <mat-icon>
+        keyboard_backspace
+      </mat-icon>
+    </button>
+  </div>
+  <div class="card-container mt-2">
+    <section *ngIf="card" data-aos="fade-up" class="section-detail">
+      <mat-card class="detail-card">
+        <div [innerHTML]="card.description" class="description-detail"></div>
+        <div *ngIf="card.image">
+          <figure >
+            <img [src]="card.image" class="img-detail">
+          </figure>
+        </div>
+        <div *ngIf="!card.image">
+        <h5>No se a cargado ninguna imagen</h5>
+        </div>
+      </mat-card>
+    </section>
+  </div>
+</main>

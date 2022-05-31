@@ -7,17 +7,29 @@ import { Observable } from 'rxjs';
 })
 export class SlidesService {
 
+
+  constructor(private http: HttpClient) { }
+
   url:string = "https://ongapi.alkemy.org/api/slides";
-  constructor(private _http: HttpClient) { }
 
-  getSlide():Observable<any>{
-    return this._http.get(this.url);
+  getSlides():Observable<any>{
+    return this.http.get(this.url);
   }
 
-
-  putSlide(slide: any, id: any):Observable<any>{
-    let params = JSON.stringify(slide)
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.put(this.url+'/'+id,params,{headers: headers});
+  postSlides(slides:any):Observable<any>{
+    return this.http.post(this.url,slides);
   }
+
+  updateSlides(slides:any, id:string):Observable<any>{
+    return this.http.put(this.url + `/${id}`,slides);
+  }
+
+  getSlidesId(id:string):Observable<any>{
+    return this.http.get(this.url+`/${id}`);
+  }
+
+  deleteSlidesId(id:string):Observable<any>{
+    return this.http.delete(this.url+`/${id}`);
+  }
+  
 }
