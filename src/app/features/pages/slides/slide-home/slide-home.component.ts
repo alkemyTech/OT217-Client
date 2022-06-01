@@ -84,6 +84,18 @@ export class SlideHomeComponent implements OnInit{
         }
       }
     });
+    if(!this.selecSlide1){
+      this.slideArray[0]= this.slides[0]
+      this.selecSlide1= this.slides[0].id
+    }
+    if(!this.selecSlide2){
+      this.slideArray[1]= this.slides[0]
+      this.selecSlide2= this.slides[0].id
+    }
+    if(!this.selecSlide3){
+      this.slideArray[2]= this.slides[0]
+      this.selecSlide3= this.slides[0].id
+    }
     this.view= true
   }
   getSlide(){
