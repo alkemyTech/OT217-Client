@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+ export class DetailComponent implements OnInit {
      activities!: Activity;
      private id!: number;
 

@@ -1,0 +1,18 @@
+<div class="position-relative container">
+    <button class=" btn position-absolute top-0 end-0 colorButtomDetails" routerLink="/backoffice/activities/create">Crear <i class="bi bi-plus-lg"></i></button>
+</div>
+<app-table
+    [title]="'Actividades'"
+
+    [dataArray]="activities"
+    [firstCol]="'Nombre'"
+    [secondCol]="'Fecha de creacion'"
+    [thirdCol]="'Acción'"
+
+    [imageTrue]="true"
+    [createdTrue]="true"
+
+    [editUrl]="'/backoffice/activities/create/'"
+    [deleteElement]="deleteActivity"
+>
+</app-table>

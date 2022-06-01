@@ -1,0 +1,74 @@
+<section class="container shadow-sm p-3 mb-5 bg-body rounded"  >
+    <form  #homeForm="ngForm" (ngSubmit)="onSubmit()">
+        <h1>Editar informacion de inicio</h1>
+        <div class="container shadow-sm p-3 mb-5 bg-body rounded">
+            <p> <b>Texto de bienvenida: </b></p>
+            <textarea class="form-control"  id="floatingTextarea" minlength="20" name="textWelcome" #textWelcom="ngModel" [(ngModel)]="textWelcome" required > </textarea>
+            <label *ngIf="text"> {{text}}</label>
+        </div>
+
+        <div *ngIf="view" >
+            <div class="container shadow-sm p-3 mb-5 bg-body rounded">
+                <p> <b>Slide 1: </b></p>
+                <div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                    <mat-form-field appearance="fill" class="col" >
+                        <mat-select [(value)]="selecSlide1"  >
+                            <mat-option [value]="option.id" *ngFor="let option of slides">
+                                <button class="btn widthButtom" (click)="changeDate(option.id, 0)"  > {{ option.name }} </button> 
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    
+                    <ckeditor [editor]="Editor"  class="col mb-2" name="description" #description0="ngModel" [(ngModel)]="slideArray[0].description" ></ckeditor>
+                    <input type="file" name="" id="" class="col mb-2" (change)="fileChangeEvent($event, 0)" accept=".png, .jpg, ">
+                    <img src={{slideArray[0].image}} alt="" class="col widthImgSlideHome">                    
+                </div>
+            </div>
+
+            <div>
+                <div class="container shadow-sm p-3 mb-5 bg-body rounded">
+                    <p> <b>Slide 2: </b></p>
+                    <div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <mat-form-field appearance="fill" class="col" >
+                            <mat-select [(value)]="selecSlide2">
+                                <mat-option [value]="option.id" *ngFor="let option of slides">
+                                    <button class="btn widthButtom" (click)="changeDate(option.id, 1)"  > {{ option.name }} </button>
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <ckeditor [editor]="Editor"  class="col mb-2" name="description1" #description1="ngModel" [(ngModel)]="slideArray[1].description"></ckeditor>
+                        <input type="file" name="" id="" class="col mb-2" (change)="fileChangeEvent($event, 1)">
+                        <img src={{slideArray[1].image}} alt="" class="col widthImg">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="container shadow-sm p-3 mb-5 bg-body rounded">
+                    <p> <b>Slide 3: </b></p>
+                    <div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                        <mat-form-field appearance="fill" class="col" >
+                            <mat-select [(value)]="selecSlide3">
+                                <mat-option [value]="option.id" *ngFor="let option of slides">
+                                    <button class="btn widthButtom" (click)="changeDate(option.id, 2)"  > {{ option.name }} </button>
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        
+                        <ckeditor [editor]="Editor" class="col mb-2" name="description2" #description2="ngModel" [(ngModel)]="slideArray[2].description"  ></ckeditor>
+                        <input type="file" name="" id="" class="col mb-2" (change)="fileChangeEvent($event, 2)">
+                        <img src={{slideArray[2].image}} alt="" class="col widthImg">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col"><button class="btn colorButtomSuccess col" type="submit" > Guardar </button></div>
+              <div class="col"><button class="btn bg-danger" type="button">Cancelar</button> </div>
+            </div>
+        </div>
+    </form>
+</section>

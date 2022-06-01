@@ -9,7 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSliderModule} from '@angular/material/slider';
-import { MatIconModule } from "@angular/material/icon";
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -26,7 +27,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatSnackBarModule,
     MatDialogModule,
     MatSliderModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   exports: [
     MatFormFieldModule,
@@ -38,7 +40,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatSnackBarModule,
     MatDialogModule,
     MatSliderModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
   ]
 })
 export class MaterialModule { }
