@@ -19,4 +19,8 @@ export class PrivateApiServiceService {
   private put<T>(url: string, id: string | number, body: any):Observable<T> {
     return this.http.put<T>(url, body , { headers: this.headers });
   }
+
+  private delete<T>(url: string, id: string | number, body: any):Observable<T> {
+    return this.http.delete<T>(url, body, { headers: this.headers});
+  }
 }
