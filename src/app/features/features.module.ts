@@ -31,6 +31,8 @@ import { SlidesListComponent } from './pages/slides/slides-list/slides-list.comp
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from "./pages/card/card.component";
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
+import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
+import { MembersComponent } from "./pages/members/members.component";
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { ActivitiesListComponent } from './pages/activities/activities-list/acti
     PaginatePipe,
     SlideInicioComponent,
     SlideHomeComponent,
-    DashBoardBackofficeComponent, 
+    DashBoardBackofficeComponent,
     CreationActivitiesComponent,
     FormContactComponent,
     DonationsComponent,
@@ -59,6 +61,8 @@ import { ActivitiesListComponent } from './pages/activities/activities-list/acti
     TableComponent,
     CardComponent,
     ActivitiesListComponent,
+    MembersCardComponentComponent,
+    MembersComponent
 
   ],
   exports: [
@@ -72,9 +76,9 @@ import { ActivitiesListComponent } from './pages/activities/activities-list/acti
     UserFormComponent,
     RouterModule,
     FormContactComponent,
-    DashBoardBackofficeComponent 
+    DashBoardBackofficeComponent
   ],
-  imports: [CommonModule,CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule,MatIconModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
 })
 export class FeaturesModule {
 }

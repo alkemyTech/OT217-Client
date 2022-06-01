@@ -25,8 +25,8 @@ export class SlidesListComponent implements OnInit {
 
   deleteElement = (args: any): void => {
     let id = String(args);
-    this.slidesService.deleteSlidesId(id).subscribe(() => {
+    this.slidesService.deleteSlides(id).subscribe(() => {
       this.populateArray();
     });
-    }
+  };
 }

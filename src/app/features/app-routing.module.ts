@@ -17,6 +17,7 @@ import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
+import { MembersComponent } from "./pages/members/members.component";
 
 const routes: Routes = [
   {
@@ -81,16 +82,20 @@ const routes: Routes = [
   },
   {
     path: "backoffice/Home/:id",
-    component:  SlideHomeComponent,
+    component: SlideHomeComponent,
+  },
+  {
+    path: "members",
+    component: MembersComponent,
   },
   {
     path: "",
     redirectTo: "actividades",
     pathMatch: "full",
   },
-  
-  { 
-    path: "backoffice", 
+
+  {
+    path: "backoffice",
     component: DashBoardBackofficeComponent
   },
   { 
@@ -101,13 +106,13 @@ const routes: Routes = [
     path: "backoffice/activities/create/:id", 
     component: CreationActivitiesComponent 
   },
-  
+
   {
     path: "**",
     redirectTo: "actividades",
     pathMatch: "full",
   },
-  
+
 ]
 
 @NgModule({
@@ -115,4 +120,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
