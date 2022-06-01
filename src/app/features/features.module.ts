@@ -30,7 +30,9 @@ import { UserComponent } from './pages/users/user/user.component';
 import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from "./pages/card/card.component";
-import { OrganizationListComponent } from "./pages/organization/organization-list.component";
+import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
+import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
+import { MembersComponent } from "./pages/members/members.component";
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { OrganizationListComponent } from "./pages/organization/organization-lis
     SlidesListComponent,
     TableComponent,
     CardComponent,
-    OrganizationListComponent
+    ActivitiesListComponent,
+    MembersCardComponentComponent,
+    MembersComponent
 
   ],
   exports: [

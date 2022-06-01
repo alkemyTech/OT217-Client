@@ -17,6 +17,9 @@ import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
 import { OrganizationListComponent } from "./pages/organization/organization-list.component";
+import { MembersComponent } from "./pages/members/members.component";
+import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
+
 
 const routes: Routes = [
   {
@@ -60,6 +63,10 @@ const routes: Routes = [
     component: UserComponent,
   },
   {
+    path: "backoffice/activities",
+    component: ActivitiesListComponent,
+  },
+  {
     path: "activity",
     component: ActivityFormComponent,
   },
@@ -81,7 +88,11 @@ const routes: Routes = [
   },
   {
     path: "backoffice/organization/list",
-    component: OrganizationListComponent,
+    component: OrganizationListComponent
+  },
+  {
+    path: "members",
+    component: MembersComponent,
   },
   {
     path: "",
@@ -98,7 +109,11 @@ const routes: Routes = [
     component: CreationActivitiesComponent
   },
   {
-    path: "creationActividades/:id",
+    path: "backoffice/activities/create",
+    component: CreationActivitiesComponent
+  },
+  {
+    path: "backoffice/activities/create/:id",
     component: CreationActivitiesComponent
   },
 
