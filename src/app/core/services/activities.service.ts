@@ -16,12 +16,17 @@ export class ActivitiesServices{
     this.url = Global.url
   }
 
-
+  getActiviti(): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.get( this.url+'activities',{headers:headers})
+  }
   getActivities(id: string): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get( this.url+'activities/'+id,{headers:headers})
   }
-
+  deleteActivities( id: string): Observable<any>{
+    return this.http.delete(this.url+'activities/'+id)
+  }
   putActivities(activities: any, id: string): Observable<any>{
     let params = JSON.stringify(activities)
     let headers = new HttpHeaders().set('Content-Type','application/json');
