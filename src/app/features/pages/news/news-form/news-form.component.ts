@@ -41,7 +41,7 @@ export class NewsFormComponent implements OnInit {
 
     if (this.newsId) {
       this.newsService
-        .updateNews(newsCommit, this.newsId)
+        .putNews(newsCommit, this.newsId)
         .subscribe((response) => {
         });
       this.news.reset();
@@ -68,7 +68,7 @@ export class NewsFormComponent implements OnInit {
 
     if (this.newsId) {
       this.title = "Modificar Novedad";
-      this.newsService.getNewsId(this.newsId).subscribe((response) => {
+      this.newsService.getById<any>(this.newsId).subscribe((response) => {
         this.currentNews.push(response.data);
         this.news = this.formBuilder.group({
           name: [
