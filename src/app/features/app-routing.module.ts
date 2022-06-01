@@ -16,6 +16,7 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
 import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
+import { HomeComponent } from "./pages/home/home.component";
 
 const routes: Routes = [
   {
@@ -75,34 +76,38 @@ const routes: Routes = [
     component: RegisterFormComponent,
   },
   {
+    path: "",
+    component: HomeComponent,
+  },
+  {
     path: "backoffice/Home/:id",
-    component:  SlideHomeComponent,
+    component: SlideHomeComponent,
   },
   {
     path: "",
     redirectTo: "actividades",
     pathMatch: "full",
   },
-  
-  { 
-    path: "backoffice", 
+
+  {
+    path: "backoffice",
     component: DashBoardBackofficeComponent
   },
-  { 
-    path: "creationActividades", 
-    component: CreationActivitiesComponent 
+  {
+    path: "creationActividades",
+    component: CreationActivitiesComponent
   },
-  { 
-    path: "creationActividades/:id", 
-    component: CreationActivitiesComponent 
+  {
+    path: "creationActividades/:id",
+    component: CreationActivitiesComponent
   },
-  
+
   {
     path: "**",
     redirectTo: "actividades",
     pathMatch: "full",
   },
-  
+
 ]
 
 @NgModule({
@@ -110,4 +115,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
