@@ -2,12 +2,14 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Contacts } from "src/app/shared/models/contact";
+import { environment } from "src/environments/environment";
 import { PublicapiserviceService } from "./publicapiservice.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class NewContactsService extends PublicapiserviceService {
+  endpoint: string = environment.contacts;
   constructor(http: HttpClient) {
     super(http);
   }
