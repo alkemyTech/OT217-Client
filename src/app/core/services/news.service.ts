@@ -16,7 +16,6 @@ export class NewsService extends PublicApiService {
   }
 
   postNews<News>(news:any):Observable<any>{
-    console.log(this.endpoint)
     return this.post<News>(this.endpoint,news);
   }
 
