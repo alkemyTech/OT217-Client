@@ -1,0 +1,72 @@
+<div class="position-container">
+  <div class="slides-container">
+    <main class="section-wrapper">
+      <form class="form-container" [formGroup]="myForm" autocomplete="off">
+        <h1 class="title"> Formulario de edición de datos de la organización</h1>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="Nombre" [(ngModel)]="nameInput" class="form-control" name="name"
+                formControlName="name" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Descripción</mat-label>
+              <input matInput placeholder="Descripción larga" [(ngModel)]="descriptionInput" class="form-control"
+                name="description" formControlName="description" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Url facebook Ej: https://www.facebook.com</mat-label>
+              <input matInput placeholder="Url facebook Ej: http://www.facebook.com " [(ngModel)]="urlfacebookInput"
+                class="form-control" name="urlfacebook" formControlName="urlfacebook" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Url twitter Ej: https://www.twitter.com</mat-label>
+              <input matInput placeholder="Url twitter Ej: http://www.twitter.com " [(ngModel)]="urltwitterInput"
+                class="form-control" name="urltwitter" formControlName="urltwitter" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Url instagram: Ej: https://www.instagram.com</mat-label>
+              <input matInput placeholder="Url Instagram Ej: http://www.instagram.com" [(ngModel)]="urlinstagramInput"
+                class="form-control" name="urlinstagram" formControlName="urlinstagram" />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Url linkedin: Ej: https://www.linkedin.com</mat-label>
+              <input matInput placeholder="Url linkedin Ej: http://www.linkedin.com" [(ngModel)]="urllinkedinInput"
+                class="form-control" name="urllinkedin" formControlName="urllinkedin" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="special-input">
+          <label class="input-label">Agrega un logo</label>
+          <input class="inputs" type="file" class="image" formControlName="logo" accept=".png, .jpg, .jpeg"
+            (change)="onFileChange($event)" />
+        </div>
+
+        <div class="special-input">
+          <label class="input-label">Descripción corta de la oranización</label>
+          <ckeditor class="content-editor file-input" formControlName="description2" [editor]="Editor"
+            [(ngModel)]="description2Input"></ckeditor>
+        </div>
+
+        <button mat-raised-button class="form-button inputs" [disabled]="!myForm.valid">
+          Enviar
+        </button>
+      </form>
+    </main>
+  </div>
+</div>

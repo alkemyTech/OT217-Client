@@ -13,6 +13,7 @@ import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-back
 import { DonationsComponent } from "./pages/donations/donations.component";
 import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
+import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
 import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: "gracias",
     component: ThanksComponent,
+  },
+  {
+    path: "backoffice/organization/edit",
+    component: OrganizationEditComponent,
   },
   {
     path: "backoffice/news",
@@ -98,13 +103,13 @@ const routes: Routes = [
     path: "backoffice",
     component: DashBoardBackofficeComponent
   },
-  { 
-    path: "backoffice/activities/create", 
-    component: CreationActivitiesComponent 
+  {
+    path: "backoffice/activities/create",
+    component: CreationActivitiesComponent
   },
-  { 
-    path: "backoffice/activities/create/:id", 
-    component: CreationActivitiesComponent 
+  {
+    path: "backoffice/activities/create/:id",
+    component: CreationActivitiesComponent
   },
 
   {
