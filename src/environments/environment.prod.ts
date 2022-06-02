@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl:"https://ongapi.alkemy.org/api/",
+  news: "https://ongapi.alkemy.org/api/news",
 };
