@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class PublicapiserviceService {
   constructor(public http: HttpClient) {}
 
-  protected url: string = "https://ongapi.alkemy.org/api/";
+  protected url: string = "https://ongapi.alkemy.org/api";
 
   public post<T>(body: any): Observable<T> {
     return this.http.post<T>(this.url, body);
