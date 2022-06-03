@@ -6,11 +6,10 @@ import { environment } from "../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class SlidesService extends PublicApiService {
+export class SlidesService extends PublicApiService{
 
   public constructor(http:HttpClient) {
     super(http);
-    this.url = environment.slidesUrl
   }
 
   postSlides<Slides>(slides:any):Observable<any>{
@@ -31,6 +30,10 @@ export class SlidesService extends PublicApiService {
 
   deleteSlides<Slides>(id:string):Observable<Slides>{
     return this.delete<Slides>('' +id);
+  }
+
+  getUrl(): string {
+    return environment.slidesUrl;
   }
 
 }
