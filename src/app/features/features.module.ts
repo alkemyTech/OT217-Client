@@ -34,6 +34,7 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MembersComponent } from "./pages/members/members.component";
     OrganizationEditComponent,
     ActivitiesListComponent,
     MembersCardComponentComponent,
-    MembersComponent
+    MembersComponent,
+    SkeletonComponent
 
   ],
   exports: [
