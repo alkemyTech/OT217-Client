@@ -19,7 +19,7 @@ export class PrivateApiServiceService {
   }
 
   public patch<T>(url: string, id: string | number, body: any):Observable<T> {
-    return this.http.put<T>(url, body , { headers: this.headers });
+    return this.http.patch<T>(url, body , { headers: this.headers });
   }
 
   public post<T>(url:string, body:any):Observable<T>{
