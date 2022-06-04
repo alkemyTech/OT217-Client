@@ -34,6 +34,10 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
+import { AlertComponent } from "./components/setup-alerts/alert/alert.component";
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +68,10 @@ import { MembersComponent } from "./pages/members/members.component";
     OrganizationEditComponent,
     ActivitiesListComponent,
     MembersCardComponentComponent,
-    MembersComponent
+    MembersComponent,
+    SetupAlertsComponent,
+    AlertComponent
+
 
   ],
   exports: [
@@ -80,6 +87,7 @@ import { MembersComponent } from "./pages/members/members.component";
     FormContactComponent,
     DashBoardBackofficeComponent
   ],
+  entryComponents: [SetupAlertsComponent],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
 })
 export class FeaturesModule {

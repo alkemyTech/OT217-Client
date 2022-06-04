@@ -8,14 +8,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -41,7 +42,7 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatSliderModule,
     MatIconModule,
-    MatTableModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
