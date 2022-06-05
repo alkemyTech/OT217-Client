@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   contacts: "https://ongapi.alkemy.org/api/contacts",
-  baseUrl:"https://ongapi.alkemy.org/api/",
-  news: "https://ongapi.alkemy.org/api/news"
+  baseUrl: "https://ongapi.alkemy.org/api/",
+  news: "https://ongapi.alkemy.org/api/news",
+  organizationList: "https://ongapi.alkemy.org/api/organization"
 };
 
 /*

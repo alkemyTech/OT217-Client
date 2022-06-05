@@ -1,23 +1,38 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+
+
+import { PublicApiService } from './public-api.service';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-export class OrganizationListService {
+export class OrganizationListService extends PublicApiService {
 
-    constructor(private _http: HttpClient) { }
+  endpoint: string = environment.organizationList;
 
-    organizationApiUrl = "https://ongapi.alkemy.org/api/organization"
+  public constructor(http: HttpClient) {
+    super(http);
+  }
+
+  postOrganization<Organization>(organization: any): Observable<any> {
+    return this.post<Organization>(this.endpoint, organization);
+  }
+
+  getOrganization<Organization>(): Observable<any> {
+    return this.get<Organization>(this.endpoint);
+  }
+
+  putOrganization<Organization>(organization: any, id: string): Observable<Organization> {
+    return this.put<Organization>(this.endpoint + "/" + id, organization);
+  }
+
+  getOrganizationById<Organization>(id: string): Observable<Organization> {
+    return this.getById<Organization>(this.endpoint + "/" + id);
+  }
 
 
-
-
-
-    topOrganization(): Observable<any> {
-        return this._http.get(this.organizationApiUrl);
-    }
 }
-
-
