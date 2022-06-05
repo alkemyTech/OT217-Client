@@ -15,7 +15,7 @@ export class OrganizationListService {
 
 
 
-    topOrganization<listData>(): Observable<any> {
+    topOrganization(): Observable<any> {
         return this._http.get(this.organizationApiUrl);
     }
 }

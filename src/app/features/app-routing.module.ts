@@ -116,6 +116,10 @@ const routes: Routes = [
     path: "backoffice/activities/create/:id",
     component: CreationActivitiesComponent
   },
+  {
+    path: "organization/list",
+    component: OrganizationListComponent
+  },
 
   {
     path: "**",

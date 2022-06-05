@@ -1,17 +1,24 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Imágen</th>
-            <th scope="col">Descripción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let data of listaDatos">
-            <td>{{data.name}}</td>
-            <td>{{data.logo}}</td>
-            <td>{{data.short_description}}</td>
-        </tr>
+<h1 class="title">Datos de la organización</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr id="border">
+                <th scope="col">Nombre</th>
+                <th scope="col">Imágen</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of listaDatos |keyvalue |slice:0:1">
+                <td>{{data.value.name}}</td>
+                <td><img id="logo" src="{{data.value.logo}}" alt=""></td>
 
-    </tbody>
-</table>
+                <td>{{data.value.short_description}}</td>
+                <td> <a href="backoffice/organization/edit"> <button id="button-edit" mat-raised-button
+                            color="primary">Editar</button></a></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

@@ -34,7 +34,7 @@ import { ActivitiesListComponent } from './pages/activities/activities-list/acti
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
 import { OrganizationListComponent } from "./pages/organization/organization-list.component";
-import { OrganizationTableComponent } from "./pages/organization/organization-table/organization-table.component";
+
 
 @NgModule({
   declarations: [
@@ -65,8 +65,7 @@ import { OrganizationTableComponent } from "./pages/organization/organization-ta
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
-    OrganizationListComponent,
-    OrganizationTableComponent
+    OrganizationListComponent
 
   ],
   exports: [
@@ -81,7 +80,7 @@ import { OrganizationTableComponent } from "./pages/organization/organization-ta
     RouterModule,
     FormContactComponent,
     DashBoardBackofficeComponent,
-    OrganizationListComponent,
+    OrganizationListComponent
 
   ],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
