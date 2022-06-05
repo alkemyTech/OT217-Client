@@ -13,7 +13,7 @@ export class SlidesService extends PublicApiService {
   }
 
   postSlides<Slides>(slides:any):Observable<any>{
-    return this.post<Slides>(slides);
+    return this.post<Slides>('slides',slides);
   }
 
   getSlides<Slides>():Observable<any>{
