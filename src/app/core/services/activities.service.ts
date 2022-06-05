@@ -1,35 +1,32 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Global } from "./global";
+import { PublicApiService } from "./public-api.service";
 
 @Injectable({
   providedIn: "root",
 })
-export class ActivitiesServices{
-  private _groupId!: string;
-  private _headers!: HttpHeaders;
-  public url : string;
-
-  constructor(private http: HttpClient) {
-    this._headers = new HttpHeaders({ Group: this._groupId });
-    this.url = Global.url
+export class ActivitiesServices extends PublicApiService {
+  public url: string = "https://ongapi.alkemy.org/api/";
+  public constructor(http: HttpClient) {
+    super(http);
   }
-
-  getActiviti(): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get( this.url+'activities',{headers:headers})
+  postActivities<Activities>(activities: any): Observable<any> {
+    return this.post<Activities>(this.url + "activities", activities);
   }
-  getActivities(id: string): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get( this.url+'activities/'+id,{headers:headers})
+  getActiviti<Activities>(): Observable<any> {
+    return this.get<Activities>(this.url + "activities");
   }
-  deleteActivities( id: string): Observable<any>{
-    return this.http.delete(this.url+'activities/'+id)
+  getActivitiesID<Activities>(id: string): Observable<Activities> {
+    return this.getById<Activities>(this.url + "activities/" + id);
   }
-  putActivities(activities: any, id: string): Observable<any>{
-    let params = JSON.stringify(activities)
-    let headers = new HttpHeaders().set('Content-Type','application/json');
-    return this.http.put(this.url+'activities/'+id, params, {headers:headers})
+  deleteActivities<Activities>(id: string): Observable<Activities> {
+    return this.delete(this.url + "activities/" + id);
+  }
+  putActivities<Activities>(
+    activities: any,
+    id: string
+  ): Observable<Activities> {
+    return this.put<Activities>(this.url + id, activities);
   }
 }
