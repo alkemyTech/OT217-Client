@@ -35,7 +35,8 @@ import { ActivitiesListComponent } from './pages/activities/activities-list/acti
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
 import { DialogComponent } from './components/dialog/dialog.component';
-import { DialogContentComponent } from './components/dialog/dialog-content/dialog-content.component';
+import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
+
 
 @NgModule({
   declarations: [

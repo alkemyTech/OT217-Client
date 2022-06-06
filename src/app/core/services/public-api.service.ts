@@ -27,7 +27,7 @@ export abstract class PublicApiService {
   }
 
   public getById<T>(id: string): Observable<T> {
-    return this.http.get<T>(this.baseUrl + this.getUrl() +'/'+id);
+    return this.http.get<T>(this.baseUrl + id);
   }
 
   public delete<T>(id: string): Observable<T> {
