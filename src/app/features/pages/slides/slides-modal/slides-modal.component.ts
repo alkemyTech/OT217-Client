@@ -15,7 +15,7 @@ export class SlidesModalComponent implements OnInit {
     private slidesService: SlidesService,
     private router: Router
   ) {}
-
+/* 
   quitar(slide: Slides, id: number) {
     let quitarSlide = {
       name: slide.name,
@@ -28,7 +28,7 @@ export class SlidesModalComponent implements OnInit {
 
   modificar(data: number) {
     this.router.navigate(["/backoffice/slides/", data]);
-  }
+  } */
 
   ngOnInit(): void {}
 }
