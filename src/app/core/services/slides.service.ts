@@ -13,8 +13,8 @@ export class SlidesService extends PublicApiService {
     super(http);
   }
 
-  postSlides<Slides>(slides:any):Observable<any>{
-    return this.post<Slides>(slides);
+  postSlides<Slides>(slides:any, body:any):Observable<any>{
+    return this.post<Slides>(slides, body);
   }
 
   getSlides<Slides>():Observable<any>{
