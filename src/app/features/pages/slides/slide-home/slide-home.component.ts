@@ -1,4 +1,4 @@
-/* import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {OrganizationService} from'src/app/core/services/organization.service';
 import {SlidesService} from 'src/app/core/services/slides.service'
@@ -195,4 +195,3 @@ export class SlideHomeComponent implements OnInit{
   }
   
 }
- */

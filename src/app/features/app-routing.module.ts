@@ -4,11 +4,11 @@ import { RouterModule, Routes } from "@angular/router";
 import { CreationActivitiesComponent } from "./pages/activities/creation-activities/creation-activities.component";
 import { ActivitiesPageComponent } from "./pages/activities/activities-page/activities-page.component";
 import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
-//import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
+import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
 import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
 import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
-//import { SlideHomeComponent } from "./pages/slides/slide-home/slide-home.component";
+import { SlideHomeComponent } from "./pages/slides/slide-home/slide-home.component";
 import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { DonationsComponent } from "./pages/donations/donations.component";
 import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
@@ -16,7 +16,7 @@ import { DetailComponent } from "./pages/views/activities/detail/detail.componen
 import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
 import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
-//import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
+import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
 
@@ -25,10 +25,10 @@ const routes: Routes = [
     path: "actividades",
     component: ActivitiesPageComponent,
   },
-//  {
- //   path: "backoffice/slides",
- //   component: SlidesListComponent,
-  //},
+ {
+   path: "backoffice/slides",
+   component: SlidesListComponent,
+  },
   {
     path: "donar",
     component: DonationsComponent,
@@ -49,13 +49,13 @@ const routes: Routes = [
     path: "backoffice/news/:id",
     component: NewsFormComponent,
   },
- // {
-  //  path: "backoffice/newslide",
-  //  component: SlidesFormComponent,
-  //},
   {
-  //  path: "backoffice/slides/:id",
-  //  component: SlidesFormComponent,
+    path: "backoffice/newslide",
+   component: SlidesFormComponent,
+  },
+  {
+  path: "backoffice/slides/:id",
+    component: SlidesFormComponent,
   },
   {
     path: "backoffice/users/:id",
@@ -85,10 +85,10 @@ const routes: Routes = [
     path: "register",
     component: RegisterFormComponent,
   },
-  //{
-  //  path: "backoffice/Home/:id",
-   // component: SlideHomeComponent,
-  //},
+  {
+    path: "backoffice/Home/:id",
+    component: SlideHomeComponent,
+  },
   {
     path: "members",
     component: MembersComponent,
