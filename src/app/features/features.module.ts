@@ -34,8 +34,9 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
-import { DialogComponent } from './components/dialog/dialog.component';
-import { DialogContentComponent } from './components/dialog/dialog-content/dialog-content.component';
+import { DialogComponent } from './components/dialog/dialog.component'
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component'
+import { SetupProgressComponent } from './components/setup-progress/setup-progress.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { DialogContentComponent } from './components/dialog/dialog-content/dialo
     MembersCardComponentComponent,
     MembersComponent,
     DialogComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    SetupProgressComponent
 
   ],
   exports: [
@@ -82,7 +84,7 @@ import { DialogContentComponent } from './components/dialog/dialog-content/dialo
     UserFormComponent,
     RouterModule,
     FormContactComponent,
-    DashBoardBackofficeComponent
+    DashBoardBackofficeComponent,
   ],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
 })

@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 
 
 
@@ -28,7 +29,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatSliderModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressBarModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -42,6 +44,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSliderModule,
     MatIconModule,
     MatTableModule,
+    MatProgressBarModule,
   ]
 })
 export class MaterialModule { }
