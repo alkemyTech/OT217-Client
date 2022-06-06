@@ -11,7 +11,7 @@ import { LoginFormComponent } from "./pages/auth/login-form/login-form.component
 import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
 import { CategoriesFormComponent } from "./pages/categories/categories-form/categories-form.component";
 import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
-//import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
+import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
 import { TestimonialFormComponent } from "./pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { CreationActivitiesComponent } from './pages/activities/creation-activities/creation-activities.component';
@@ -19,7 +19,7 @@ import { FormContactComponent } from './pages/form-contact/form-contact.componen
 import { ActivitiesPageComponent } from './pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
-//import { SlideHomeComponent } from './pages/slides/slide-home/slide-home.component';
+import { SlideHomeComponent } from './pages/slides/slide-home/slide-home.component';
 import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { DonationsComponent } from './pages/donations/donations.component';
 import { SlidesModalComponent } from './pages/slides/slides-modal/slides-modal.component';
@@ -27,7 +27,7 @@ import { ThanksComponent } from './pages/donations/thanks/thanks.component';
 import { DetailComponent } from "./pages/views/activities/detail/detail.component";
 import { MatIconModule } from "@angular/material/icon";
 import { UserComponent } from './pages/users/user/user.component';
-//import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
+import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from "./pages/card/card.component";
 import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
@@ -45,14 +45,14 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-   // SlidesFormComponent,
+   SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
- //   SlideHomeComponent,
+ SlideHomeComponent,
     DashBoardBackofficeComponent,
     CreationActivitiesComponent,
     FormContactComponent,
@@ -61,7 +61,7 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     ThanksComponent,
     DetailComponent,
     UserComponent,
-  //  SlidesListComponent,
+  SlidesListComponent,
     TableComponent,
     CardComponent,
     OrganizationEditComponent,
@@ -78,7 +78,7 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-   // SlidesFormComponent,
+   SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
