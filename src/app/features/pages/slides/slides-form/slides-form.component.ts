@@ -100,14 +100,14 @@ export class SlidesFormComponent implements OnInit {
       image: this.cardImageBase64,
     };
 
-    /* if (this.slidesId) {
+    if (this.slidesId) {
       this.slidesService
         .putSlides(slidesCommit, this.slidesId)
-        .subscribe((response) => {});
+        .subscribe((response) => { });
       this.slides.reset();
     } else if (!this.slidesId) {
-      this.slidesService.postSlides(slidesCommit).subscribe((response) => {});
+      this.slidesService.postSlides(slidesCommit).subscribe((response) => { });
       this.slides.reset();
-    } */
+    }
   }
 }
