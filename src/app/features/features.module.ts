@@ -36,6 +36,7 @@ import { MembersCardComponentComponent } from "./pages/members/members-card-comp
 import { MembersComponent } from "./pages/members/members.component";
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -85,7 +86,7 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     FormContactComponent,
     DashBoardBackofficeComponent
   ],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, SweetAlert2Module]
 })
 export class FeaturesModule {
 }

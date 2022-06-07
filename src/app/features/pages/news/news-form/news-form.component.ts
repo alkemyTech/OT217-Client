@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { News } from "../../../../shared/models/News";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ActivatedRoute } from "@angular/router";
+import { AlertsService } from "src/app/core/services/alerts.service";
 
 @Component({
   selector: "app-news-form",
@@ -43,12 +44,16 @@ export class NewsFormComponent implements OnInit {
       this.newsService
         .putNews(newsCommit, this.newsId)
         .subscribe((response) => {
-          return response
+          this.alerts.onSuccess
+        }, error =>{
+          this.alerts.onError
         });
       this.news.reset();
     } else if (!this.newsId) {
       this.newsService.postNews(newsCommit).subscribe((response) => {
-        return response
+        this.alerts.onSuccess
+      }, error =>{
+        this.alerts.onError
       });
       this.news.reset();
     }
@@ -58,7 +63,8 @@ export class NewsFormComponent implements OnInit {
     private categoriesService: CategoriesService,
     private newsService: NewsService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerts:AlertsService
   ) {
     this.newsId = this.route.snapshot.params.id;
   }
