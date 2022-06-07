@@ -9,9 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { ROOT_REDUCERS } from './state/app.state';
+import { ROOT_REDUCERS } from './shared/state/app.state';
 import { EffectsModule } from '@ngrx/effects';
-import { ActivitiesEffects } from './state/effects/activities.effects';
+import { ActivitiesEffects } from './shared/state/activities/activities.effects';
 @NgModule({
   declarations: [
     AppComponent

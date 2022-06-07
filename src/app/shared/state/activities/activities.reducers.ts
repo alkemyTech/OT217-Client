@@ -3,7 +3,7 @@ import { ACtivitiesState } from "src/app/shared/models/activities.state";
 import {
   loadActivities,
   loadedActivities,
-} from "../actions/activities.actions";
+} from "./activities.actions";
 
 export const initialState: ACtivitiesState = { loading: false, activities: [] };
 

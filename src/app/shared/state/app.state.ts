@@ -1,7 +1,6 @@
 import { ActionReducer, ActionReducerMap } from "@ngrx/store";
-import { Activities } from "../features/models";
-import { ACtivitiesState } from "../shared/models/activities.state";
-import { activitiesReducer } from "./reducers/activities.reducers";
+import { ACtivitiesState } from "../models/activities.state";
+import { activitiesReducer } from "./activities/activities.reducers";
 
 export interface AppState {
   activities: ACtivitiesState;
