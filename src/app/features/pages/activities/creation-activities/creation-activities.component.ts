@@ -88,7 +88,7 @@ export class CreationActivitiesComponent implements OnInit{
     var actual = window.location+'';
     var split = actual.split("/");
     this.id = split[split.length-1];
-    if(this.id !== 'creationActividades' ){
+    if(this.id !== 'create' ){
       this.getActivitiesID(this.id);
       this.title= " Actualizar la actividad "
     }
@@ -97,8 +97,8 @@ export class CreationActivitiesComponent implements OnInit{
   getActivitiesID(id: string){
     var actividades: any
     this.update = true
-    this._ActivitiesServices.getActivities(id).subscribe(
-      response => {
+    this._ActivitiesServices.getActivitiesID<any>(id).subscribe(
+      (response) => {
         actividades = response.data
         this.activities[0]= actividades
         this.name= response.data.name

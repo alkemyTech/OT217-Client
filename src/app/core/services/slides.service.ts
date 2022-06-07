@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PublicApiService } from './public-api.service';
+import { environment } from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class SlidesService extends PublicApiService {
   }
 
   getSlides<Slides>():Observable<any>{
-    return this.get<Slides>('slides');
+    return this.get<Slides>(this.getUrl());
   }
 
   putSlides<Slides>(slides:any, id:string):Observable<Slides>{
@@ -25,11 +26,14 @@ export class SlidesService extends PublicApiService {
   }
 
   getSlidesById<Slides>(id:string):Observable<Slides>{
-    return this.getById<Slides>('slides/'+id);
+    return this.getById<Slides>(this.getUrl()+'/'+id);
   }
 
   deleteSlides<Slides>(id:string):Observable<Slides>{
-    return this.delete<Slides>("slides/" +id);
+    return this.delete<Slides>(this.getUrl()+'/' +id);
   }
-  
+  getUrl(): string {
+    return environment.slidesUrl;
+  }
+
 }

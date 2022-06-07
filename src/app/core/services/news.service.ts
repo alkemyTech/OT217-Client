@@ -1,29 +1,43 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { PublicApiService } from './public-api.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService {
+export class NewsService extends PublicApiService {
 
-  constructor(private http: HttpClient) { }
+  endpoint:string = environment.news;
 
-  url:string = "https://ongapi.alkemy.org/api/news";
-
-  getNews():Observable<any>{
-    return this.http.get(this.url);
+  public constructor(http:HttpClient)  {
+    super(http);
   }
 
-  postNews(news:any):Observable<any>{
-    return this.http.post(this.url,news);
+  postNews<News>(news:any):Observable<any>{
+    return this.post<News>(this.getUrl(),);
   }
 
-  updateNews(news:any, id:string):Observable<any>{
-    return this.http.put(this.url + `/${id}`,news);
+  getNews<News>():Observable<any>{
+    return this.get<News>(this.getUrl());
   }
 
-  getNewsId(id:string):Observable<any>{
-    return this.http.get(this.url+`/${id}`);
+  putNews<News>(news:any, id:string):Observable<News>{
+    return this.put<News>(this.getUrl() + "/" + id, news);
   }
+
+  getNewsById<News>(id:string):Observable<News>{
+    return this.getById<News>(this.getUrl()+ "/" + id);
+  }
+
+  deleteNews<News>(id:string):Observable<News>{
+    return this.delete<News>(this.getUrl()+ "/" + id);
+  }
+
+  getUrl(): string {
+    return environment.news ;
+  }
+
+
 }
