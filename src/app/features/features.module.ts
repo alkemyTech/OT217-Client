@@ -39,6 +39,7 @@ import { MembersCardComponentComponent } from "./pages/members/members-card-comp
 import { MembersComponent } from "./pages/members/members.component";
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -70,13 +71,14 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     CardComponent,
     HomeComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
     OrganizationEditComponent,
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
     DialogComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    SpinnerComponent
   ],
   exports: [
     ActivityFormComponent,
