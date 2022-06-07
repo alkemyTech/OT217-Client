@@ -16,9 +16,7 @@ import {
   providers: [ActivitiesServices],
 })
 export class ActivitiesListComponent implements OnInit {
-  // public activities: Activity[] = [];
   activities$: Observable<any> = new Observable();
-  loading$: Observable<boolean> = new Observable();
 
   constructor(
     private _ActivitiesServices: ActivitiesServices,
@@ -26,9 +24,6 @@ export class ActivitiesListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //  this.getActivities();
-    //this.activities$ = this.store(selecListActivities)
-    this.loading$ = this.store.select(selecLoadingActivities);
     this.store.dispatch(loadActivities());
     this.activities$ = this.store.select(selecListActivities);
   }
