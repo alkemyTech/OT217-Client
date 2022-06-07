@@ -1,11 +1,8 @@
 import { createReducer, on } from "@ngrx/store";
-import { News } from "../../models/News";
+import { newsState } from "../../models/news.state";
 import { loadNews } from "./news.actions";
 
-export const initialState: {
-    loading:boolean,
-    news:ReadonlyArray<News>;
-} = { loading: false, news: []}
+export const initialState:newsState={ loading: false, news: []}
 
 export const newsReducer = createReducer(
     initialState,

@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { newsReducer } from './shared/state/news/news.reducers';
+import { ROOT_REDUCERS } from './shared/state/app.state';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,9 +24,7 @@ import { newsReducer } from './shared/state/news/news.reducers';
     FormsModule,
     MaterialModule,
     FeaturesModule,
-    StoreModule.forRoot({
-      newsStore: newsReducer
-    }, {}),
+    StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
