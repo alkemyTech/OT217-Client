@@ -44,16 +44,16 @@ export class NewsFormComponent implements OnInit {
       this.newsService
         .putNews(newsCommit, this.newsId)
         .subscribe((response) => {
-          this.alerts.onSuccess
+          this.alerts.onSuccess()
         }, error =>{
-          this.alerts.onError
+          this.alerts.onError()
         });
       this.news.reset();
     } else if (!this.newsId) {
       this.newsService.postNews(newsCommit).subscribe((response) => {
-        this.alerts.onSuccess
+        this.alerts.onSuccess()
       }, error =>{
-        this.alerts.onError
+        this.alerts.onError()
       });
       this.news.reset();
     }
@@ -72,6 +72,8 @@ export class NewsFormComponent implements OnInit {
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe((response) => {
       this.categories = response.data;
+    }, error =>{
+      this.alerts.onError()
     });
 
     if (this.newsId) {
