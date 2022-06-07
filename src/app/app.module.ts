@@ -6,6 +6,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { ROOT_REDUCERS } from './state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { ActivitiesEffects } from './state/effects/activities.effects';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     FormsModule,
     MaterialModule,
-    FeaturesModule
+    FeaturesModule,
+    StoreModule.forRoot( ROOT_REDUCERS ),
+    StoreDevtoolsModule.instrument({ name: 'TEST'}),
+    EffectsModule.forRoot([ ActivitiesEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
