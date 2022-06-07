@@ -36,6 +36,7 @@ import { MembersCardComponentComponent } from "./pages/members/members-card-comp
 import { MembersComponent } from "./pages/members/members.component";
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
+import { NewsListComponent } from './pages/news/news-list/news-list.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     MembersCardComponentComponent,
     MembersComponent,
     DialogComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    NewsListComponent
 
   ],
   exports: [

@@ -19,11 +19,16 @@ import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { NewsListComponent } from "./pages/news/news-list/news-list.component";
 
 const routes: Routes = [
   {
     path: "actividades",
     component: ActivitiesPageComponent,
+  },
+  {
+    path: "news",
+    component: NewsListComponent,
   },
   {
     path: "backoffice/slides",
