@@ -19,18 +19,13 @@ export class NewsListComponent implements OnInit {
   loading$: Observable<boolean> = new Observable();
 
   constructor(
-    private store: Store<AppState>,
-    private newsService: NewsService
+    private store: Store<AppState>
   ) {}
 
   ngOnInit(): void {
     this.loading$ = this.store.select(selectNewsLoading);
 
     this.store.dispatch(loadNews());
-
-    this.newsService.getNews().subscribe((response) => {
-      this.store.dispatch(loadedNews({ news: response.data }));
-    });
 
     this.newsList$ = this.store.select(selectNewsList);
   }

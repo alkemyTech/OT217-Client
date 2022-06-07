@@ -9,8 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { newsReducer } from './shared/state/news/news.reducers';
 import { ROOT_REDUCERS } from './shared/state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { NewsEffects } from './shared/state/news/news.effects';
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +26,8 @@ import { ROOT_REDUCERS } from './shared/state/app.state';
     MaterialModule,
     FeaturesModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([NewsEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
