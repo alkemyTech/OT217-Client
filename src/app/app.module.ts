@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { newsReducer } from './shared/state/news/news.reducers';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +23,9 @@ import { environment } from '../environments/environment';
     FormsModule,
     MaterialModule,
     FeaturesModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({
+      newsStore: newsReducer
+    }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
