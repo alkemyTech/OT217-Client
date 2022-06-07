@@ -1,1 +1,12 @@
 <h1>Listado de News</h1>
+<p *ngIf="loading$ | async">cargando...</p>
+
+<app-activity-card
+  class="col-12 col-md-6 col-lg-4 mt-3"
+  *ngFor="let news of newsList$ | async"
+  name="{{ news.name }}"
+  image="{{ news.image }}"
+  description="{{ news.description }}"
+  id="{{ news.id }}"
+>
+</app-activity-card>
