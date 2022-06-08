@@ -16,23 +16,28 @@ export class NewsService extends PublicApiService {
   }
 
   postNews<News>(news:any):Observable<any>{
-    return this.post<News>(this.endpoint,news);
+    return this.post<News>(this.getUrl(),);
   }
 
   getNews<News>():Observable<any>{
-    return this.get<News>(this.endpoint);
+    return this.get<News>(this.getUrl());
   }
 
   putNews<News>(news:any, id:string):Observable<News>{
-    return this.put<News>(this.endpoint + "/" + id, news);
+    return this.put<News>(this.getUrl() + "/" + id, news);
   }
 
   getNewsById<News>(id:string):Observable<News>{
-    return this.getById<News>(this.endpoint+ "/" + id);
+    return this.getById<News>(this.getUrl()+ "/" + id);
   }
 
   deleteNews<News>(id:string):Observable<News>{
-    return this.delete<News>(this.endpoint+ "/" + id);
+    return this.delete<News>(this.getUrl()+ "/" + id);
   }
-  
+
+  getUrl(): string {
+    return environment.news ;
+  }
+
+
 }

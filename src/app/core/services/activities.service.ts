@@ -1,35 +1,37 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Global } from "./global";
+import { PublicApiService } from "./public-api.service";
+import { environment } from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: "root",
 })
-export class ActivitiesServices{
-  private _groupId!: string;
-  private _headers!: HttpHeaders;
-  public url : string;
-
-  constructor(private http: HttpClient) {
-    this._headers = new HttpHeaders({ Group: this._groupId });
-    this.url = Global.url
+export class ActivitiesServices extends PublicApiService {
+  public url: string = environment.activities
+  public constructor(http: HttpClient) {
+    super(http);
+  }
+  postActivities<Activities>(activities: any): Observable<any> {
+    return this.post<Activities>(activities);
+  }
+  getActiviti<Activities>(): Observable<any> {
+    return this.get<Activities>(this.baseUrl + this.getUrl());
+  }
+  getActivitiesID<Activities>(id: string): Observable<Activities> {
+    return this.getById<Activities>(this.url + "/" + id);
+  }
+  deleteActivities<Activities>(id: string): Observable<Activities> {
+    return this.delete(this.url + "/" + id);
+  }
+  putActivities<Activities>(
+    activities: any,
+    id: string
+  ): Observable<Activities> {
+    return this.put<Activities>(this.url + "/" + id, activities);
   }
 
-  getActiviti(): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get( this.url+'activities',{headers:headers})
-  }
-  getActivities(id: string): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get( this.url+'activities/'+id,{headers:headers})
-  }
-  deleteActivities( id: string): Observable<any>{
-    return this.http.delete(this.url+'activities/'+id)
-  }
-  putActivities(activities: any, id: string): Observable<any>{
-    let params = JSON.stringify(activities)
-    let headers = new HttpHeaders().set('Content-Type','application/json');
-    return this.http.put(this.url+'activities/'+id, params, {headers:headers})
+  getUrl(): string {
+    return environment.activities;
   }
 }

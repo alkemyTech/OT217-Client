@@ -6,6 +6,7 @@
     las normas de convivencia de la sociedad a la que pertenecen.
   </p>
   <div class="row p-4">
+<<<<<<< HEAD
     <div *ngIf="activities.length === 0; else elseBlock">
       <div>
         <app-skeleton 
@@ -25,6 +26,17 @@
       >
       </app-activity-card>
     </ng-template>
+=======
+    <app-activity-card
+      class="col-12 col-md-6 col-lg-4 mt-3"
+      *ngFor="let item of activities | paginate: page_size:page_number"
+      name="{{ item.name }}"
+      image="{{ item.image }}"
+      description="{{ item.description }}"
+      id="{{ item.id }}"
+    >
+    </app-activity-card>
+>>>>>>> main
   </div>
   <div class="card-paginator">
     <mat-paginator

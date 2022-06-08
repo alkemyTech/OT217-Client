@@ -39,8 +39,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   submit() {
-    this.service.loginUser(this.createdForm.getRawValue())
-      .subscribe(r => {
+    this.service.loginUser(this.createdForm.getRawValue()).subscribe(r => {
           if (r.success) {
             this.router.navigate(['/actividades']);
             this.service.addToken(r);
