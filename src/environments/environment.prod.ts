@@ -4,4 +4,5 @@ export const environment = {
   news: "/news",
   slidesUrl : "/slides",
   contacts: "/contacts",
+  activities: "/activities"
 };
