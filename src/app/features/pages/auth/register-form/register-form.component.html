@@ -1,45 +1,48 @@
-<div class="container">
-    <div class="container">
-        <div class="formGroup formLogin">
-            <mat-card class="cardLogin">
-                <h1 class="title-register title">
-                    Register
-                </h1>
-                <form (ngSubmit)="submit()" [formGroup]="createdForm" class="form-register">
-                    <div>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Name</mat-label>
-                            <input matInput type="text" required formControlName="name"/>
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Email</mat-label>
-                            <input matInput type="email" required formControlName="email"/>
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Password</mat-label>
-                            <input matInput type="password" required minlength="6" formControlName="password"/>
-                        </mat-form-field>
-                            <div *ngIf="createdForm?.controls?.password?.errors?.pattern && createdForm?.controls?.password?.touched" >
-                                Password is not valid.
-                            </div>
-                    </div>
-                    <div>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Confirm Password</mat-label>
-                            <input matInput type="password" required minlength="6" formControlName="confirmPassword" placeholder="Confirm Password"/>
-                        </mat-form-field>
-                    </div>
-                </form>
-                <div class="divButtRegister">
-                    <button mat-raised-button class="butRegister" color="primary" type="submit" [disabled]="!createdForm.valid" (click)="submit()">
-                        Register
-                    </button>
+<div class="container-fluid mr-0 pe-0">
+    <div class="formGroup row formRegister">
+        <div class="div-card col-6">
+        <h1 class="title-register title">
+            Register
+        </h1>
+            <form (ngSubmit)="submit()" [formGroup]="createdForm" class="form-register">
+                <div>
+                    <mat-form-field appearance="fill" class="col-6">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" required formControlName="name"/>
+                    </mat-form-field>
                 </div>
-            </mat-card>
+                <div>
+                    <mat-form-field appearance="fill" class="col-6">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" required formControlName="email"/>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill" class="col-6">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" required minlength="6" formControlName="password"/>
+                    </mat-form-field>
+                    <div *ngIf="createdForm?.controls?.password?.errors?.pattern && createdForm?.controls?.password?.touched">
+                        Password is not valid.
+                    </div>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill" class="col-6">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput type="password" required minlength="6" formControlName="confirmPassword"
+                               placeholder="Confirm Password"/>
+                    </mat-form-field>
+                </div>
+            </form>
+            <div class="divButtRegister">
+                <button mat-raised-button class="butRegister" color="primary" type="submit" [disabled]="!createdForm.valid"
+                        (click)="submit()">
+                    Register
+                </button>
+            </div>
+        </div>
+        <div class="col-6 pe-0 ">
+            <img src="/assets/donationsbackground.png" class="img-login">
         </div>
     </div>
 </div>
