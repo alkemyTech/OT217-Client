@@ -17,9 +17,11 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
+import { HomeComponent } from "./pages/home/home.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
 import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
+
 
 const routes: Routes = [
   {
@@ -87,6 +89,10 @@ const routes: Routes = [
     component: RegisterFormComponent,
   },
   {
+    path: "",
+    component: HomeComponent,
+  },
+  {
     path: "backoffice/Home/:id",
     component: SlideHomeComponent,
   },
@@ -109,14 +115,17 @@ const routes: Routes = [
     component: DashBoardBackofficeComponent
   },
   {
+    path: "creationActividades",
+    component: CreationActivitiesComponent
+  },
+  {
     path: "backoffice/activities/create",
     component: CreationActivitiesComponent
   },
   {
-    path: "backoffice/activities/create/:id",
+    path: "creationActividades/:id",
     component: CreationActivitiesComponent
   },
-
   {
     path: "**",
     redirectTo: "actividades",

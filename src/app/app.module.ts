@@ -12,7 +12,6 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 @NgModule({
   declarations: [
     AppComponent
-
   ],
   imports: [
     BrowserModule,
