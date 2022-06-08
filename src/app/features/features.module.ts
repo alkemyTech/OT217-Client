@@ -37,6 +37,7 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { SetupProgressComponent } from './components/setup-progress/setup-progress.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
 
@@ -70,11 +71,12 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     CardComponent,
     HomeComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
     OrganizationEditComponent,
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
+    SetupProgressComponent,
     DialogComponent,
     DialogContentComponent
   ],
