@@ -11,11 +11,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -28,7 +32,10 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatSliderModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    NgxSkeletonLoaderModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -42,6 +49,9 @@ import {MatTableModule} from '@angular/material/table';
     MatSliderModule,
     MatIconModule,
     MatTableModule,
+    NgxSkeletonLoaderModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ]
 })
 export class MaterialModule { }
