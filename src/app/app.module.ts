@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from './shared/state/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { NewsEffects } from './shared/state/news/news.effects';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -27,7 +28,8 @@ import { NewsEffects } from './shared/state/news/news.effects';
     FeaturesModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([NewsEffects])
+    EffectsModule.forRoot([NewsEffects, ]),
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
