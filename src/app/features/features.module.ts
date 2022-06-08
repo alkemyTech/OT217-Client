@@ -70,7 +70,7 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     CardComponent,
     HomeComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
     OrganizationEditComponent,
     ActivitiesListComponent,
     MembersCardComponentComponent,
