@@ -8,11 +8,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
 
 
 
@@ -32,7 +32,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSliderModule,
     MatIconModule,
     MatTableModule,
-    MatProgressBarModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -46,7 +47,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSliderModule,
     MatIconModule,
     MatTableModule,
-    MatProgressBarModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ]
 })
 export class MaterialModule { }

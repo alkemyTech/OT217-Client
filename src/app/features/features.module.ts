@@ -42,6 +42,7 @@ import { AlertComponent } from "./components/setup-alerts/alert/alert.component"
 import { SetupProgressComponent } from './components/setup-progress/setup-progress.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -83,7 +84,8 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
     AlertComponent,
     SetupProgressComponent,
     DialogComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    SpinnerComponent
   ],
   exports: [
     ActivityFormComponent,
