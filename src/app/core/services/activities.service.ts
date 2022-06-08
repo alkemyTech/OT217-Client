@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { PublicApiService } from "./public-api.service";
-import { environment } from "src/environments/environment";
+import { environment } from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: "root",
@@ -13,10 +13,10 @@ export class ActivitiesServices extends PublicApiService {
     super(http);
   }
   postActivities<Activities>(activities: any): Observable<any> {
-    return this.post<Activities>(this.url, activities);
+    return this.post<Activities>(activities);
   }
   getActiviti<Activities>(): Observable<any> {
-    return this.get<Activities>(this.url);
+    return this.get<Activities>(this.baseUrl + this.getUrl());
   }
   getActivitiesID<Activities>(id: string): Observable<Activities> {
     return this.getById<Activities>(this.url + "/" + id);
@@ -29,5 +29,9 @@ export class ActivitiesServices extends PublicApiService {
     id: string
   ): Observable<Activities> {
     return this.put<Activities>(this.url + "/" + id, activities);
+  }
+
+  getUrl(): string {
+    return environment.activities;
   }
 }
