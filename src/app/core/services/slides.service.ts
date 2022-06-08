@@ -13,13 +13,8 @@ export class SlidesService extends PublicApiService {
     super(http);
   }
 
-<<<<<<< HEAD
-  postSlides<Slides>(slides:any):Observable<any>{
-    return this.post<Slides>("https://ongapi.alkemy.org/api/slides", slides);
-=======
   postSlides<Slides>(slides: any): Observable<any> {
     return this.post<Slides>(slides);
->>>>>>> main
   }
 
 

@@ -37,9 +37,7 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
-<<<<<<< HEAD
 import { SkeletonComponent } from './components/skeleton/skeleton.component';
-=======
 import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
 import { AlertComponent } from "./components/setup-alerts/alert/alert.component";
 import { SetupProgressComponent } from './components/setup-progress/setup-progress.component';
@@ -50,7 +48,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
->>>>>>> main
 
 @NgModule({
   declarations: [
@@ -85,10 +82,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
-<<<<<<< HEAD
-    SkeletonComponent
-
-=======
+    SkeletonComponent,
     SetupAlertsComponent,
     AlertComponent,
     SetupProgressComponent,
@@ -96,7 +90,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
->>>>>>> main
   ],
   exports: [
     RegisterFormComponent,
