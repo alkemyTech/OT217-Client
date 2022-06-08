@@ -109,16 +109,13 @@ const routes: Routes = [
     path: "backoffice",
     component: DashBoardBackofficeComponent
   },
-  {
-    path: "creationActividades",
-    component: CreationActivitiesComponent
-  },
+  
   {
     path: "backoffice/activities/create",
     component: CreationActivitiesComponent
   },
   {
-    path: "creationActividades/:id",
+    path: "backoffice/activities/create/:id",
     component: CreationActivitiesComponent
   },
   {
