@@ -37,9 +37,13 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
+import { AlertComponent } from "./components/setup-alerts/alert/alert.component";
+import { SetupProgressComponent } from './components/setup-progress/setup-progress.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
 import { SpinnerComponent } from './components/spinner/spinner.component';
+
 
 
 
@@ -76,6 +80,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
+    SetupAlertsComponent,
+    AlertComponent,
+    SetupProgressComponent,
     DialogComponent,
     DialogContentComponent,
     SpinnerComponent
@@ -93,6 +100,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     FormContactComponent,
     DashBoardBackofficeComponent
   ],
+  entryComponents: [SetupAlertsComponent],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
 })
 export class FeaturesModule {
