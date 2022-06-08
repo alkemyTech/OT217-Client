@@ -20,6 +20,7 @@ import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.comp
 import { HomeComponent } from "./pages/home/home.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { NewsListComponent } from "./pages/news/news-list/news-list.component";
 import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
 
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "actividades",
     component: ActivitiesPageComponent,
+  },
+  {
+    path: "news",
+    component: NewsListComponent,
   },
   {
     path: "backoffice/slides",
