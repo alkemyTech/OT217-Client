@@ -1,1 +1,32 @@
-<p>categories-form works!</p>
+<div class="position-container">
+    <div class="categories-container">
+        <main class="section-wrapper">
+            <form class="form-container" autocomplete="off" [formGroup]="categories">
+
+                <h1>Categorías</h1>
+
+                <div class="special-input">
+                    <mat-form-field appearance="fill">
+                        <mat-label class="input-label">Nombre</mat-label>
+                        <input matInput formControlName="name">
+                        <mat-error>4 Caracteres Mínimo</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="special-input">
+                    <mat-label class="input-label">Descripcion de la Categoría</mat-label>
+                    <ckeditor formControlName="description" [editor]="Editor"></ckeditor>
+                </div>
+
+
+
+                <div class="special-input">
+                    <input class="inputs" type="file" class="image" formControlName="image" accept=".png, .jpg, .jpeg"
+                        (change)="toBase64($event)" />
+                </div>
+
+                <button class="form-button inputs" mat-raised-button 
+                    (click)="categoriesCommit()">Enviar</button>
+            </form>
+        </main>
+    </div>
+</div>

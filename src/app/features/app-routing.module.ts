@@ -20,6 +20,7 @@ import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.comp
 import { HomeComponent } from "./pages/home/home.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { CategoriesFormComponent } from "./pages/categories/categories-form/categories-form.component";
 
 
 const routes: Routes = [
@@ -38,6 +39,14 @@ const routes: Routes = [
   {
     path: "gracias",
     component: ThanksComponent,
+  },
+  {
+    path: "backoffice/categories",
+    component: CategoriesFormComponent,
+  },
+  {
+    path: "backoffice/categories/:id",
+    component: CategoriesFormComponent,
   },
   {
     path: "backoffice/organization/edit",
