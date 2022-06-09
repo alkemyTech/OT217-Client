@@ -17,8 +17,6 @@ export class SlidesService extends PublicApiService {
     return this.post<Slides>(slides);
   }
 
-
-
   getSlides<Slides>():Observable<any>{
     return this.get<Slides>(this.getUrl());
   }
@@ -26,8 +24,6 @@ export class SlidesService extends PublicApiService {
   putSlides<Slides>(slides: any, id: string): Observable<Slides> {
     return this.put<Slides>(id, slides);
   }
-
-
 
   getSlidesById<Slides>(id:string):Observable<Slides>{
     return this.getById<Slides>(this.getUrl()+'/'+id);
