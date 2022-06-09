@@ -1,12 +1,12 @@
 <section >
-    <div   class="row d-flex flex-row justify-content-center alig-items-center m-4" >
+    <div   class="row d-flex flex-row justify-content-center alig-items-center m-t-4" >
         <div  class="  col-xl-4 m-5 border-bottom border-end  text-alig-center">
             <h1 class="text-center welcomBackoffice textBackoffice">Bienvenido</h1>
         </div>
     </div>
 </section>
 
-<section  *ngIf="textInitial" >
+<section >
     
     <div   class="row d-flex flex-row justify-content-center alig-items-center">
         <div  class="col-xl-2 col-lg-4 col-md-4 col-6 m-4 border-bottom border-end bg-none  row d-flex flex-row bg-light justify-content-center alig-items-center">
@@ -15,7 +15,7 @@
                 <i class="bi bi-newspaper rounded-circle mb-1 wisthIcons"> <p class=""></p></i>
             </div>
             <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('news')" > Ir</button>   
             </p>
         </div>
 
@@ -25,7 +25,7 @@
                 <i class="bi bi-journal-check rounded-circle mb-1 wisthIcons"></i>
             </div>
               <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('activities')" > Ir</button>   
             </p>   
         </div>
 
@@ -35,7 +35,7 @@
                 <i class="bi bi-list-task rounded-circle mb-1 wisthIcons"></i>
             </div>
               <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('categories')" > Ir</button>   
             </p>  
         </div>
 
@@ -45,7 +45,7 @@
                 <i class="bi bi-people rounded-circle mb-1 wisthIcons"></i>
             </div>
               <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1"  (click)="linkButtom('testimonials')"> Ir</button>   
             </p> 
         </div>
 
@@ -55,7 +55,7 @@
                 <i class="bi bi-diagram-3 rounded-circle mb-1 wisthIcons"></i>
             </div>
               <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('organization')"> Ir</button>   
             </p>   
         </div>
 
@@ -65,7 +65,7 @@
                 <i class="bi bi-file-earmark-slides rounded-circle mb-1 wisthIcons"></i>
             </div>
               <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('sliders')"  > Ir</button>   
             </p>  
         </div>
 
@@ -75,7 +75,7 @@
                 <i class="bi bi-person-rolodex rounded-circle mb-1 wisthIcons"></i>
             </div>
             <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('users')"> Ir</button>   
             </p>
         </div>
 
@@ -85,7 +85,7 @@
                 <i class="bi bi-person-lines-fill rounded-circle mb-1 wisthIcons"></i>
             </div>
               <p class=" rounded text-center">
-                <button type="button" class="btn colorButtomDetails m-1" > Ir</button>   
+                <button type="button" class="btn colorButtomDetails m-1" (click)="linkButtom('members')" > Ir</button>   
             </p> 
         </div>
     </div>

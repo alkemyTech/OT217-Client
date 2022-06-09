@@ -2,18 +2,19 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Contacts } from "src/app/shared/models/contact";
-import { PublicapiserviceService } from "./publicapiservice.service";
+import { environment } from "src/environments/environment";
+import { PublicApiService } from "./public-api.service";
 
 @Injectable({
   providedIn: "root",
 })
-export class NewContactsService extends PublicapiserviceService {
+export class NewContactsService extends PublicApiService {
   constructor(http: HttpClient) {
     super(http);
   }
 
   getContacts<Contacts>(): Observable<Contacts> {
-    return this.get<Contacts>("contacts");
+    return this.get<Contacts>(this.getUrl());
   }
 
   postContacts<Contacts>(contacts: Contacts): Observable<Contacts> {
@@ -25,9 +26,12 @@ export class NewContactsService extends PublicapiserviceService {
   }
 
   getContactsById<Contacts>(id: string): Observable<Contacts> {
-    return this.getById<Contacts>("contacts/" + id);
+    return this.getById<Contacts>(this.getUrl()+'/' + id);
   }
   deleteContacts<Contacts>(id: string): Observable<Contacts> {
-    return this.delete<Contacts>("contacts/" + id);
+    return this.delete<Contacts>(this.getUrl()+'/' + id);
+  }
+  getUrl(): string {
+    return environment.contacts ;
   }
 }

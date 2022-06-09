@@ -1,0 +1,61 @@
+<div class="container">
+  <div *ngFor="let item of repeat">
+    <div class="skeleton-container" *ngIf="skeletonStyle === 'card'">
+      <ngx-skeleton-loader
+        count="1"
+        [theme]="{
+          'border-radius': '5px',
+          height: '30px',
+          border: '1px solid white'
+        }"
+        appearance="line"
+        animation="progress"
+      ></ngx-skeleton-loader>
+      <ngx-skeleton-loader
+        count="1"
+        [theme]="{
+          'border-radius': '5px',
+          height: '150px',
+          border: '1px solid white'
+        }"
+        appearance="line"
+        animation="progress"
+      ></ngx-skeleton-loader>
+      <ngx-skeleton-loader
+        count="2"
+        [theme]="{
+          'border-radius': '5px',
+          height: '20px',
+          border: '1px solid white'
+        }"
+        appearance="line"
+        animation="progress"
+      ></ngx-skeleton-loader>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div *ngFor="let item of repeat">
+    <div class="skeleton-container" *ngIf="skeletonStyle === 'table'">
+      <ngx-skeleton-loader
+        count="1"
+        [theme]="{
+          'border-radius': '5px',
+          width: '120px'
+        }"
+        appearance="line"
+        animation="progress"
+      ></ngx-skeleton-loader>
+      <ngx-skeleton-loader
+        count="8"
+        [theme]="{
+          'border-radius': '5px',
+          width: '100%'
+        }"
+        appearance="line"
+        animation="progress"
+      ></ngx-skeleton-loader>
+    </div>
+  </div>
+</div>
