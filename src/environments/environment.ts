@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  members: "https://ongapi.alkemy.org/api/members",
   baseUrl:"https://ongapi.alkemy.org/api",
   news: "/news",
   slidesUrl : "/slides",
