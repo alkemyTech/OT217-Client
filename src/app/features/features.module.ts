@@ -30,11 +30,26 @@ import { UserComponent } from './pages/users/user/user.component';
 import { SlidesListComponent } from './pages/slides/slides-list/slides-list.component';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from "./pages/card/card.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { FooterComponent } from "./pages/home/footer/footer.component";
+import { NavbarComponent } from "./pages/home/navbar/navbar.component";
 import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
 import { OrganizationListComponent } from "./pages/organization/organization-list.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { FooterComponent } from "./pages/home/footer/footer.component";
+import { NavbarComponent } from "./pages/home/navbar/navbar.component";
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
+import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
+import { AlertComponent } from "./components/setup-alerts/alert/alert.component";
+import { SetupProgressComponent } from './components/setup-progress/setup-progress.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
+import { NewsListComponent } from './pages/news/news-list/news-list.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+
 
 
 @NgModule({
@@ -63,28 +78,37 @@ import { OrganizationListComponent } from "./pages/organization/organization-lis
     SlidesListComponent,
     TableComponent,
     CardComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
     OrganizationEditComponent,
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
-    OrganizationListComponent
-
+    OrganizationListComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    SkeletonComponent,
+    SetupAlertsComponent,
+    AlertComponent,
+    SetupProgressComponent,
+    DialogComponent,
+    DialogContentComponent,
+    NewsListComponent,
+    SpinnerComponent
   ],
   exports: [
-    ActivityFormComponent,
-    LoginFormComponent,
     RegisterFormComponent,
     CategoriesFormComponent,
-    NewsFormComponent,
     SlidesFormComponent,
-    TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
     FormContactComponent,
-    DashBoardBackofficeComponent,
-    OrganizationListComponent
-
+    OrganizationListComponent,
+    DashBoardBackofficeComponent
   ],
+  entryComponents: [SetupAlertsComponent],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
 })
 export class FeaturesModule {
