@@ -8,6 +8,9 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root'
 })
 export class MembersService extends PublicApiService {
+    getUrl(): string {
+        throw new Error('Error');
+    }
 
     endpoint: string = environment.members;
 
@@ -16,7 +19,7 @@ export class MembersService extends PublicApiService {
     }
 
     postMembers<Members>(members: any): Observable<any> {
-        return this.post<Members>(this.endpoint, members);
+        return this.post<Members>(this.endpoint);
     }
 
     getMembers<Members>(): Observable<any> {
