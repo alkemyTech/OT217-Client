@@ -11,6 +11,9 @@ import { PublicApiService } from './public-api.service';
   providedIn: 'root'
 })
 export class OrganizationListService extends PublicApiService {
+  getUrl(): string {
+    throw new Error('Error');
+  }
 
   endpoint: string = environment.organizationList;
 
@@ -19,7 +22,7 @@ export class OrganizationListService extends PublicApiService {
   }
 
   postOrganization<Organization>(organization: any): Observable<any> {
-    return this.post<Organization>(this.endpoint, organization);
+    return this.post<Organization>(this.endpoint);
   }
 
   getOrganization<Organization>(): Observable<any> {
