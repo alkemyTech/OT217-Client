@@ -17,11 +17,13 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { UserComponent } from "./pages/users/user/user.component";
 import { UserFormComponent } from "./pages/users/user-form/user-form.component";
 import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
+import { OrganizationListComponent } from "./pages/organization/organization-list.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
 import { NewsListComponent } from "./pages/news/news-list/news-list.component";
 import { SetupAlertsComponent } from "./components/setup-alerts/setup-alerts.component";
+
 
 
 const routes: Routes = [
@@ -102,6 +104,10 @@ const routes: Routes = [
     component: SlideHomeComponent,
   },
   {
+    path: "backoffice/organization/list",
+    component: OrganizationListComponent
+  },
+  {
     path: "members",
     component: MembersComponent,
   },
@@ -120,6 +126,22 @@ const routes: Routes = [
     component: DashBoardBackofficeComponent
   },
   
+  {
+    path: "creationActividades",
+    component: CreationActivitiesComponent
+  },
+  {
+    path: "backoffice/activities/create",
+    component: CreationActivitiesComponent
+  },
+  {
+    path: "backoffice/activities/create/:id",
+    component: CreationActivitiesComponent
+  },
+  {
+    path: "organization/list",
+    component: OrganizationListComponent
+  },
   {
     path: "backoffice/activities/create",
     component: CreationActivitiesComponent

@@ -37,6 +37,7 @@ import { OrganizationEditComponent } from "./pages/organization/organization-edi
 import { ActivitiesListComponent } from './pages/activities/activities-list/activities-list.component';
 import { MembersCardComponentComponent } from "./pages/members/members-card-component/members-card-component.component";
 import { MembersComponent } from "./pages/members/members.component";
+import { OrganizationListComponent } from "./pages/organization/organization-list.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { FooterComponent } from "./pages/home/footer/footer.component";
 import { NavbarComponent } from "./pages/home/navbar/navbar.component";
@@ -48,6 +49,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
 import { NewsListComponent } from './pages/news/news-list/news-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+
 
 
 @NgModule({
@@ -83,6 +85,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ActivitiesListComponent,
     MembersCardComponentComponent,
     MembersComponent,
+    OrganizationListComponent,
     HomeComponent,
     FooterComponent,
     NavbarComponent,
@@ -102,8 +105,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     UserFormComponent,
     RouterModule,
     FormContactComponent,
+    OrganizationListComponent,
     DashBoardBackofficeComponent
-
   ],
   entryComponents: [SetupAlertsComponent],
   imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
