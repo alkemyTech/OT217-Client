@@ -7,6 +7,16 @@ import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { ROOT_REDUCERS } from './shared/state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { ActivitiesEffects } from './shared/state/activities/activities.effects';
+import { NewsEffects } from './shared/state/news/news.effects';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,9 +29,16 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MaterialModule,
     HttpClientModule,
-    FeaturesModule
+    FeaturesModule,
+    MatDialogModule,
+    FeaturesModule,
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([NewsEffects,ActivitiesEffects ]),  ],
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

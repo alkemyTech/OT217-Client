@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  organizationList: "https://ongapi.alkemy.org/api/organization",
+  members: "https://ongapi.alkemy.org/api/members",
+  baseUrl:"https://ongapi.alkemy.org/api",
+  news: "/news",
+  slidesUrl : "/slides",
+  contacts: "/contacts"
 };
 
 /*

@@ -1,0 +1,21 @@
+<mat-card class="activity-card">
+  <div class="card-container ">
+    <mat-card-header>
+      <mat-card-title class="card-name">{{ name }}</mat-card-title>
+    </mat-card-header>
+    <img class="card-image col-10" src="{{ image }}" alt="Activity image" />
+    <mat-card-content>
+      <div class="card-description" [innerHTML]="description"></div>
+      <div class="text-center">
+        <div id="urlButtons">
+          <a href="{{facebookUrl}}" target="_blank"><button mat-raised-button class="primary btn-detail" type="button"
+              id="button1">Ver
+              perfil facebook</button></a>
+          <a href="{{linkedinUrl}}" target="_blank"><button type="button" mat-raised-button class="primary btn-detail"
+              id="button2">Ver
+              perfil linkedin</button></a>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>

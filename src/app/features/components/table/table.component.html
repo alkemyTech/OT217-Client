@@ -5,60 +5,67 @@
     modificarlos o eliminarlos
   </p>
 </div>
-<div class="table-container">
-  <table mat-table [dataSource]="dataArray" class="mat-elevation-z8">
-    <ng-container matColumnDef="firstCol">
-      <th mat-header-cell *matHeaderCellDef>{{ firstCol }}</th>
-      <td mat-cell *matCellDef="let element">
-        <span class="slide-title">{{ element.name }}</span>
-        <div *ngIf="imageTrue">
-          <div class="image-title">
-            <img
-              class="slide-image"
-              src="{{ element.image }}"
-              alt="Slide Image"
-            />
-          </div>
-        </div>
-      </td>
-    </ng-container>
 
-    <ng-container matColumnDef="secondCol">
-      <th mat-header-cell *matHeaderCellDef>{{ secondCol }}</th>
-      <td mat-cell *matCellDef="let element">
-        <div *ngIf="orderTrue">
-          {{ element.order }}
-        </div>
-        <div *ngIf="createdTrue">
-          {{ dateFormatter(element.created_at) }}
-        </div>
-        <div *ngIf="emailTrue">
-          {{ element.email }}
-        </div>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="thirdCol">
-      <th mat-header-cell *matHeaderCellDef>{{ thirdCol }}</th>
-      <td mat-cell *matCellDef="let element">
-        <button
-          mat-raised-button
-          class="edit"
-          routerLink="{{ editUrl }}/{{ element.id }}"
-        >
-          Editar
-        </button>
-        <button
-          mat-raised-button
-          class="delete"
-          (click)="this.deleteElement(element.id)"
-        >
-          Eliminar
-        </button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+<div *ngIf="dataArray.length === 0; else elseBlock">
+  <app-skeleton [skeletonStyle]="'table'" [repetition]="3"></app-skeleton>
 </div>
+
+<ng-template #elseBlock>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataArray" class="mat-elevation-z8">
+      <ng-container matColumnDef="firstCol">
+        <th mat-header-cell *matHeaderCellDef>{{ firstCol }}</th>
+        <td mat-cell *matCellDef="let element">
+          <span class="slide-title">{{ element.name }}</span>
+          <div *ngIf="imageTrue">
+            <div class="image-title">
+              <img
+                class="slide-image"
+                src="{{ element.image }}"
+                alt="Slide Image"
+              />
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="secondCol">
+        <th mat-header-cell *matHeaderCellDef>{{ secondCol }}</th>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="orderTrue">
+            {{ element.order }}
+          </div>
+          <div *ngIf="createdTrue">
+            {{ dateFormatter(element.created_at) }}
+          </div>
+          <div *ngIf="emailTrue">
+            {{ element.email }}
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="thirdCol">
+        <th mat-header-cell *matHeaderCellDef>{{ thirdCol }}</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-raised-button
+            class="edit"
+            routerLink="{{ editUrl }}/{{ element.id }}"
+          >
+            Editar
+          </button>
+          <button
+            mat-raised-button
+            class="delete"
+            (click)="this.deleteElement(element.id)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</ng-template>

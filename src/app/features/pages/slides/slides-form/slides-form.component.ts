@@ -36,23 +36,28 @@ export class SlidesFormComponent implements OnInit {
   ngOnInit(): void {
     if (this.slidesId) {
       this.title = "Modificar Slide";
-      this.slidesService.getSlidesId(this.slidesId).subscribe((response) => {
-        this.currentSlides.push(response.data);
-        this.slides = this.formBuilder.group({
-          name: [
-            this.currentSlides[0].name,
-            [Validators.required, Validators.minLength(4)],
-          ],
-          order: [this.currentSlides[0].order, Validators.required],
-          description: [this.currentSlides[0].description, Validators.required],
+      this.slidesService
+        .getSlidesById<any>(this.slidesId)
+        .subscribe((response) => {
+          this.currentSlides.push(response.data);
+          this.slides = this.formBuilder.group({
+            name: [
+              this.currentSlides[0].name,
+              [Validators.required, Validators.minLength(4)],
+            ],
+            order: [this.currentSlides[0].order, Validators.required],
+            description: [
+              this.currentSlides[0].description,
+              Validators.required,
+            ],
+          });
         });
-      });
     } else {
       this.title = "Crear Slide";
       this.slides = this.formBuilder.group({
         name: ["", [Validators.required, Validators.minLength(4)]],
         description: ["", Validators.required],
-        order: ["null", Validators.required],
+        order: [0, Validators.required],
         image: ["", Validators.required],
       });
     }
@@ -97,11 +102,11 @@ export class SlidesFormComponent implements OnInit {
 
     if (this.slidesId) {
       this.slidesService
-        .updateSlides(slidesCommit, this.slidesId)
-        .subscribe((response) => {});
+        .putSlides(slidesCommit, this.slidesId)
+        .subscribe((response) => { });
       this.slides.reset();
     } else if (!this.slidesId) {
-      this.slidesService.postSlides(slidesCommit).subscribe((response) => {});
+      this.slidesService.postSlides(slidesCommit).subscribe((response) => { });
       this.slides.reset();
     }
   }
