@@ -4,9 +4,11 @@
 
 export const environment = {
   production: false,
-  contacts: "https://ongapi.alkemy.org/api/contacts",
-  baseUrl:"https://ongapi.alkemy.org/api/",
-  news: "https://ongapi.alkemy.org/api/news"
+  members: "https://ongapi.alkemy.org/api/members",
+  baseUrl:"https://ongapi.alkemy.org/api",
+  news: "/news",
+  slidesUrl : "/slides",
+  contacts: "/contacts",
 };
 
 /*
