@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { privateRoutingModule } from "./private-routing.module";
-import { publicRoutingModule } from "./public-routing.module";
+import { privateRoutingModule } from "./pages/private-pages/private-routing.module";
+import { publicRoutingModule } from "./pages/public-pages/public-routing.module";
 
 const routes: Routes = [
 
