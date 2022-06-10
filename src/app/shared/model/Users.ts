@@ -1,31 +1,30 @@
-export interface Users{
- id:number,
-name:string,
+export interface Users {
+  id: string;
+  name: string;
 
+  email: string;
 
-email:string,	
+  email_verified_at: string;
 
-email_verified_at:string,
+  password: string;
 
-password:string,
+  role_id: number;
 
-role_id:number,
+  remember_token: string;
 
-remember_token: string,	
+  created_at: string;
 
-created_at: string,
+  updated_at: string;
 
-updated_at: string,
+  deleted_at: string;
 
-deleted_at	: string,
+  group_id: string;
 
-group_id:number,
+  latitude: string;
 
-latitude:number,
+  longitude: string;
 
-longitude:number,
+  address: string;
 
-address:string,
-
-profile_image: string	
+  profile_image: string;
 }

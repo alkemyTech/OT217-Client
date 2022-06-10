@@ -11,7 +11,7 @@
   </div>
 </div>
 <div class="containter-fluid">
-  <table class="table">
+  <table class="table" *ngIf="usuario$ | async">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
@@ -19,10 +19,10 @@
         <th scope="col" class="text-end">Editar/Eliminar</th>
       </tr>
     </thead>
-    <tbody *ngFor="let user of users">
-      <tr>
+    <tbody>
+      <tr *ngFor="let user of usuario$ | async">
         <td class="align-middle">{{ user.name }}</td>
-        <td class="align-middle">{{ user.email }}</td>
+        <td class="align-middle">{{ user.email}}</td>
         <td class="align-middle">
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button
@@ -31,7 +31,7 @@
             >
               Editar
             </button>
-            <button class="btn eliminar text-light" (click)="onDelete(user)">
+            <button class="btn eliminar text-light" (click)="onDelete(user.id)">
               Eliminar
             </button>
           </div>
