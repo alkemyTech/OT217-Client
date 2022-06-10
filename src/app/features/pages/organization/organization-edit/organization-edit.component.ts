@@ -7,8 +7,9 @@ import { OrganizationService } from "src/app/core/services/organization.service"
 @Component({
   selector: 'app-organization-edit',
   templateUrl: './organization-edit.component.html',
-  styleUrls: ['./organization-edit.component.scss']
+  styleUrls: ['./organization-edit.component.css']
 })
+
 export class OrganizationEditComponent implements OnInit {
 
   public Editor = ClassicEditor;

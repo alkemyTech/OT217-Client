@@ -97,8 +97,8 @@ export class CreationActivitiesComponent implements OnInit{
   getActivitiesID(id: string){
     var actividades: any
     this.update = true
-    this._ActivitiesServices.getActivities(id).subscribe(
-      response => {
+    this._ActivitiesServices.getActivitiesID<any>(id).subscribe(
+      (response) => {
         actividades = response.data
         this.activities[0]= actividades
         this.name= response.data.name
