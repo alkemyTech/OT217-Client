@@ -1,69 +1,35 @@
 <footer>
   <!-- //footer- pie de página -->
-  <div class="container">
-    <!-- Section: Links -->
-    <section class="mt-2">
-      <!-- Grid row-->
-      <div class="row text-center d-flex justify-content-center pt-3">
-        <!-- Grid column -->
-        <div class="col-md-2">
-          <h4 class="text-uppercase font-weight-bold">
-            <a href="#!" class="text-white">Noticias</a>
-          </h4>
-        </div>
-        <!-- Grid column -->
-        <div class="col-md-2">
-          <h4 class="text-uppercase font-weight-bold">
-            <a href="#!" class="text-white">Actividades</a>
-          </h4>
-        </div>
-        <!-- Grid column -->
-        <div class="col-md-2">
-          <h4 class="text-uppercase font-weight-bold">
-            <a href="#!" class="text-white">Novedades</a>
-          </h4>
-        </div>
-        <!-- Grid column -->
-        <div class="col-md-2">
-          <h4 class="text-uppercase font-weight-bold">
-            <a href="#!" class="text-white">Testimonios</a>
-          </h4>
-        </div>
-        <!-- Grid column -->
-        <div class="col-md-2">
-          <h4 class="text-uppercase font-weight-bold">
-            <a href="#!" class="text-white">Nosotros</a>
-          </h4>
-        </div>
-        <!-- Grid column -->
-        <div class="col-md-2">
-          <h4 class="text-uppercase font-weight-bold">
-            <a href="#!" class="text-white">Contacto</a>
-          </h4>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row-->
-    </section>
 
+  <div class="container">
+    <div id="row2">
+      <img class="logo-footer" src="assets/LOGO-SOMOS MAS.png" alt="" />
+    </div>
   </div>
-  <div id="row2">
-    <img class="logo-footer" src="../../../../../../assets/LOGO-SOMOS%20MAS.png" alt="" />
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-2" *ngFor="let item of rutas">
+        <a [routerLink]="item.path">{{item.titulo}}</a>
+      </div>
+    </div>
   </div>
-  <section class="text-center mb-2">
-    <a href="" class="text-white me-4">
-      <i class="fa fa-facebook-official fa-2x" id="facebook-logo" aria-hidden="true"></i>
-    </a>
-    <a href="" class="text-white me-4">
-      <i class="fa fa-twitter-square fa-2x" aria-hidden="true" id="twitter-logo"></i>
-    </a>
-    <a href="" class="text-white me-4">
-      <i class="fa fa-instagram fa-2x" aria-hidden="true" id="instagram-logo"></i>
-    </a>
-    <a href="" class="text-white me-4">
-      <i class="fa fa-linkedin-square fa-2x" aria-hidden="true" id="linkedin-logo"></i>
-    </a>
-  </section>
+  <!-- Section: Links -->
+  <div *ngFor="let data of listaDatos |keyvalue |slice:0:1">
+    <section class="text-center mb-2">
+      <a href="{{data.value.facebook_url}}" class="text-white me-4">
+        <i class="fa fa-facebook-official fa-2x" id="facebook-logo" aria-hidden="true"></i>
+      </a>
+      <a href="{{data.value.twitter_url}}" class="text-white me-4">
+        <i class="fa fa-twitter-square fa-2x" aria-hidden="true" id="twitter-logo"></i>
+      </a>
+      <a href="{{data.value.instagram_url}}" class="text-white me-4">
+        <i class="fa fa-instagram fa-2x" aria-hidden="true" id="instagram-logo"></i>
+      </a>
+      <a href="{{data.value.linkedin_url}}" class="text-white me-4">
+        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true" id="linkedin-logo"></i>
+      </a>
+    </section>
+  </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
