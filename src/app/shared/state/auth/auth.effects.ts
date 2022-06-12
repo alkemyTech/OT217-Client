@@ -13,7 +13,7 @@ export class authEffects {
       ofType('[Login User] Login User'),
       mergeMap(() => this.loginService.loginUser(this.user)
         .pipe(
-          map(news => ({ type: '[Login User] Login user success', user: this.user })),
+          map(user => ({ type: '[Login User] Login user success', user: this.user })),
           catchError(() => EMPTY)
         ))
     )
@@ -22,7 +22,7 @@ export class authEffects {
       ofType('[Register User] Register User'),
       mergeMap(() => this.loginService.registerUser(this.user)
         .pipe(
-          map(news => ({ type: '[Register User User] Register success', user: this.user })),
+          map(user => ({ type: '[Register User User] Register success', user: this.user })),
           catchError(() => EMPTY)
         ))
     )
