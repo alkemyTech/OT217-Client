@@ -11,11 +11,12 @@ export class NewsEffects {
     ofType('[News List] Load news'),
     mergeMap(() => this.newsService.getNews()
       .pipe(
-        map(news => ({ type: '[News List] Load news success', news })),
+        map(news => ({ type: '[News List] Load news success', news: news.data })),
         catchError(() => EMPTY)
       ))
     )
   );
+  
  
   constructor(
     private actions$: Actions,
