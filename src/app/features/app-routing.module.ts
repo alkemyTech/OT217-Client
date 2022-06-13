@@ -1,26 +1,27 @@
-import { Component, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { CreationActivitiesComponent } from "./pages/activities/creation-activities/creation-activities.component";
-import { ActivitiesPageComponent } from "./pages/activities/activities-page/activities-page.component";
-import { NewsFormComponent } from "./pages/news/news-form/news-form.component";
-import { SlidesFormComponent } from "./pages/slides/slides-form/slides-form.component";
-import { LoginFormComponent } from "./pages/auth/login-form/login-form.component";
-import { RegisterFormComponent } from "./pages/auth/register-form/register-form.component";
-import { ActivityFormComponent } from "./pages/activities/activity-form/activity-form.component";
-import { SlideHomeComponent } from "./pages/slides/slide-home/slide-home.component";
-import { DashBoardBackofficeComponent } from "./pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
-import { DonationsComponent } from "./pages/donations/donations.component";
-import { ThanksComponent } from "./pages/donations/thanks/thanks.component";
-import { DetailComponent } from "./pages/views/activities/detail/detail.component";
-import { OrganizationEditComponent } from "./pages/organization/organization-edit/organization-edit.component";
-import { UserComponent } from "./pages/users/user/user.component";
-import { UserFormComponent } from "./pages/users/user-form/user-form.component";
-import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.component";
-import { HomeComponent } from "./pages/home/home.component";
-import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
-import { MembersComponent } from "./pages/members/members.component";
-
+import { privateRoutingModule } from "./pages/private-pages/private-routing.module";
+import { publicRoutingModule } from "./pages/public-pages/public-routing.module";
+import { SlideHomeComponent } from "./pages/public-pages/slides/slide-home/slide-home.component";
+import { HomeComponent } from "./pages/public-pages/home/home.component";
+import { RegisterFormComponent } from "./pages/public-pages/auth/register-form/register-form.component";
+import { LoginFormComponent } from "./pages/public-pages/auth/login-form/login-form.component";
+import { ActivityFormComponent } from "./pages/public-pages/activities/activity-form/activity-form.component";
+import { UserComponent } from "./pages/private-pages/users/user/user.component";
+import { SlidesFormComponent } from "./pages/public-pages/slides/slides-form/slides-form.component";
+import { NewsFormComponent } from "./pages/private-pages/news/news-form/news-form.component";
+import { OrganizationEditComponent } from "./pages/private-pages/organization/organization-edit/organization-edit.component";
+import { ThanksComponent } from "./pages/public-pages/donations/thanks/thanks.component";
+import { DonationsComponent } from "./pages/public-pages/donations/donations.component";
+import { SlidesListComponent } from "./pages/public-pages/slides/slides-list/slides-list.component";
+import { ActivitiesPageComponent } from "./pages/public-pages/activities/activities-page/activities-page.component";
+import { UserFormComponent } from "./pages/private-pages/users/user-form/user-form.component";
+import { ActivitiesListComponent } from "./pages/public-pages/activities/activities-list/activities-list.component";
+import { DetailComponent } from "./pages/public-pages/views/activities/detail/detail.component";
+import { MembersComponent } from "./pages/public-pages/members/members.component";
+import { DashBoardBackofficeComponent } from "./pages/private-pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
+import { CreationActivitiesComponent } from "./pages/public-pages/activities/creation-activities/creation-activities.component";
 
 const routes: Routes = [
   {
@@ -132,6 +133,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   exports: [RouterModule],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes), privateRoutingModule, publicRoutingModule],
 })
 export class AppRoutingModule { }
