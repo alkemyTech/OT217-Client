@@ -47,6 +47,8 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
 import { NewsListComponent } from './pages/private-pages/news/news-list/news-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
+import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+
 
 
 
@@ -95,7 +97,8 @@ import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguet
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
-    FooterJuguetesComponent
+    FooterJuguetesComponent,
+    PageNotFoundComponent
   ],
   exports: [
     RegisterFormComponent,

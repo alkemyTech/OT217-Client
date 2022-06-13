@@ -15,8 +15,14 @@ import { CreationActivitiesComponent } from "./activities/creation-activities/cr
 import { OrganizationListComponent } from "../private-pages/organization/organization-list.component";
 import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const routes: Routes = [
+  {
+    path:'',
+    redirectTo: "home",
+    pathMatch: "full"
+  },
   {
     path: "actividades",
     component: ActivitiesPageComponent,
@@ -63,19 +69,13 @@ const routes: Routes = [
     path: "setup_alert",
     component: SetupAlertsComponent,
   },
-
-  {
-    path: "creationActividades",
-    component: CreationActivitiesComponent
-  },
   {
     path: "organization/list",
     component: OrganizationListComponent
   },
   {
     path: "**",
-    redirectTo: "home",
-    pathMatch: "full",
+    component: PageNotFoundComponent
   },
 ]
 
