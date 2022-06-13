@@ -18,6 +18,7 @@ export class authEffects {
         ))
     )
   );
+
   registerUser$ = createEffect(() => this.actions$.pipe(
       ofType('[Register User] Register User'),
       mergeMap(() => this.loginService.registerUser(this.user)
