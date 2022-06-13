@@ -15,7 +15,6 @@ import {UserEffect} from "./features/pages/users/user/effects-users"
 @NgModule({
   declarations: [
     AppComponent
-  
   ],
   imports: [
     BrowserModule,

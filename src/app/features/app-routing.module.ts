@@ -20,6 +20,7 @@ import { SlidesListComponent } from "./pages/slides/slides-list/slides-list.comp
 import { ActivitiesListComponent } from "./pages/activities/activities-list/activities-list.component";
 import { MembersComponent } from "./pages/members/members.component";
 
+
 const routes: Routes = [
   {
     path: "actividades",
@@ -104,14 +105,17 @@ const routes: Routes = [
     component: DashBoardBackofficeComponent
   },
   {
+    path: "creationActividades",
+    component: CreationActivitiesComponent
+  },
+  {
     path: "backoffice/activities/create",
     component: CreationActivitiesComponent
   },
   {
-    path: "backoffice/activities/create/:id",
+    path: "creationActividades/:id",
     component: CreationActivitiesComponent
   },
-
   {
     path: "**",
     redirectTo: "actividades",

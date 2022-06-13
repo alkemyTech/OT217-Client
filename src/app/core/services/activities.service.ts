@@ -8,7 +8,7 @@ import { environment } from "../../../environments/environment.prod";
   providedIn: "root",
 })
 export class ActivitiesServices extends PublicApiService {
-  public url: string = "https://ongapi.alkemy.org/api/";
+  public url: string = environment.activities
   public constructor(http: HttpClient) {
     super(http);
   }
@@ -19,16 +19,16 @@ export class ActivitiesServices extends PublicApiService {
     return this.get<Activities>(this.baseUrl + this.getUrl());
   }
   getActivitiesID<Activities>(id: string): Observable<Activities> {
-    return this.getById<Activities>(this.url + "activities/" + id);
+    return this.getById<Activities>(this.url + "/" + id);
   }
   deleteActivities<Activities>(id: string): Observable<Activities> {
-    return this.delete(this.url + "activities/" + id);
+    return this.delete(this.url + "/" + id);
   }
   putActivities<Activities>(
     activities: any,
     id: string
   ): Observable<Activities> {
-    return this.put<Activities>(this.url + id, activities);
+    return this.put<Activities>(this.url + "/" + id, activities);
   }
 
   getUrl(): string {
