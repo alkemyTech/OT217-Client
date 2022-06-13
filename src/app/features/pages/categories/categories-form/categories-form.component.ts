@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Categories } from "./../../../../shared/models/Categories";
 import { FormBuilder, Validators } from "@angular/forms";
 import { CategoriesService } from "src/app/core/services/categories.service";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";

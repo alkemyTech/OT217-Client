@@ -24,8 +24,8 @@
                         (change)="toBase64($event)" />
                 </div>
 
-                <button class="form-button inputs" mat-raised-button 
-                    (click)="categoriesCommit()">Enviar</button>
+                <button mat-raised-button class="form-button inputs"  
+                    (click)="categoriesCommit()" [disabled]="!categories.valid">Enviar</button>
             </form>
         </main>
     </div>
