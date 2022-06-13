@@ -9,11 +9,15 @@ import { environment } from "../../../environments/environment.prod";
 })
 export class SlidesService extends PublicApiService {
 
-  public constructor(http:HttpClient) {
+  public constructor(http: HttpClient) {
     super(http);
   }
 
+<<<<<<< HEAD
    postSlides<Slides>(slides:any):Observable<any>{
+=======
+  postSlides<Slides>(slides: any): Observable<any> {
+>>>>>>> 2cb60b92d4f844fcbed7b91292cfa23d72964558
     return this.post<Slides>(slides);
   }
 
@@ -21,8 +25,8 @@ export class SlidesService extends PublicApiService {
     return this.get<Slides>(this.getUrl());
   }
 
-  putSlides<Slides>(slides:any, id:string):Observable<Slides>{
-    return this.put<Slides>(id,slides);
+  putSlides<Slides>(slides: any, id: string): Observable<Slides> {
+    return this.put<Slides>(id, slides);
   }
 
   getSlidesById<Slides>(id:string):Observable<Slides>{
