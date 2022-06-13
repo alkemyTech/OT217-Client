@@ -119,3 +119,23 @@ html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
 .mat-progress-bar-fill::after {
   background-color: #FAFA88 !important;
 }
+
+.headerNavColor{
+  background-color: var(--success-Buttom);
+}
+.sidevar{
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.logo{
+width: 80px;
+}
+.menuLogo{
+  margin-left: 5%;
+}
+
+@media (max-width: 575px) {
+  .grindNavar{
+    width: 20% !important;
+  }
+}
