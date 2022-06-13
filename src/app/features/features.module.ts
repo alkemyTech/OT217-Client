@@ -48,6 +48,7 @@ import { NewsListComponent } from './pages/private-pages/news/news-list/news-lis
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
 
 
 
@@ -98,7 +99,9 @@ import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-
     NewsListComponent,
     SpinnerComponent,
     FooterJuguetesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent,
+    HeaderFooterRouterComponent
   ],
   exports: [
     RegisterFormComponent,
