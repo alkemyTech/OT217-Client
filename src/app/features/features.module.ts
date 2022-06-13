@@ -47,6 +47,7 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
 import { NewsListComponent } from './pages/private-pages/news/news-list/news-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+import { PdfViewerModule } from "ng2-pdf-viewer";
 
 
 
@@ -95,7 +96,8 @@ import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PdfViewerModule
   ],
   exports: [
     RegisterFormComponent,

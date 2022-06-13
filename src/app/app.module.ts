@@ -15,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ActivitiesEffects } from './shared/state/activities/activities.effects';
 import { NewsEffects } from './shared/state/news/news.effects';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -32,9 +33,10 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
     FeaturesModule,
     MatDialogModule,
     FeaturesModule,
+    PdfViewerModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([NewsEffects,ActivitiesEffects ]),  ],
+    EffectsModule.forRoot([NewsEffects, ActivitiesEffects]),],
   providers: [
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
