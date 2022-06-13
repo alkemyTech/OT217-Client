@@ -44,11 +44,11 @@ export class NavbarComponent implements OnInit {
       titulo: "Contacto"
     },
     {
-      path: "/campana_materiales_esc",
+      path: "",
       titulo: "Campaña materiales esc"
     },
     {
-      path: "/campana_juguetes",
+      path: "",
       titulo: "Campaña juguetes"
     },
 
