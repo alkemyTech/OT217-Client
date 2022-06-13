@@ -8,6 +8,9 @@
     </button>
   </div>
   <div class="card-container mt-2">
+    <div *ngIf="!card">
+      <app-spinner></app-spinner>
+    </div>
     <section *ngIf="card" data-aos="fade-up" class="section-detail">
       <mat-card class="detail-card">
         <div [innerHTML]="card.description" class="description-detail"></div>
