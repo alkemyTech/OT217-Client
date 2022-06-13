@@ -20,17 +20,17 @@ export class UserService {
     return this.http.put(this.url + `/${id}`, user);
   }
 
-  getUser(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.url).pipe(map((data)  => {
-      const users:Users[] = [];
-      for (let key in data){
-        users.push({...data[key], id:key});
-      }
-      return users;
-    }) )
-  }
+  getUser():Observable<Users[]>{
+    return this.http.get<Users[]>(this.url).pipe
+    (map((data) => {
+      console.log(data)
+      return data;
+    }),
+    )
+    }
 
-  deleteUser(id:string) {
-    return this.http.delete(`https://ongapi.alkemy.org/api/users${id}`);
-  }
+    deleteUser(user: Users): Observable<Users> {
+      const url = `${this.url}/${user.id}`;
+      return this.http.delete<Users>(url);
+    }
 }

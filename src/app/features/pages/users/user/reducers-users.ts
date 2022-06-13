@@ -1,42 +1,29 @@
-import { createReducer, on } from "@ngrx/store";
-import {
-  loadUsersSuccess,
-  loadUsersFailure,
-  removeUsers,
-  removeUsersSuccess,
-  removeUsersFailure
-} from "./action-users"
-import { initialState } from "./users-state";
+import { Users } from "src/app/shared/model/Users";
+import { UsersActions, UsersActionTypes} from "./action-users"
+
+export interface UsersState {
+  users: Users[],
+  loaded: boolean;
+  error: string
+}
+
+const initialState: UsersState = {
+  users: [],
+  loaded: false,
+  error: ''
+};
 
 
-export const userReducer = createReducer(initialState, on(loadUsersSuccess, (state, {users}) =>{
+export function UserReducer(state = initialState, action: UsersActions): UsersState {
+  switch (action.type) {
+case UsersActionTypes.LoadSuccess:
   return {
     ...state,
-    isloading:false,
-    users
-    
+    ...(action.payload || []),
+    loaded: true,
+    error: '',
   }
-}),
-on(loadUsersFailure,(state,action) => {
-  return {
-    ...state,
-    error: "hubo algun error"
+    default:
+      return state
   }
-}),
-on(removeUsersSuccess, (state, {id}) => {
-  const updatedUsers = state.users.filter((user) => {
-    return user.id !== id;
-  })
-  return {
-    ...state,
-    user: removeUsers,
-    };
-}),
-on(removeUsersFailure,(state,action) => {
-  return {
-  ...state,
-    error: "hubo algun error"
-  }
-}),
-) 
-
+}

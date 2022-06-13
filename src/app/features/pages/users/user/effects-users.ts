@@ -1,40 +1,42 @@
-import { Injectable } from "@angular/core"
-import { Actions, createEffect, ofType } from "@ngrx/effects"
-import { map, mergeMap, switchMap} from "rxjs/operators"
-import { UserService } from "src/app/core/services/user.service"
-import {loadUsers, loadUsersSuccess, removeUsers, removeUsersSuccess} from "./action-users"
+import { Injectable } from '@angular/core';
+import { Observable } from "rxjs/internal/Observable";
+import { catchError, exhaustMap, map, switchMap, withLatestFrom } from "rxjs/operators";
 
+import { Action, Store, select } from "@ngrx/store";
+import { Actions, Effect, ofType } from "@ngrx/effects";
+
+import * as fromUsers from "./selector-users"
+
+import * as UsersAction from "./action-users";
+import { of } from "rxjs/internal/observable/of";
+import { empty } from "rxjs/internal/observable/empty";
+import { UserService } from 'src/app/core/services/user.service';
 
 
 @Injectable()
-export class EffectsUsers {
-    constructor(private actions$:Actions, private userService: UserService){}
+export class UserEffect {
 
-    cargarUsuarios$ = createEffect(
-        () => {
-            return this.actions$.pipe(
-                ofType(loadUsers),
-                mergeMap((action)=> {
-                    return this.userService.getUser().pipe (
-                        map ((users) => {
-                        return loadUsersSuccess({users});
-                        }
-                        )
-                    );
-                })
-            );
-        })
 
-        eliminarUsuarios$ = createEffect(()=>{
-            return this.actions$.pipe(
-                ofType(removeUsers),
-                switchMap((action) => {
-                    return this.userService.deleteUser(action.id).pipe(
-                        map((data) => {
-                            return removeUsersSuccess({id: action.id})
-                        })
-                    )
-                })
-            )
-        })
+  constructor(private userService:UserService,
+    private action$: Actions, private store: Store<any>) {
+  }
+
+  @Effect()
+  loadUsers$: Observable<Action> = this.action$.pipe(
+    ofType(UsersAction.UsersActionTypes.Load),
+    withLatestFrom(this.store.pipe(select(fromUsers.getLoaded))),
+    switchMap(([, loaded]) => {
+      if (loaded) {
+        return empty();
+      }
+      return this.userService.getUser().pipe(
+        map((users) => {
+          return new UsersAction.LoadSuccess(users)
+        }),
+        catchError(err => of(new UsersAction.LoadFail(err)))
+      )
+    })
+  )
+
+  
 }
