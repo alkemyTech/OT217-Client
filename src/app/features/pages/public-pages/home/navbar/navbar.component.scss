@@ -8,7 +8,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  font-family: Roboto;
 }
 
 #logo {
@@ -30,6 +29,7 @@ ul {
 .menu ul li a {
   text-decoration: none;
   color: #151515;
+  font-family: Roboto;
 }
 
 .menu ul li a:hover {
@@ -56,15 +56,35 @@ ul {
 
 .navbar-nav {
   display: flex;
-  margin-left: 15px;
+  margin-left: 1%;
 }
 
-.btn-warning {
-  background: #fafa88;
-  color: #151515;
-  font-family: Roboto;
+.btn-group :nth-child(1) {
+  margin-left: 7%;
 }
 
-.btn-primary {
-  margin-right: 10px;
+.active-link {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:focus {
+  background-color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#user-mess {
+  text-align: right;
+}
+
+@media screen and (max-width: 1078px) {
+  .navbar-nav {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1053px) {
+  .navbar-nav {
+    display: flex;
+    font-size: 14px;
+  }
 }
