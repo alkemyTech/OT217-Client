@@ -1,34 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { PublicApiService } from './public-api.service';
-
+import { catchError } from 'rxjs/operators';
+import { SetupAlertsComponent } from 'src/app/features/components/setup-alerts/setup-alerts.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NewsHomeService extends PublicApiService {
+export class NewsHomeService {
 
-  endpointSlides: string = environment.slides;
+  endpointSlides: string = environment.slidesUrl;
   endpointNews: string = environment.news;
   endpointTestimonials: string = environment.testimonials;
+  errorMessage: any = SetupAlertsComponent.openDialog();
 
-  constructor(public http: HttpClient) { super(http) }
+  constructor(public http: HttpClient) { }
 
-  getSlides<Slides>(): Observable<any> {
-    return this.get<Slides>(this.endpointSlides);
+  getSlides<Slides>(endpointSlides: string): Observable<any> {
+    return this.getSlides<Slides>(endpointSlides).pipe(
+      catchError(_err => throwError(() => new Error(this.errorMessage)))
+    );
+
   }
 
-  getNews<News>(): Observable<any> {
-    return this.get<News>(this.endpointNews);
+  getNews<News>(endpointNews: string): Observable<any> {
+    return this.getNews<News>(endpointNews).pipe(
+      catchError(_err => throwError(() => new Error(this.errorMessage)))
+    )
   }
 
-  getTestimonials<Testimonials>(): Observable<any> {
-    return this.get<Testimonials>(this.endpointTestimonials);
+  getTestimonials<Testimonials>(endpointTestimonials: string): Observable<any> {
+    return this.getTestimonials<Testimonials>(endpointTestimonials).pipe(
+      catchError(_err => throwError(() => new Error(this.errorMessage)))
+    );
   }
+
 
 }
-
-
-
