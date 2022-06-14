@@ -15,6 +15,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { ActivitiesEffects } from './shared/state/activities/activities.effects';
 import { NewsEffects } from './shared/state/news/news.effects';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UserEffect } from './features/pages/private-pages/users/user/effects-users';
+import { reducers } from './features/pages/private-pages/users/user/selector-users';
 
 
 @NgModule({
@@ -28,6 +30,10 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
     ReactiveFormsModule,
     FormsModule,
     MaterialModule,
+    FeaturesModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([UserEffect]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     HttpClientModule,
     FeaturesModule,
     MatDialogModule,
