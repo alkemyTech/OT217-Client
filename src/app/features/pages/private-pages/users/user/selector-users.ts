@@ -2,14 +2,14 @@ import {createFeatureSelector, createSelector, ActionReducerMap} from "@ngrx/sto
 import * as fromUsers from './reducers-users'
 
 export interface State {
-    userFeature: fromUsers.UsersState;
+  userFeature: fromUsers.UsersState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-    userFeature: fromUsers.UserReducer,
+  userFeature : fromUsers.UserReducer,
 };
 
-const getUsersFeatureState =createFeatureSelector<fromUsers.UsersState>('userFeature')
+const getUsersFeatureState = createFeatureSelector<fromUsers.UsersState>('userFeature');
 
 export const getUsers = createSelector(
     getUsersFeatureState,
