@@ -1,0 +1,40 @@
+<header>
+  <nav class="navbar navbar-light headerNavColor sidevar">
+    <a [routerLink]="['/home']" class="menuLogo">
+      <img src="../../../../../assets/LOGO-SOMOS MAS.png" class="logo" />
+    </a>
+
+    <div class="d-flex justify-content-end toghgleheader">
+      <button
+        class="btn colorButtomSuccess"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div
+  class="offcanvas offcanvas-start headerNavColor"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-header">
+    <span class="navbar-toggler-icon"></span>
+  </div>
+  <div class="offcanvas-body"></div>
+</div>
