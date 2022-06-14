@@ -48,8 +48,9 @@ import { NewsListComponent } from './pages/private-pages/news/news-list/news-lis
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
-
-
+import { AuthGoogleComponent } from './pages/public-pages/auth/auth-google/auth-google.component';
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "src/environments/environment";
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-
     NewsListComponent,
     SpinnerComponent,
     FooterJuguetesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AuthGoogleComponent
   ],
   exports: [
     RegisterFormComponent,
@@ -113,7 +115,7 @@ import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-
     DashBoardBackofficeComponent
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
 })
 export class FeaturesModule {
 }
