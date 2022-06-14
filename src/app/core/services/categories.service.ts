@@ -13,4 +13,12 @@ export class CategoriesService {
   getCategories(): Observable<any> {
     return this.http.get(this.url);
   }
+
+  postCategories(categories: any): Observable<any> { 
+    return this.http.post(this.url, categories)
+  }
+
+  putCategories(categories: any, id: string): Observable<any> { 
+    return this.http.put(this.url +'/'+ id, categories)
+  }
 }

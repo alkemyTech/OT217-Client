@@ -47,6 +47,9 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
 import { NewsListComponent } from './pages/private-pages/news/news-list/news-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
+import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
+import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+
 
 
 
@@ -57,14 +60,14 @@ import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-c
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-    SlidesFormComponent,
+   SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
-    SlideHomeComponent,
+ SlideHomeComponent,
     DashBoardBackofficeComponent,
     CreationActivitiesComponent,
     FormContactComponent,
@@ -73,7 +76,7 @@ import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-c
     ThanksComponent,
     DetailComponent,
     UserComponent,
-    SlidesListComponent,
+  SlidesListComponent,
     TableComponent,
     CardComponent,
     HomeComponent,
@@ -95,12 +98,16 @@ import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-c
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
-    ToysCampaignComponent
+    ToysCampaignComponent,
+    FooterJuguetesComponent,
+    PageNotFoundComponent
   ],
   exports: [
     RegisterFormComponent,
     CategoriesFormComponent,
-    SlidesFormComponent,
+    NewsFormComponent,
+   SlidesFormComponent,
+    TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
     FormContactComponent,
