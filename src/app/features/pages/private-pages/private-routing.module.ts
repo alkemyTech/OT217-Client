@@ -14,74 +14,72 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 const routes: Routes = [
   {
-    path: "backoffice/slides",
-    component: SlidesListComponent,
-  },
-  {
-    path: "backoffice/organization/edit",
-    component: OrganizationEditComponent,
-  },
-  {
-    path: "backoffice/news",
-    component: NewsFormComponent,
-  },
-  {
-    path: "backoffice/news/:id",
-    component: NewsFormComponent,
-  },
-  {
-    path: "backoffice/newslide",
-    component: SlidesFormComponent,
-  },
-  {
-    path: "backoffice/slides/:id",
-    component: SlidesFormComponent,
-  },
-  {
-    path: "backoffice/users/:id",
-    component: UserFormComponent,
-  },
-  {
-    path: "backoffice/users",
-    component: UserComponent,
-  },
-  {
-    path: "backoffice/activities",
-    component: ActivitiesListComponent,
-  },
-  {
-    path: "backoffice/Home/:id",
-    component: SlideHomeComponent,
-  },
-  {
-    path: "backoffice/organization/list",
-    component: OrganizationListComponent
-  },
-  {
     path: "backoffice",
-    component: DashBoardBackofficeComponent
+    component: DashBoardBackofficeComponent,
+    children: [
+      {
+        path: "slides",
+        component: SlidesListComponent,
+      },
+      {
+        path: "organization/edit",
+        component: OrganizationEditComponent,
+      },
+      {
+        path: "news",
+        component: NewsFormComponent,
+      },
+      {
+        path: "news/:id",
+        component: NewsFormComponent,
+      },
+      {
+        path: "newslide",
+        component: SlidesFormComponent,
+      },
+      {
+        path: "slides/:id",
+        component: SlidesFormComponent,
+      },
+      {
+        path: "users/:id",
+        component: UserFormComponent,
+      },
+      {
+        path: "users",
+        component: UserComponent,
+      },
+      {
+        path: "activities",
+        component: ActivitiesListComponent,
+      },
+      {
+        path: "Home/:id",
+        component: SlideHomeComponent,
+      },
+      {
+        path: "organization/list",
+        component: OrganizationListComponent,
+      },
+      {
+        path: "activities/create",
+        component: CreationActivitiesComponent,
+      },
+      {
+        path: "activities/create/:id",
+        component: CreationActivitiesComponent,
+      }
+    ],
   },
-  {
-    path: "backoffice/activities/create",
-    component: CreationActivitiesComponent
-  },
-  {
-    path: "backoffice/activities/create/:id",
-    component: CreationActivitiesComponent
-  },
-  {
-    path: "backoffice/activities/create",
-    component: CreationActivitiesComponent
-  },
-  {
-    path: "backoffice/activities/create/:id",
-    component: CreationActivitiesComponent
-  },
-]
+];
 
 @NgModule({
   declarations: [],
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes)],
 })
-export class privateRoutingModule { }
+export class privateRoutingModule {}
+export const privateArrayComponents = [CreationActivitiesComponent, 
+  OrganizationListComponent, SlideHomeComponent,
+  ActivitiesListComponent,UserComponent,UserFormComponent,SlidesFormComponent,NewsFormComponent,OrganizationEditComponent,SlidesListComponent
+]

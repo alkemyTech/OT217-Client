@@ -21,7 +21,7 @@ import { reducers } from './features/pages/private-pages/users/user/selector-use
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

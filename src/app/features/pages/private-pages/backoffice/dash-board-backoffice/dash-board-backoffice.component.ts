@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-dash-board-backoffice',
   templateUrl: './dash-board-backoffice.component.html',
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class DashBoardBackofficeComponent{
   public textInitial: boolean;
-  constructor(private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.textInitial= true
    }
 
@@ -15,7 +15,7 @@ export class DashBoardBackofficeComponent{
      switch(ruta){
       case 'news':  this.router.navigate([''])
       break;
-      case 'activities':  this.router.navigate(['backoffice/activities'])
+      case 'activities':  this.router.navigate(['activities'], {relativeTo:this.route})
        break; 
       case 'categories':  this.router.navigate([''])
       break;
@@ -23,9 +23,9 @@ export class DashBoardBackofficeComponent{
       break;
       case 'organization':  this.router.navigate([''])
        break; 
-       case 'sliders':  this.router.navigate(['backoffice/slides'])
+       case 'sliders':  this.router.navigate(['slides'], {relativeTo:this.route})
        break; 
-       case 'users':  this.router.navigate(['backoffice/users'])
+       case 'users':  this.router.navigate(['/backoffice/users'], {relativeTo:this.route})
        break; 
        case 'members':  this.router.navigate([''])
        break; 
