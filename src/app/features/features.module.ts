@@ -49,6 +49,7 @@ import { SpinnerComponent } from "./components/spinner/spinner.component";
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from "./pages/public-pages/page-not-found/page-not-found.component";
 import { privateArrayComponents } from "./pages/private-pages/private-routing.module";
+import { PrivateLayoutComponent } from './pages/private-pages/private-layout/private-layout.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { privateArrayComponents } from "./pages/private-pages/private-routing.mo
     SpinnerComponent,
     FooterJuguetesComponent,
     PageNotFoundComponent,
+    PrivateLayoutComponent,
   ],
   exports: [
     RegisterFormComponent,

@@ -12,11 +12,16 @@ import { DashBoardBackofficeComponent } from "./backoffice/dash-board-backoffice
 import { CreationActivitiesComponent } from "../public-pages/activities/creation-activities/creation-activities.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { PrivateLayoutComponent } from "./private-layout/private-layout.component";
 const routes: Routes = [
   {
     path: "backoffice",
-    component: DashBoardBackofficeComponent,
+    component: PrivateLayoutComponent,
     children: [
+      {
+        path: "",
+        component: DashBoardBackofficeComponent,
+      },
       {
         path: "slides",
         component: SlidesListComponent,
@@ -68,7 +73,7 @@ const routes: Routes = [
       {
         path: "activities/create/:id",
         component: CreationActivitiesComponent,
-      }
+      },
     ],
   },
 ];
@@ -79,7 +84,16 @@ const routes: Routes = [
   imports: [CommonModule, RouterModule.forRoot(routes)],
 })
 export class privateRoutingModule {}
-export const privateArrayComponents = [CreationActivitiesComponent, 
-  OrganizationListComponent, SlideHomeComponent,
-  ActivitiesListComponent,UserComponent,UserFormComponent,SlidesFormComponent,NewsFormComponent,OrganizationEditComponent,SlidesListComponent
-]
+export const privateArrayComponents = [
+  CreationActivitiesComponent,
+  PrivateLayoutComponent,
+  OrganizationListComponent,
+  SlideHomeComponent,
+  ActivitiesListComponent,
+  UserComponent,
+  UserFormComponent,
+  SlidesFormComponent,
+  NewsFormComponent,
+  OrganizationEditComponent,
+  SlidesListComponent,
+];
