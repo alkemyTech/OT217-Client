@@ -13,11 +13,7 @@ export class SlidesService extends PublicApiService {
     super(http);
   }
 
-<<<<<<< HEAD
    postSlides<Slides>(slides:any):Observable<any>{
-=======
-  postSlides<Slides>(slides: any): Observable<any> {
->>>>>>> 2cb60b92d4f844fcbed7b91292cfa23d72964558
     return this.post<Slides>(slides);
   }
 
