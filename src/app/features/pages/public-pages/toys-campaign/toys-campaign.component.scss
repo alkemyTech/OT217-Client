@@ -2,7 +2,7 @@
   display: none;
 }
 
-.child-container{
+.child-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,7 +163,7 @@
   font-size: large;
 }
 
-.left{
+.left {
   display: flex;
   justify-content: center;
   align-self: center;
@@ -173,7 +173,7 @@
   .timer-show {
     display: block;
   }
-  .img-container{
+  .img-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -188,5 +188,15 @@
 
   .child-show {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .smart-bg{
+    background-image: url(../../../../../assets/bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    background-color: #ade0fd;
   }
 }
