@@ -15,11 +15,16 @@ import { CreationActivitiesComponent } from "./activities/creation-activities/cr
 import { OrganizationListComponent } from "../private-pages/organization/organization-list.component";
 import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
+import { ToysCampaignComponent } from "./toys-campaign/toys-campaign.component";
 
 const routes: Routes = [
   {
     path: "actividades",
     component: ActivitiesPageComponent,
+  },
+  {
+    path: "toys",
+    component: ToysCampaignComponent,
   },
   {
     path: "news",
