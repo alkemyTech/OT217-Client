@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrganizationListService } from 'src/app/core/services/organization-list.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  public listaDatos: Array<any> = []
+  route: any;
+
+
+  constructor(private organizationListService: OrganizationListService) { }
 
   ngOnInit() {
+    this.organizationListService.getOrganization().subscribe((data: any) => {
+      this.listaDatos = data;
+      console.log(data);
+    });
   }
 
+  rutas: any[] = [
+    {
+      path: "",
+      titulo: "Inicio"
+    },
+    {
+      path: "/nosotros",
+      titulo: "Nosotros"
+    },
+    {
+      path: "/actividades",
+      titulo: "Actividades"
+    },
+
+    {
+      path: "/novedades",
+      titulo: "Novedades"
+    },
+    {
+      path: "/testimonios",
+      titulo: "Testimonios"
+    },
+    {
+      path: "/contacto",
+      titulo: "Contacto"
+    },
+    {
+      path: "/contribuye",
+      titulo: "Contribuye"
+    },
+  ]
+
 }
+

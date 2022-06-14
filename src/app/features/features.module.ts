@@ -47,6 +47,11 @@ import { DialogContentComponent } from "./components/dialog-content/dialog-conte
 import { NewsListComponent } from './pages/private-pages/news/news-list/news-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/header-sidebar.component';
+import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
+import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
+import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
+
 
 
 
@@ -57,14 +62,14 @@ import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/hea
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-    SlidesFormComponent,
+   SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
-    SlideHomeComponent,
+ SlideHomeComponent,
     DashBoardBackofficeComponent,
     CreationActivitiesComponent,
     FormContactComponent,
@@ -73,7 +78,7 @@ import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/hea
     ThanksComponent,
     DetailComponent,
     UserComponent,
-    SlidesListComponent,
+  SlidesListComponent,
     TableComponent,
     CardComponent,
     HomeComponent,
@@ -95,12 +100,19 @@ import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/hea
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
-    HeaderSidebarComponent
+    HeaderSidebarComponent,
+    ToysCampaignComponent,
+    FooterJuguetesComponent,
+    PageNotFoundComponent,
+    NavbarComponent,
+    HeaderFooterRouterComponent
   ],
   exports: [
     RegisterFormComponent,
     CategoriesFormComponent,
-    SlidesFormComponent,
+    NewsFormComponent,
+   SlidesFormComponent,
+    TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
     FormContactComponent,

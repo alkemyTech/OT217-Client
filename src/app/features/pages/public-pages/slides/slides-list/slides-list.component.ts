@@ -9,7 +9,7 @@ import { Slides } from "src/app/shared/models/Slides";
 })
 export class SlidesListComponent implements OnInit {
   slidesDataTable: Slides[] = [];
-
+ 
   ngOnInit(): void {}
   displayedColumns: string[] = ["order", "image", "description", "buttons"];
 
@@ -29,4 +29,4 @@ export class SlidesListComponent implements OnInit {
       this.populateArray();
     });
   };
-}
+} 
