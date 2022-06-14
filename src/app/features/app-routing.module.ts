@@ -22,6 +22,7 @@ import { SlidesListComponent } from "./pages/public-pages/slides/slides-list/sli
 import { ActivitiesPageComponent } from "./pages/public-pages/activities/activities-page/activities-page.component";
 import { DashBoardBackofficeComponent } from "./pages/private-pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { CreationActivitiesComponent } from "./pages/public-pages/activities/creation-activities/creation-activities.component";
+import { SidebarComponent } from "./pages/private-pages/backoffice/sidebar/sidebar.component";
 
 const routes: Routes = [
   {
