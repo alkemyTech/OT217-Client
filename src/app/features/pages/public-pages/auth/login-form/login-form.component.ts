@@ -4,6 +4,11 @@ import { Router } from "@angular/router";
 import { HttpService } from "../../../../../core/services/http.service";
 import { User } from "../../../../../shared/models/user";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Observable } from "rxjs";
+import { loginUser } from "../../../../../shared/state/auth/auth.selectors";
+import { Store } from "@ngrx/store";
+import { AppState } from "../../../../../shared/state/app.state";
+import { loginUsers } from "../../../../../shared/state/auth/auth.actions";
 
 @Component({
   selector: 'app-login-form',
@@ -14,10 +19,13 @@ export class LoginFormComponent implements OnInit {
   login: User [] = [];
   createdForm: FormGroup | any;
   r: any;
+  private loading$:  Observable<boolean> = new Observable();
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private service: HttpService,
-              private _snackBar: MatSnackBar) {
+              private _snackBar: MatSnackBar,
+              private store: Store<AppState>,
+  ) {
   }
 
   ngOnInit(): void {
@@ -26,6 +34,8 @@ export class LoginFormComponent implements OnInit {
       password: ['', [Validators.required]
       ]
     })
+
+
   }
 
   logIn(res: any) {
@@ -41,10 +51,15 @@ export class LoginFormComponent implements OnInit {
   submit() {
     this.service.loginUser(this.createdForm.getRawValue()).subscribe(r => {
           if (r.success) {
-            this.router.navigate(['/actividades']);
+
+            this.router.navigate(['/home']);
             this.service.addToken(r);
+            this.loading$ = this.store.select(loginUser);
+            this.store.dispatch(loginUsers())
           }
-          this.openSnackBar("Credentials Invalid");
+         else {
+         this.openSnackBar("Credentials Invalid");
+          }
         },
         error => {
           console.log("error");
