@@ -1,44 +1,40 @@
 <header>
-  <!--the 'navbar-expand-sm' class is in charge of controlling the toggle, only the measure is changed at the end of the class-->
-  <nav class="navbar navbar-expand-sm navbar-light headerNavColor sidevar row">
-    <a
-      [routerLink]="['/home']"
-      class="menuLogo col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 grindNavar"
-      href="#"
-    >
+  <nav class="navbar navbar-light headerNavColor sidevar">
+    <a [routerLink]="['/home']" class="menuLogo">
       <img src="../../../../../assets/LOGO-SOMOS MAS.png" class="logo" />
     </a>
-    <div class="col-xs-1 col-sm-1 col-md-0 col-lg-0 col-xl-0 grindNavar">
+
+    <div class="d-flex justify-content-end toghgleheader">
       <button
-        class="navbar-toggler"
+        class="btn colorButtomSuccess"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-
-    <div
-      class="container-fluid justify-content-center col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5"
-    >
-      <div class="collapse navbar-collapse"  id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="['#']"
-              [routerLinkActive]="['actived']"
-              class="nav-link active bi bi-lock"
-              aria-current="page"
-              >Log out</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
   </nav>
 </header>
+
+<div
+  class="offcanvas offcanvas-start headerNavColor"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-header">
+    <span class="navbar-toggler-icon"></span>
+  </div>
+  <div class="offcanvas-body"></div>
+</div>

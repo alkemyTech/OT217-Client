@@ -121,7 +121,7 @@ html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; }
 }
 
 .headerNavColor{
-  background-color: var(--success-Buttom);
+  background-color: var(--success-Buttom) !important;
 }
 .sidevar{
   padding-top: 0rem !important;
@@ -132,6 +132,9 @@ width: 80px;
 }
 .menuLogo{
   margin-left: 5%;
+}
+.toghgleheader{
+  margin-right: 1%;
 }
 
 @media (max-width: 575px) {
