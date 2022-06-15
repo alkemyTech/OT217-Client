@@ -52,6 +52,7 @@ import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguet
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { SidebarComponent } from './pages/private-pages/backoffice/sidebar/sidebar.component';
 import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
+import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/school-campanign.component';
 
 
 
@@ -107,7 +108,8 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
     PageNotFoundComponent,
     SidebarComponent,
     NavbarComponent,
-    HeaderFooterRouterComponent
+    HeaderFooterRouterComponent,
+    SchoolCampanignComponent
   ],
   exports: [
     RegisterFormComponent,
