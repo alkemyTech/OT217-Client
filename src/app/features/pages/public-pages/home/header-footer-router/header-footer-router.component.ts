@@ -1,34 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/core/services/user.service';
-
-
-
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: 'app-header-footer-router',
+  templateUrl: './header-footer-router.component.html',
+  styleUrls: ['./header-footer-router.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class HeaderFooterRouterComponent implements OnInit {
 
-  activo: any;
-
-  constructor(private userService: UserService) { }
-
-  public isLogged: boolean = false;
+  constructor() { }
 
   ngOnInit() {
-    this.onCheckUser();
   }
-
-  onCheckUser() {
-    if (this.userService.getUser() == null) {
-      this.isLogged = false;
-    } else {
-      this.isLogged = true;
-    }
-  }
-
 
   rutas: any[] = [
     {
@@ -50,7 +32,7 @@ export class NavbarComponent implements OnInit {
     {
       path: "",
       titulo: "Campaña juguetes"
-    },
+    }
 
   ]
 
@@ -65,6 +47,7 @@ export class NavbarComponent implements OnInit {
       titulo: "Registrate"
     }
   ]
+
 
 }
 
