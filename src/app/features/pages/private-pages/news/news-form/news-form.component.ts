@@ -5,6 +5,8 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { News } from "../../../../../shared/models/News";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ActivatedRoute } from "@angular/router";
+import { MatDialog } from "@angular/material/dialog";
+import { AlertComponent } from "src/app/features/components/setup-alerts/alert/alert.component";
 
 @Component({
   selector: "app-news-form",
@@ -40,16 +42,30 @@ export class NewsFormComponent implements OnInit {
     };
 
     if (this.newsId) {
-      this.newsService
-        .putNews(newsCommit, this.newsId)
-        .subscribe((response) => {
-          return response
-        });
+      this.newsService.putNews(newsCommit, this.newsId).subscribe(
+        (response) => {
+          return response;
+        },
+        (error) => {
+          this.dialog.open(AlertComponent, {
+            width: "350px",
+            data: "La petición no se realizó correctamente.",
+          });
+        }
+      );
       this.news.reset();
     } else if (!this.newsId) {
-      this.newsService.postNews(newsCommit).subscribe((response) => {
-        return response
-      });
+      this.newsService.postNews(newsCommit).subscribe(
+        (response) => {
+          return response;
+        },
+        (error) => {
+          this.dialog.open(AlertComponent, {
+            width: "350px",
+            data: "La petición no se realizó correctamente.",
+          });
+        }
+      );
       this.news.reset();
     }
   }
@@ -58,7 +74,8 @@ export class NewsFormComponent implements OnInit {
     private categoriesService: CategoriesService,
     private newsService: NewsService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.newsId = this.route.snapshot.params.id;
   }
@@ -80,6 +97,12 @@ export class NewsFormComponent implements OnInit {
           category_id: [this.currentNews[0].category_id, Validators.required],
           content: [this.currentNews[0].content, Validators.required],
           image: [this.currentNews[0].image, Validators.required],
+        });
+      },
+      (error) => {
+        this.dialog.open(AlertComponent, {
+          width: "350px",
+          data: "La petición no se realizó correctamente",
         });
       });
     } else {

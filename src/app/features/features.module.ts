@@ -46,11 +46,18 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogContentComponent } from "./components/dialog-content/dialog-content.component";
 import { NewsListComponent } from './pages/private-pages/news/news-list/news-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/header-sidebar.component';
+import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { AuthGoogleComponent } from './pages/public-pages/auth/auth-google/auth-google.component';
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from "src/environments/environment";
+import { SidebarComponent } from './pages/private-pages/backoffice/sidebar/sidebar.component';
+import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
+import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/school-campanign.component';
+
+
 
 
 @NgModule({
@@ -98,9 +105,15 @@ import { environment } from "src/environments/environment";
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
+    HeaderSidebarComponent,
+    ToysCampaignComponent,
     FooterJuguetesComponent,
     PageNotFoundComponent,
-    AuthGoogleComponent
+    AuthGoogleComponent,
+    SidebarComponent,
+    NavbarComponent,
+    HeaderFooterRouterComponent,
+    SchoolCampanignComponent
   ],
   exports: [
     RegisterFormComponent,

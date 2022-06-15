@@ -1,11 +1,12 @@
- <app-navbar></app-navbar>
-    <div class="container-fluid mr-0 pe-0">
-        <div class="formGroup row formLogin">
-            <div class="div-card col-6">
-                <h5>Bienvenido!</h5>
-                <h1 class="title-login title">
-                    Inicia Sesion en tu cuenta!
-                </h1>
+<app-navbar></app-navbar>
+<div class="container-fluid mr-0 pe-0">
+    <div class="formGroup row formLogin">
+        <div class="div-card col-6">
+            <h5>Bienvenido!</h5>
+            <h1 class="title-login title">
+                Inicia Sesion en tu cuenta!
+            </h1>
+            <div class="login">
                 <form [formGroup]="createdForm" class="form-login">
                     <div class="input-login">
                         <mat-form-field appearance="fill" class="col-6">
@@ -23,15 +24,15 @@
                 <div class="divButLogin">
                     <button mat-raised-button class="butLogin" color="primary" type="submit" (click)="submit()">Login</button>
                 </div>
-                <div class="div-text-register">
+            </div>
+            <div class="div-text-register">
                 <h1 class="text-register">No tienes cuenta? <a class="a-link-register" routerLink="/register"> Registrate</a>
                 </h1>
-                </div>
                 <app-auth-google></app-auth-google>
             </div>
-            <div class="col-6 pe-0 ">
-                <img src="./assets/img-login.jpg" class="img-login" >
-            </div>
+        </div>
+        <div class="col-5 pe-0">
+            <img src="./assets/img-login.jpg" class="img-login">
         </div>
     </div>
-    <app-footer></app-footer>
+</div>

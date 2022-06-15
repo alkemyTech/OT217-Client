@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="principal">
+  <router-outlet></router-outlet>
+  <div id="columna-container">
+    <!-- aside with media query on 992px -->
+    <aside id="columna">
+      <img id="logo-footer" src="assets/LOGO-SOMOS MAS.png" alt="" />
+      <div id="menu-barra">
+        <!-- Section: Links -->
+        <ul *ngFor="let item of rutas">
+          <li><a class="nav-link" aria-current="page" [routerLink]="item.path" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }">{{item.titulo}}</a></li>
+
+        </ul>
+        <div id="btn-group" *ngFor="let item of rutasboton">
+          <a class="nav-link" aria-current="page"><button class="btn btn-primary">{{item.titulo}}</button></a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -8,6 +8,7 @@ import { AlertComponent } from './alert/alert.component';
   styleUrls: ['./setup-alerts.component.scss']
 })
 export class SetupAlertsComponent {
+  static openDialog: any;
 
   constructor(
     public dialog: MatDialog
