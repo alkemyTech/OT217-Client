@@ -20,7 +20,6 @@ export class AuthGoogleComponent {
 
   IngresarGoogle() {
     this.authService.authGoogle().then((res) => {
-      console.log("successful", res);
       this.newUser = res.additionalUserInfo.isNewUser;
       this.user = {
         name: res.user.providerData[0].displayName,
