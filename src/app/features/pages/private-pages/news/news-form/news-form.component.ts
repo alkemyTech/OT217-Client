@@ -102,7 +102,7 @@ export class NewsFormComponent implements OnInit {
       (error) => {
         this.dialog.open(AlertComponent, {
           width: "350px",
-          data: "La petición no se realizó correctamente.",
+          data: "La petición no se realizó correctamente",
         });
       });
     } else {
