@@ -48,6 +48,9 @@ import { NewsListComponent } from './pages/private-pages/news/news-list/news-lis
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { PdfViewerModule } from "ng2-pdf-viewer";
+import { DialogContentPdfComponent } from "./components/dialog-content-pdf/dialog-content-pdf.component";
+import { DialogPdfOpenComponent } from "./components/dialog-content-pdf/dialog-pdf-open/dialog-pdf-open.component";
+
 
 
 
@@ -97,7 +100,9 @@ import { PdfViewerModule } from "ng2-pdf-viewer";
     NewsListComponent,
     SpinnerComponent,
     PageNotFoundComponent,
-    PdfViewerModule
+    DialogContentPdfComponent,
+    DialogPdfOpenComponent
+
   ],
   exports: [
     RegisterFormComponent,
@@ -107,10 +112,11 @@ import { PdfViewerModule } from "ng2-pdf-viewer";
     RouterModule,
     FormContactComponent,
     OrganizationListComponent,
-    DashBoardBackofficeComponent
+    DashBoardBackofficeComponent,
+
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, PdfViewerModule]
 })
 export class FeaturesModule {
 }

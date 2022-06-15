@@ -16,10 +16,11 @@ import { OrganizationListComponent } from "../private-pages/organization/organiz
 import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { DialogPdfOpenComponent } from "../../components/dialog-content-pdf/dialog-pdf-open/dialog-pdf-open.component";
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     redirectTo: "home",
     pathMatch: "full"
   },
@@ -68,6 +69,10 @@ const routes: Routes = [
   {
     path: "setup_alert",
     component: SetupAlertsComponent,
+  },
+  {
+    path: "pdf_alert",
+    component: DialogPdfOpenComponent,
   },
   {
     path: "organization/list",

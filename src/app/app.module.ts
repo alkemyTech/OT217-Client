@@ -16,6 +16,7 @@ import { ActivitiesEffects } from './shared/state/activities/activities.effects'
 import { NewsEffects } from './shared/state/news/news.effects';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AppRoutingModule } from './features/app-routing.module';
 
 
 @NgModule({
@@ -30,10 +31,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FormsModule,
     MaterialModule,
     HttpClientModule,
-    FeaturesModule,
     MatDialogModule,
-    FeaturesModule,
     PdfViewerModule,
+    AppRoutingModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([NewsEffects, ActivitiesEffects]),],
