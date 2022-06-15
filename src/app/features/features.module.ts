@@ -50,6 +50,9 @@ import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/hea
 import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+import { AuthGoogleComponent } from './pages/public-pages/auth/auth-google/auth-google.component';
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "src/environments/environment";
 import { SidebarComponent } from './pages/private-pages/backoffice/sidebar/sidebar.component';
 import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
 import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/school-campanign.component';
@@ -106,6 +109,7 @@ import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/
     ToysCampaignComponent,
     FooterJuguetesComponent,
     PageNotFoundComponent,
+    AuthGoogleComponent,
     SidebarComponent,
     NavbarComponent,
     HeaderFooterRouterComponent,
@@ -124,7 +128,7 @@ import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/
     DashBoardBackofficeComponent
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
 })
 export class FeaturesModule {
 }
