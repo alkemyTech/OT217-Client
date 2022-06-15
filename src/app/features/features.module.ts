@@ -50,6 +50,7 @@ import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/hea
 import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+import { SidebarComponent } from './pages/private-pages/backoffice/sidebar/sidebar.component';
 import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
 
 
@@ -104,6 +105,7 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
     ToysCampaignComponent,
     FooterJuguetesComponent,
     PageNotFoundComponent,
+    SidebarComponent,
     NavbarComponent,
     HeaderFooterRouterComponent
   ],
