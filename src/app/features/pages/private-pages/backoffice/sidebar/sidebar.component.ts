@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,10 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+    
 
-  constructor(private route:Router) { }
+  constructor(private route:Router) {
+    
+   }
 
-  ngOnInit(): void {
-  }
+   ngOnInit(): void {
+  
+   }
 
+
+ 
 }

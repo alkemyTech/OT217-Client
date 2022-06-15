@@ -50,9 +50,6 @@ import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguet
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { SidebarComponent } from './pages/private-pages/backoffice/sidebar/sidebar.component';
 
-
-
-
 @NgModule({
   declarations: [
     ActivityFormComponent,
