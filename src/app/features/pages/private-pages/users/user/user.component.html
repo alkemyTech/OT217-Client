@@ -19,10 +19,10 @@
         <th scope="col" class="text-end">Editar/Eliminar</th>
       </tr>
     </thead>
-    <tbody *ngFor="let user of users">
-      <tr>
+    <tbody>
+      <tr *ngFor="let user of usuario$ | async">
         <td class="align-middle">{{ user.name }}</td>
-        <td class="align-middle">{{ user.email }}</td>
+        <td class="align-middle">{{ user.email}}</td>
         <td class="align-middle">
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button

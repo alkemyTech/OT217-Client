@@ -29,9 +29,9 @@ const routes: Routes = [
     path: "actividades",
     component: ActivitiesPageComponent,
   },
- {
-   path: "backoffice/slides",
-   component: SlidesListComponent,
+  {
+    path: "backoffice/slides",
+    component: SlidesListComponent,
   },
   {
     path: "donar",
@@ -53,12 +53,12 @@ const routes: Routes = [
     path: "backoffice/news/:id",
     component: NewsFormComponent,
   },
-  {
+ {
     path: "backoffice/newslide",
    component: SlidesFormComponent,
   },
   {
-  path: "backoffice/slides/:id",
+    path: "backoffice/slides/:id",
     component: SlidesFormComponent,
   },
   {
@@ -90,12 +90,8 @@ const routes: Routes = [
     component: RegisterFormComponent,
   },
   {
-    path: "",
-    component: HomeComponent,
-  },
-  {
     path: "backoffice/Home/:id",
-    component: SlideHomeComponent,
+   component: SlideHomeComponent,
   },
   {
     path: "members",
