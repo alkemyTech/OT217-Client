@@ -51,6 +51,7 @@ import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-c
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
+import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/school-campanign.component';
 
 
 
@@ -105,7 +106,8 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
     FooterJuguetesComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    HeaderFooterRouterComponent
+    HeaderFooterRouterComponent,
+    SchoolCampanignComponent
   ],
   exports: [
     RegisterFormComponent,
