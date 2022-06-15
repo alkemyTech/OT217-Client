@@ -17,6 +17,7 @@ import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
 import { ToysCampaignComponent } from "./toys-campaign/toys-campaign.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ContactComponent } from "./contact/contact.component";
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
   {
     path: "setup_alert",
     component: SetupAlertsComponent,
+  },
+  {
+    path: "contact",
+    component: ContactComponent,
   },
   {
     path: "organization/list",

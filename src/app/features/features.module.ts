@@ -15,7 +15,7 @@ import { SlidesFormComponent } from "./pages/public-pages/slides/slides-form/sli
 import { TestimonialFormComponent } from "./pages/public-pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/private-pages/users/user-form/user-form.component";
 import { CreationActivitiesComponent } from './pages/public-pages/activities/creation-activities/creation-activities.component';
-import { FormContactComponent } from './pages/public-pages/form-contact/form-contact.component';
+import { FormContactComponent } from './pages/public-pages/contact/form-contact/form-contact.component';
 import { ActivitiesPageComponent } from './pages/public-pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/public-pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
@@ -51,7 +51,8 @@ import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-c
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
-
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { ContactComponent } from './pages/public-pages/contact/contact.component';
 
 
 
@@ -105,7 +106,8 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
     FooterJuguetesComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    HeaderFooterRouterComponent
+    HeaderFooterRouterComponent,
+    ContactComponent
   ],
   exports: [
     RegisterFormComponent,
@@ -120,7 +122,7 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
     DashBoardBackofficeComponent
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule]
 })
 export class FeaturesModule {
 }
