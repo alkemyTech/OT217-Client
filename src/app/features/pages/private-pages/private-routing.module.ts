@@ -12,68 +12,85 @@ import { DashBoardBackofficeComponent } from "./backoffice/dash-board-backoffice
 import { CreationActivitiesComponent } from "../public-pages/activities/creation-activities/creation-activities.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { UserGuard } from "src/app/guards/user.guard/user.guard.component";
 const routes: Routes = [
   {
+    canActivate: [UserGuard],
     path: "backoffice/slides",
     component: SlidesListComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/organization/edit",
     component: OrganizationEditComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/news",
     component: NewsFormComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/news/:id",
     component: NewsFormComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/newslide",
     component: SlidesFormComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/slides/:id",
     component: SlidesFormComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/users/:id",
     component: UserFormComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/users",
     component: UserComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/activities",
     component: ActivitiesListComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/Home/:id",
     component: SlideHomeComponent,
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/organization/list",
     component: OrganizationListComponent
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice",
     component: DashBoardBackofficeComponent
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/activities/create",
     component: CreationActivitiesComponent
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/activities/create/:id",
     component: CreationActivitiesComponent
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/activities/create",
     component: CreationActivitiesComponent
   },
   {
+    canActivate: [UserGuard],
     path: "backoffice/activities/create/:id",
     component: CreationActivitiesComponent
   },
