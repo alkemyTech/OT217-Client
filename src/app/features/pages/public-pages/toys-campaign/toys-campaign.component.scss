@@ -11,7 +11,7 @@
   background-color: rgba(255, 255, 255, 0.53);
 
 }
-.img-logo-ong ,.img-logo-campaña{
+.img-logo-ong ,.img-logo-campaign{
   width: 5%;
 }
 .child-container {
@@ -223,16 +223,16 @@
     margin-inline: auto;
     padding: 16px 0;
   }
-  .eslogan-toys , .img-logo-campaña {
+  .slogan-toys , .img-logo-campaign {
     display: none
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
-  .eslogan-toys {
+  .slogan-toys {
     display: none;
   }
-  .img-logo-ong, .img-logo-campaña {
+  .img-logo-ong, .img-logo-campaign{
     width: initial;
     margin-inline: auto;
     padding: 16px 0;
