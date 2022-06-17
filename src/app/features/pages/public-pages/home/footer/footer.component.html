@@ -7,15 +7,16 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
+    <div class="menu">
       <div class="col-xs-2" *ngFor="let item of rutas">
         <a [routerLink]="item.path">{{item.titulo}}</a>
       </div>
     </div>
   </div>
   <!-- Section: Links -->
+
   <div *ngFor="let data of listaDatos |keyvalue |slice:0:1">
-    <section class="text-center mb-2">
+    <section class=" text-center mb-2">
       <a href="{{data.value.facebook_url}}" class="text-white me-4">
         <i class="fa fa-facebook-official fa-2x" id="facebook-logo" aria-hidden="true"></i>
       </a>
@@ -30,6 +31,7 @@
       </a>
     </section>
   </div>
+
   <!-- Grid container -->
 
   <!-- Copyright -->

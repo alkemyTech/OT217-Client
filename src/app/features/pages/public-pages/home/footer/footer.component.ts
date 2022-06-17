@@ -15,9 +15,8 @@ export class FooterComponent implements OnInit {
   constructor(private organizationListService: OrganizationListService) { }
 
   ngOnInit() {
-    this.organizationListService.getOrganization().subscribe((data: any) => {
+    this.organizationListService.getOrganizationData().subscribe((data: any) => {
       this.listaDatos = data;
-      console.log(data);
     });
   }
 
@@ -44,7 +43,7 @@ export class FooterComponent implements OnInit {
       titulo: "Testimonios"
     },
     {
-      path: "/contacto",
+      path: "/contact",
       titulo: "Contacto"
     },
     {

@@ -17,27 +17,30 @@ export class HomeComponent implements OnInit {
       titulo: "Nosotros"
     },
     {
-      path: "/actividades",
-      titulo: "Actividades"
+      path: "/contact",
+      titulo: "Contacto"
+    },
+    {
+      path: "/schoolCampaign",
+      titulo: "Campaña materiales esc"
+    },
+    {
+      path: "/toys",
+      titulo: "Campaña juguetes"
     },
 
-    {
-      path: "/novedades",
-      titulo: "Novedades"
-    },
-    {
-      path: "/testimonios",
-      titulo: "Testimonios"
-    },
-    {
-      path: "/contactos",
-      titulo: "Contactos"
-    },
-    {
-      path: "/contribuye",
-      titulo: "Contribuye"
-    },
+  ]
 
+  rutasboton: any[] = [
+    {
+      path: "/login",
+      titulo: "Login"
+
+    },
+    {
+      path: "/register",
+      titulo: "Registrate"
+    }
   ]
 
   constructor() { }

@@ -40,15 +40,15 @@ export class NavbarComponent implements OnInit {
       titulo: "Nosotros"
     },
     {
-      path: "/contacto",
+      path: "/contact",
       titulo: "Contacto"
     },
     {
-      path: "",
+      path: "/schoolCampaign",
       titulo: "Campaña materiales esc"
     },
     {
-      path: "",
+      path: "/toys",
       titulo: "Campaña juguetes"
     },
 
