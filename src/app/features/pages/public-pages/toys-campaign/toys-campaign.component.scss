@@ -1,7 +1,19 @@
 .child-show {
   display: none;
 }
+.header{
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.53);
 
+}
+.img-logo-ong ,.img-logo-campaign{
+  width: 5%;
+}
 .child-container {
   display: flex;
   justify-content: center;
@@ -187,7 +199,7 @@
 @media only screen and (min-width: 992px) {
   .campaign-image {
     max-width: 720px;
-    max-height: auto;
+    max-height: 720px;
   }
 
   .child-show {
@@ -196,11 +208,34 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .smart-bg{
+  .smart-bg {
     background-image: url(../../../../../assets/bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-
     background-color: #ade0fd;
   }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .img-logo-ong {
+    width: initial;
+    margin-inline: auto;
+    padding: 16px 0;
+  }
+  .slogan-toys , .img-logo-campaign {
+    display: none
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .slogan-toys {
+    display: none;
+  }
+  .img-logo-ong, .img-logo-campaign{
+    width: initial;
+    margin-inline: auto;
+    padding: 16px 0;
+  }
+
 }

@@ -1,0 +1,50 @@
+<button
+  class="btn position-absolute top-0 start-0"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasScrolling"
+  aria-controls="offcanvasScrolling"
+>
+  <i class="ic fa fa-bars"></i>
+</button>
+
+<div
+  class="offcanvas offcanvas-start editar anchura"
+  data-bs-scroll="true"
+  data-bs-backdrop="false"
+  tabindex="-1"
+  id="offcanvasScrolling"
+  aria-labelledby="offcanvasScrollingLabel"
+>
+  <div class="offcanvas-header">
+    <p class="offcanvas-title text-center" id="offcanvasScrollingLabel">
+      NAVEGAR
+    </p>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a routerLink="/slides"><i class="fa fa-picture-o mb-2"></i> Slides</a>
+      </li>
+      <li>
+        <a routerLink="/news"
+          ><i class="fa fa-newspaper-o mb-2"></i> Noticias</a
+        >
+      </li>
+      <li>
+        <a routerLink="/users"><i class="fa fa-user mb-2"></i> Usuarios</a>
+      </li>
+      <li>
+        <a routerLink="/activities"
+          ><i class="fa fa-book mb-2"></i> Actividades</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

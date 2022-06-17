@@ -1,0 +1,23 @@
+.login-section-divider::after {
+    content: "";
+    margin-left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    height: 1px;
+    border-bottom: 1px solid #c4c4c4;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.login-section-divider::before {
+    content: "";
+    margin-right: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    height: 1px;
+    border-bottom: 1px solid #c4c4c4;
+    position: relative;
+    box-sizing: border-box;
+}

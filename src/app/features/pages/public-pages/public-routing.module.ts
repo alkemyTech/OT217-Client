@@ -11,14 +11,13 @@ import { RegisterFormComponent } from "./auth/register-form/register-form.compon
 import { HomeComponent } from "./home/home.component";
 import { MembersComponent } from "./members/members.component";
 import { SetupAlertsComponent } from "../../components/setup-alerts/setup-alerts.component";
-import { CreationActivitiesComponent } from "./activities/creation-activities/creation-activities.component";
 import { OrganizationListComponent } from "../private-pages/organization/organization-list.component";
 import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
 import { ToysCampaignComponent } from "./toys-campaign/toys-campaign.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ContactComponent } from "./contact/contact.component";
-
+import { SchoolCampanignComponent } from "./school-campanign/school-campanign.component";
 const routes: Routes = [
   {
     path:'',
@@ -77,7 +76,10 @@ const routes: Routes = [
   },
   {
     path: "contact",
-    component: ContactComponent,
+    component: ContactComponent
+  },
+    {path: "schoolCampaign",
+    component: SchoolCampanignComponent,
   },
   {
     path: "organization/list",
