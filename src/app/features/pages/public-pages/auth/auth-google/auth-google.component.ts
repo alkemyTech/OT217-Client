@@ -18,17 +18,17 @@ export class AuthGoogleComponent {
     private router: Router
   ) {}
 
-  // IngresarGoogle() {
-  //   this.authService.authGoogle().then((res) => {
-  //     this.newUser = res.additionalUserInfo.isNewUser;
-  //     this.user = {
-  //       name: res.user.providerData[0].displayName,
-  //       email: res.user.providerData[0].email,
-  //       password: res.user.uid,
-  //     };
-  //     this.saveCredetianls();
-  //   });
-  // }
+  IngresarGoogle() {
+    this.authService.authGoogle().then((res) => {
+      this.newUser = res.additionalUserInfo.isNewUser;
+     this.user = {
+        name: res.user.providerData[0].displayName,
+        email: res.user.providerData[0].email,
+        password: res.user.uid,
+      };
+       this.saveCredetianls();
+    });
+   }
 
   saveCredetianls() {
     if (this.newUser) {
