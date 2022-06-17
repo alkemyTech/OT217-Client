@@ -12,7 +12,7 @@ import { DashBoardBackofficeComponent } from "./backoffice/dash-board-backoffice
 import { CreationActivitiesComponent } from "../public-pages/activities/creation-activities/creation-activities.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { UserGuard } from "src/app/guards/user.guard/user.guard.component";
+import { UserGuard } from "src/app/features/pages/private-pages/guards/user.guard/user.guard.component";
 const routes: Routes = [
   {
     canActivate: [UserGuard],
