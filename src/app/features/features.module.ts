@@ -15,7 +15,7 @@ import { SlidesFormComponent } from "./pages/public-pages/slides/slides-form/sli
 import { TestimonialFormComponent } from "./pages/public-pages/testimonials/testimonial-form/testimonial-form.component";
 import { UserFormComponent } from "./pages/private-pages/users/user-form/user-form.component";
 import { CreationActivitiesComponent } from './pages/public-pages/activities/creation-activities/creation-activities.component';
-import { FormContactComponent } from './pages/public-pages/form-contact/form-contact.component';
+import { FormContactComponent } from './pages/public-pages/contact/form-contact/form-contact.component';
 import { ActivitiesPageComponent } from './pages/public-pages/activities/activities-page/activities-page.component';
 import { ActivityCardComponent } from './pages/public-pages/activities/activity-card/activity-card.component';
 import { PaginatePipe } from "../shared/pipes/paginate.pipe";
@@ -55,7 +55,10 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from "src/environments/environment";
 import { SidebarComponent } from './pages/private-pages/backoffice/sidebar/sidebar.component';
 import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-footer-router/header-footer-router.component";
-import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/school-campanign.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { ContactComponent } from './pages/public-pages/contact/contact.component';
+import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
+
 
 
 
@@ -113,6 +116,7 @@ import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/
     SidebarComponent,
     NavbarComponent,
     HeaderFooterRouterComponent,
+    ContactComponent,
     SchoolCampanignComponent
   ],
   exports: [
@@ -128,7 +132,7 @@ import { SchoolCampanignComponent } from './pages/public-pages/school-campanign/
     DashBoardBackofficeComponent
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
 })
 export class FeaturesModule {
 }
