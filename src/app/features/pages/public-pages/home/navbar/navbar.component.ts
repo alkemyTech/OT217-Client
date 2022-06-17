@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/core/services/user.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { LogoutService } from 'src/app/core/services/logout.service';
+
+
 
 
 
@@ -13,22 +17,39 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private logoutService: LogoutService, private afAuth: AngularFireAuth, private authService: AuthService) { }
 
   public isLogged: boolean = false;
+  user: any;
+
 
   ngOnInit() {
     this.onCheckUser();
+
+  }
+
+  getLoggedUser() {
+    this.authService.getUserLogged().subscribe(res => {
+      console.log(res?.displayName);
+    });
+
   }
 
   onCheckUser() {
-    if (this.userService.getUser() == null) {
+    if (localStorage.getItem("token") == null) {
       this.isLogged = false;
     } else {
       this.isLogged = true;
     }
   }
 
+
+
+
+  onLogout() {
+    this.logoutService.logOut();
+    localStorage.removeItem('token');
+  }
 
   rutas: any[] = [
     {
@@ -44,11 +65,11 @@ export class NavbarComponent implements OnInit {
       titulo: "Contacto"
     },
     {
-      path: "",
+      path: "/schoolCampaign",
       titulo: "Campaña materiales esc"
     },
     {
-      path: "",
+      path: "/toys",
       titulo: "Campaña juguetes"
     },
 
@@ -66,5 +87,11 @@ export class NavbarComponent implements OnInit {
     }
   ]
 
-}
+  rutasbotonlogin: any[] = [
+    {
+      path: "",
+      titulo: "Logout"
+    }
+  ]
 
+}
