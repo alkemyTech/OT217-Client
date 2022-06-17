@@ -1,12 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { LogoutService } from 'src/app/core/services/logout.service';
-
-
-
-
-
 
 @Component({
   selector: 'app-navbar',
@@ -17,21 +13,13 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
-  constructor(private logoutService: LogoutService, private afAuth: AngularFireAuth, private authService: AuthService) { }
+  constructor(private logoutService: LogoutService, private afAuth: AngularFireAuth, private authService: AuthService, private fs: AngularFireModule,) { }
 
   public isLogged: boolean = false;
-  user: any;
 
 
   ngOnInit() {
     this.onCheckUser();
-
-  }
-
-  getLoggedUser() {
-    this.authService.getUserLogged().subscribe(res => {
-      console.log(res?.displayName);
-    });
 
   }
 
@@ -42,9 +30,6 @@ export class NavbarComponent implements OnInit {
       this.isLogged = true;
     }
   }
-
-
-
 
   onLogout() {
     this.logoutService.logOut();
