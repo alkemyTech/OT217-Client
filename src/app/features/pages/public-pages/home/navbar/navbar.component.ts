@@ -1,7 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AuthService } from 'src/app/core/services/auth.service';
 import { LogoutService } from 'src/app/core/services/logout.service';
 
 @Component({
@@ -13,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
-  constructor(private logoutService: LogoutService, private afAuth: AngularFireAuth, private authService: AuthService, private fs: AngularFireModule,) { }
+  constructor(private logoutService: LogoutService) { }
 
   public isLogged: boolean = false;
 
