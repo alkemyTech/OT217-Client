@@ -18,6 +18,7 @@ import { ToysCampaignComponent } from "./toys-campaign/toys-campaign.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ContactComponent } from "./contact/contact.component";
 import { SchoolCampanignComponent } from "./school-campanign/school-campanign.component";
+import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.component";
 const routes: Routes = [
   {
     path:'',

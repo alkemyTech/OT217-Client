@@ -1,0 +1,29 @@
+@media only screen and (max-width: 768px) {
+   .texttitle{
+    display: none;
+   }
+   .textdescription{
+    display: none;
+   }
+  }
+  
+  @media only screen and (min-width: 992px) {
+   .imagen{
+    width: auto;
+   }
+   .texttitle{
+    font-size: 100%;
+   }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .imagen{
+        width: auto;
+       }
+    .texttitle{
+        font-size: 100%;
+    }
+    .textdescription{
+        font-size: 100%;
+       }
+  }
