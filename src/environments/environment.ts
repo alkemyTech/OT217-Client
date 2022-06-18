@@ -9,7 +9,16 @@ export const environment = {
   baseUrl:"https://ongapi.alkemy.org/api",
   news: "/news",
   slidesUrl : "/slides",
-  contacts: "/contacts"
+  contacts: "/contacts",
+  firebaseConfig : {
+    apiKey: "AIzaSyBYZL3yR8hSnzilQVMTs4yCNWJUzzGqa9M",
+    authDomain: "somos-mas-9f3e8.firebaseapp.com",
+    projectId: "somos-mas-9f3e8",
+    storageBucket: "somos-mas-9f3e8.appspot.com",
+    messagingSenderId: "483767622137",
+    appId: "1:483767622137:web:d6bcac613c59f1d9178528",
+    measurementId: "G-3M3YFNBRSN"
+  }
 };
 
 /*

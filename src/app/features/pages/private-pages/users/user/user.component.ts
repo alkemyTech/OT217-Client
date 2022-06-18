@@ -1,8 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { select, Store } from "@ngrx/store";
+import * as fromApp from "./reducers-users"
+import {  Observable} from "rxjs";
 import { UserService } from "src/app/core/services/user.service";
 import { Users } from "src/app/shared/model/Users";
-import { User } from "src/app/shared/models/user";
+import * as userActions from "./action-users"
+import * as fromUsers from "./selector-users"
+
+
 
 @Component({
   selector: "app-user",
@@ -10,20 +16,17 @@ import { User } from "src/app/shared/models/user";
   styleUrls: ["./user.component.scss"],
 })
 export class UserComponent implements OnInit {
-  users: Users[] = [];
+  usuario$: Observable<Users[]>; 
+  users:Users[]= []
   creacion: string = "Aqui usted puede crear un nuevo Usuario";
 
-  constructor(private userService: UserService, private route: Router) {}
+  constructor(private userService: UserService, private route: Router, private store:Store<fromApp.UsersState>) {}
 
   ngOnInit(): void {
-    this.cargarData();
+    this.store.dispatch(new userActions.Load());
+   this.usuario$ = this.store.pipe(select(fromUsers.getUsers))
   }
 
-  cargarData(): void {
-    this.userService
-      .getUser()
-      .subscribe((response) => (this.users = response.data));
-  }
 
   onDelete(user: Users) {
     this.userService
@@ -32,8 +35,7 @@ export class UserComponent implements OnInit {
         () => (this.users = this.users.filter((u) => u.id !== user.id))
       );
   }
-
   onEdit(user: Users) {
     this.route.navigate([`/backoffice/users/${user.id}`]);
-  }
+  } 
 }
