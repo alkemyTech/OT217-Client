@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Términos y condiciones</h2>
+<mat-dialog-content class="mat-typography">
+  <div id="outerContainer">
+    <pdf-viewer [src]="src" [render-text]="true" [original-size]="true" [zoom]="0.7" [show-borders]="false"
+      [zoom-scale]="'page-fit'" style="width: 580px; height: 480px" [autoresize]="true" [show-all]="true">
+    </pdf-viewer>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close id="btn-cancel">Cancelar</button>
+  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial id="btn-accept">Aceptar</button>
+</mat-dialog-actions>

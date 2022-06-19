@@ -16,11 +16,13 @@ import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
 import { ToysCampaignComponent } from "./toys-campaign/toys-campaign.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { DialogPdfOpenComponent } from "../../components/dialog-content-pdf/dialog-pdf-open/dialog-pdf-open.component";
 import { ContactComponent } from "./contact/contact.component";
 import { SchoolCampanignComponent } from "./school-campanign/school-campanign.component";
+
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     redirectTo: "home",
     pathMatch: "full"
   },
