@@ -13,6 +13,7 @@ import { CreationActivitiesComponent } from "../public-pages/activities/creation
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { UserGuard } from "src/app/features/pages/private-pages/guards/user.guard/user.guard.component";
+import { NewsSearchComponent } from "./news-search/news-search.component";
 const routes: Routes = [
   {
     canActivate: [UserGuard],
@@ -33,6 +34,10 @@ const routes: Routes = [
     canActivate: [UserGuard],
     path: "backoffice/news/:id",
     component: NewsFormComponent,
+  },
+  {
+    path: "news/search",
+    component: NewsSearchComponent,
   },
   {
     canActivate: [UserGuard],

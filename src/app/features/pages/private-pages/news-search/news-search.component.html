@@ -5,10 +5,11 @@
 
 </div>
 
-<div class="container">
+<div class="container" id="contenedor">
   <div class="col-md-6" *ngFor="let item of showNews">
-    <h1>{{item.title}}</h1>
-    <h1>{{item.image}}</h1>
+    <div id="news">
+      <h1>{{item.name}}</h1>
+      <img id="imagen" src="{{item.image}}" alt="">
+    </div>
   </div>
-
 </div>

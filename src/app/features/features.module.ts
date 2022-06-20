@@ -58,6 +58,7 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { ContactComponent } from './pages/public-pages/contact/contact.component';
 import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
+import { NewsSearchComponent } from "./pages/private-pages/news-search/news-search.component";
 
 
 
@@ -70,14 +71,14 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-   SlidesFormComponent,
+    SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
- SlideHomeComponent,
+    SlideHomeComponent,
     DashBoardBackofficeComponent,
     CreationActivitiesComponent,
     FormContactComponent,
@@ -86,7 +87,7 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     ThanksComponent,
     DetailComponent,
     UserComponent,
-  SlidesListComponent,
+    SlidesListComponent,
     TableComponent,
     CardComponent,
     HomeComponent,
@@ -117,13 +118,14 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     NavbarComponent,
     HeaderFooterRouterComponent,
     ContactComponent,
-    SchoolCampanignComponent
+    SchoolCampanignComponent,
+    NewsSearchComponent
   ],
   exports: [
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-   SlidesFormComponent,
+    SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
@@ -132,7 +134,7 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     DashBoardBackofficeComponent
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, LeafletModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
 })
 export class FeaturesModule {
 }
