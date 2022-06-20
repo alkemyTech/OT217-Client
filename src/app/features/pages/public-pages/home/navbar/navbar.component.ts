@@ -33,17 +33,17 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('token');
   }
 
-  rutas: any[] = [
+  routes: any[] = [
     {
       path: "",
       titulo: "Inicio"
     },
     {
-      path: "/nosotros",
+      path: "/members",
       titulo: "Nosotros"
     },
     {
-      path: "/contacto",
+      path: "/contact",
       titulo: "Contacto"
     },
     {
@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
 
   ]
 
-  rutasboton: any[] = [
+  buttonroutes: any[] = [
     {
       path: "/login",
       titulo: "Login"
@@ -69,11 +69,5 @@ export class NavbarComponent implements OnInit {
     }
   ]
 
-  rutasbotonlogin: any[] = [
-    {
-      path: "",
-      titulo: "Logout"
-    }
-  ]
 
 }
