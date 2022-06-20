@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LogoutService } from 'src/app/core/services/logout.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,6 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  constructor(private logoutService: LogoutService) { }
+
+
+  public isLogged: boolean = false;
+
+
+  ngOnInit() {
+    this.onCheckUser();
+
+  }
+
+  onCheckUser() {
+    if (localStorage.getItem("token") == null) {
+      this.isLogged = false;
+    } else {
+      this.isLogged = true;
+    }
+  }
+
+  onLogout() {
+    this.logoutService.logOut();
+    localStorage.removeItem('token');
+  }
+
 
   routes: any[] = [
     {
@@ -43,9 +70,5 @@ export class HomeComponent implements OnInit {
     }
   ]
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
