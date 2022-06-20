@@ -34,6 +34,7 @@
     "css-loader": "^5.2.7",
     "firebase": "^9.8.3",
     "jquery": "^3.6.0",
+    "ng2-pdf-viewer": "^9.0.0",
     "leaflet": "^1.8.0",
     "ngx-skeleton-loader": "^5.0.0",
     "popper.js": "^1.16.1",
