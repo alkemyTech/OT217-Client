@@ -8,7 +8,7 @@ import { OrganizationListService } from 'src/app/core/services/organization-list
 })
 export class FooterComponent implements OnInit {
 
-  public listaDatos: Array<any> = []
+  public dataList: Array<any> = []
   route: any;
 
 
@@ -16,17 +16,17 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.organizationListService.getOrganizationData().subscribe((data: any) => {
-      this.listaDatos = data;
+      this.dataList = data;
     });
   }
 
-  rutas: any[] = [
+  routes: any[] = [
     {
       path: "",
       titulo: "Inicio"
     },
     {
-      path: "/nosotros",
+      path: "/members",
       titulo: "Nosotros"
     },
     {
@@ -35,7 +35,7 @@ export class FooterComponent implements OnInit {
     },
 
     {
-      path: "/novedades",
+      path: "/news",
       titulo: "Novedades"
     },
     {
@@ -47,7 +47,7 @@ export class FooterComponent implements OnInit {
       titulo: "Contacto"
     },
     {
-      path: "/contribuye",
+      path: "/donar",
       titulo: "Contribuye"
     },
   ]

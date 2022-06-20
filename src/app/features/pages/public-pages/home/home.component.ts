@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  rutas: any[] = [
+  routes: any[] = [
     {
       path: "",
       titulo: "Inicio"
     },
     {
-      path: "/nosotros",
+      path: "/members",
       titulo: "Nosotros"
     },
     {
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   ]
 
-  rutasboton: any[] = [
+  buttonroutes: any[] = [
     {
       path: "/login",
       titulo: "Login"
