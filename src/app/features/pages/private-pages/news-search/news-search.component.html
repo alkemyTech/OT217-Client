@@ -1,15 +1,21 @@
 <div class="search-container">
-
+  <h3 id="title">Búsqueda de noticias</h3>
   <input type="text" class="form-control" placeholder="Buscar" #txtQuery (keyup)="onQueryChanged()"
     [(ngModel)]="search">
-
 </div>
-
 <div class="container" id="contenedor">
-  <div class="col-md-6" *ngFor="let item of showNews">
-    <div id="news">
-      <h1>{{item.name}}</h1>
-      <img id="imagen" src="{{item.image}}" alt="">
-    </div>
-  </div>
+  <table class="table">
+    <thead>
+      <tr id="border">
+        <th scope="col">Titulo</th>
+        <th scope="col">Imágen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of showNews">
+        <td id="name">{{item.name}}</td>
+        <td><img id="logo" src="{{item.image}}" alt=""></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
