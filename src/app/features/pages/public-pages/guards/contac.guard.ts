@@ -25,10 +25,9 @@ export class ContactGuard implements CanActivate {
     | UrlTree {
     const token = localStorage.getItem("token");
 
-
-    if (token == 'admin') {
-        this.route.navigate(['backoffice'])
-        return false;
+    if (token == "admin") {
+      this.route.navigate(["backoffice"]);
+      return false;
     } else {
       return true;
     }
