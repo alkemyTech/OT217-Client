@@ -20,12 +20,13 @@ import { DialogPdfOpenComponent } from "../../components/dialog-content-pdf/dial
 import { ContactComponent } from "./contact/contact.component";
 import { SchoolCampanignComponent } from "./school-campanign/school-campanign.component";
 import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.component";
+import { DonationsGuard } from "./guards/donations.guard";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     redirectTo: "home",
-    pathMatch: "full"
+    pathMatch: "full",
   },
   {
     path: "actividades",
@@ -40,6 +41,7 @@ const routes: Routes = [
     component: NewsListComponent,
   },
   {
+    canActivate: [DonationsGuard],
     path: "donar",
     component: DonationsComponent,
   },
@@ -79,25 +81,22 @@ const routes: Routes = [
   },
   {
     path: "contact",
-    component: ContactComponent
+    component: ContactComponent,
   },
-    {path: "schoolCampaign",
-    component: SchoolCampanignComponent,
-  },
+  { path: "schoolCampaign", component: SchoolCampanignComponent },
   {
     path: "organization/list",
-    component: OrganizationListComponent
+    component: OrganizationListComponent,
   },
   {
     path: "**",
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
   },
-]
+];
 
 @NgModule({
   declarations: [],
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes), privateRoutingModule],
 })
-export class publicRoutingModule {
-}
+export class publicRoutingModule {}
