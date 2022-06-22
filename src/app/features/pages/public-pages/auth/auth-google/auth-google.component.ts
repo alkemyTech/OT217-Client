@@ -21,14 +21,14 @@ export class AuthGoogleComponent {
   IngresarGoogle() {
     this.authService.authGoogle().then((res) => {
       this.newUser = res.additionalUserInfo.isNewUser;
-      this.user = {
+     this.user = {
         name: res.user.providerData[0].displayName,
         email: res.user.providerData[0].email,
         password: res.user.uid,
       };
-      this.saveCredetianls();
+       this.saveCredetianls();
     });
-  }
+   }
 
   saveCredetianls() {
     if (this.newUser) {

@@ -50,6 +50,9 @@ import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/hea
 import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
+import { PdfViewerModule } from "ng2-pdf-viewer";
+import { DialogContentPdfComponent } from "./components/dialog-content-pdf/dialog-content-pdf.component";
+import { DialogPdfOpenComponent } from "./components/dialog-content-pdf/dialog-pdf-open/dialog-pdf-open.component";
 import { AuthGoogleComponent } from './pages/public-pages/auth/auth-google/auth-google.component';
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from "src/environments/environment";
@@ -58,6 +61,8 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { ContactComponent } from './pages/public-pages/contact/contact.component';
 import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 
 
@@ -108,6 +113,9 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     DialogContentComponent,
     NewsListComponent,
     SpinnerComponent,
+    PageNotFoundComponent,
+    DialogContentPdfComponent,
+    DialogPdfOpenComponent,
     HeaderSidebarComponent,
     ToysCampaignComponent,
     FooterJuguetesComponent,
@@ -118,6 +126,7 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     HeaderFooterRouterComponent,
     ContactComponent,
     SchoolCampanignComponent
+
   ],
   exports: [
     RegisterFormComponent,
@@ -130,9 +139,12 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     FormContactComponent,
     OrganizationListComponent,
     DashBoardBackofficeComponent
+
   ],
   entryComponents: [SetupAlertsComponent],
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, SweetAlert2Module, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule,PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+
 })
 export class FeaturesModule {
 }

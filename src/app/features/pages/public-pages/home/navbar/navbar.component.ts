@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { LogoutService } from 'src/app/core/services/logout.service';
 import { UserService } from 'src/app/core/services/user.service';
+
 
 
 
@@ -14,12 +16,16 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
+
   constructor(private userService: UserService, private logoutService: LogoutService) { }
+
 
   public isLogged: boolean = false;
 
+
   ngOnInit() {
     this.onCheckUser();
+
   }
 
   onCheckUser() {
@@ -75,5 +81,5 @@ export class NavbarComponent implements OnInit {
     }
   ]
 
-}
 
+}

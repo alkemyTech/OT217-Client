@@ -15,8 +15,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { ActivitiesEffects } from './shared/state/activities/activities.effects';
 import { NewsEffects } from './shared/state/news/news.effects';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AppRoutingModule } from './features/app-routing.module';
 import { UserEffect } from './features/pages/private-pages/users/user/effects-users';
 import { reducers } from './features/pages/private-pages/users/user/selector-users';
+import { DonationsGuard } from './features/pages/public-pages/guards/donations.guard';
+
 
 
 @NgModule({
@@ -35,15 +39,16 @@ import { reducers } from './features/pages/private-pages/users/user/selector-use
     EffectsModule.forRoot([UserEffect]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     HttpClientModule,
-    FeaturesModule,
     MatDialogModule,
-    FeaturesModule,
+    PdfViewerModule,
+    AppRoutingModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([NewsEffects,ActivitiesEffects ]),  ],
+    EffectsModule.forRoot([NewsEffects, ActivitiesEffects]),],
   providers: [
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
+    DonationsGuard
   ],
   bootstrap: [AppComponent]
 })

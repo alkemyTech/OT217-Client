@@ -16,13 +16,18 @@ import { CommonModule } from "@angular/common";
 import { privateRoutingModule } from "../private-pages/private-routing.module";
 import { ToysCampaignComponent } from "./toys-campaign/toys-campaign.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { DialogPdfOpenComponent } from "../../components/dialog-content-pdf/dialog-pdf-open/dialog-pdf-open.component";
 import { ContactComponent } from "./contact/contact.component";
 import { SchoolCampanignComponent } from "./school-campanign/school-campanign.component";
+import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.component";
+import { DonationsGuard } from "./guards/donations.guard";
+import { ContactGuard } from "./guards/contac.guard";
+
 const routes: Routes = [
   {
-    path:'',
+    path: "",
     redirectTo: "home",
-    pathMatch: "full"
+    pathMatch: "full",
   },
   {
     path: "actividades",
@@ -37,6 +42,7 @@ const routes: Routes = [
     component: NewsListComponent,
   },
   {
+    canActivate: [DonationsGuard],
     path: "donar",
     component: DonationsComponent,
   },
@@ -75,26 +81,24 @@ const routes: Routes = [
     component: SetupAlertsComponent,
   },
   {
+    canActivate: [ContactGuard],
     path: "contact",
-    component: ContactComponent
+    component: ContactComponent,
   },
-    {path: "schoolCampaign",
-    component: SchoolCampanignComponent,
-  },
+  { path: "schoolCampaign", component: SchoolCampanignComponent },
   {
     path: "organization/list",
-    component: OrganizationListComponent
+    component: OrganizationListComponent,
   },
   {
     path: "**",
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
   },
-]
+];
 
 @NgModule({
   declarations: [],
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes), privateRoutingModule],
 })
-export class publicRoutingModule {
-}
+export class publicRoutingModule {}

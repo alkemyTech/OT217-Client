@@ -1,11 +1,23 @@
-  .child-show {
+
+.child-show {
     display: none;
   }
+  .header{
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.57);
 
-  .logoScolar{
+  }
+  .logoSchool{
     width: 100px;
   }
-
+  .img-logo-ong ,.img-logo-campaña{
+    width: 5%;
+  }
   .ziseimage{
     width: 400px;
   }
@@ -213,4 +225,28 @@
       overflow: scroll;
       background-color: #ade0fd;
     }
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    .img-logo-ong {
+      width: 20%;
+      margin-inline: auto;
+      padding: 16px 0;
+    }
+    .slogan-school , .img-logo-campaign {
+      display: none
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .slogan-school {
+      display: none;
+    }
+    .img-logo-ong, .img-logo-campaign{
+      width: 20%;
+      margin-inline: auto;
+      padding: 16px 0;
+    }
+
   }
