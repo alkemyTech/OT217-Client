@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CategoriesService } from "src/app/core/services/categories.service";
 import { NewsService } from "src/app/core/services/news.service";
-import { FormBuilder, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { News } from "../../../../../shared/models/News";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ActivatedRoute } from "@angular/router";
@@ -16,6 +16,9 @@ import { AlertComponent } from "src/app/features/components/setup-alerts/alert/a
 export class NewsFormComponent implements OnInit {
   categories: News[] = [];
   cardImageBase64: string = "";
+  email = new FormGroup({
+    name: new FormControl('', Validators.minLength(4)),
+  })
   news: any;
   newsId: string | null = "";
   currentNews: News[] = [];

@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
 
 import { async } from '@angular/core/testing';
 import { MatOptionModule } from '@angular/material/core';
+import { By } from '@angular/platform-browser';
 
 class MatSelectStubComponent implements ControlValueAccessor {
   writeValue(obj: any) {}
@@ -54,9 +55,24 @@ fdescribe('NewsFormComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('Component news-form should be created', () => {
+  it('Component news-form should be created', () => {
     const fixture = TestBed.createComponent(NewsFormComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+
+  it('Components Validations'), () =>{
+    const fixture = TestBed.createComponent(NewsFormComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const form = app.email;
+    const name = app.email.controls['name']
+    name.setValue('Franco')
+
+    const btnElement = fixture.debugElement.query(By.css('formButton'))
+    btnElement.nativeElement.click()
+
+    expect(form.invalid).toBeTrue();
+  }
 });
