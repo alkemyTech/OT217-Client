@@ -21,6 +21,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { SchoolCampanignComponent } from "./school-campanign/school-campanign.component";
 import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.component";
 import { DonationsGuard } from "./guards/donations.guard";
+import { ContactGuard } from "./guards/contac.guard";
 
 const routes: Routes = [
   {
@@ -80,6 +81,7 @@ const routes: Routes = [
     component: SetupAlertsComponent,
   },
   {
+    canActivate: [ContactGuard],
     path: "contact",
     component: ContactComponent,
   },
