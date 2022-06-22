@@ -10,9 +10,14 @@ import { environment } from 'src/environments/environment';
 export class NewsService extends PublicApiService {
 
   endpoint:string = environment.news;
-
+  searchUrl:string = "/news?search="
+ 
   public constructor(http:HttpClient)  {
     super(http);
+  }
+
+  searchNews(search: string): Observable<any> {
+    return this.getById<any>(this.searchUrl + search);
   }
 
   postNews<News>(news:any):Observable<any>{

@@ -61,6 +61,7 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { ContactComponent } from './pages/public-pages/contact/contact.component';
 import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -142,7 +143,7 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
   ],
   entryComponents: [SetupAlertsComponent],
 
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule,PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, SweetAlert2Module, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule,PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
 
 })
 export class FeaturesModule {

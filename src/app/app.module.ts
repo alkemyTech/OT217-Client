@@ -19,6 +19,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppRoutingModule } from './features/app-routing.module';
 import { UserEffect } from './features/pages/private-pages/users/user/effects-users';
 import { reducers } from './features/pages/private-pages/users/user/selector-users';
+import { DonationsGuard } from './features/pages/public-pages/guards/donations.guard';
 
 
 
@@ -47,6 +48,7 @@ import { reducers } from './features/pages/private-pages/users/user/selector-use
   providers: [
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
+    DonationsGuard
   ],
   bootstrap: [AppComponent]
 })

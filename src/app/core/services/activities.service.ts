@@ -21,6 +21,9 @@ export class ActivitiesServices extends PublicApiService {
   getActivitiesID<Activities>(id: string): Observable<Activities> {
     return this.getById<Activities>(this.url + "/" + id);
   }
+  getActivitiesSearch<Activities>(search: string): Observable<Activities> {
+    return this.getById<Activities>(this.url + "?search=" + search);
+  }
   deleteActivities<Activities>(id: string): Observable<Activities> {
     return this.delete(this.url + "/" + id);
   }
