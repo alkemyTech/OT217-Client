@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { AppRoutingModule } from "./app-routing.module";
@@ -142,7 +143,10 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
   ],
   entryComponents: [SetupAlertsComponent],
 
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule,PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule,HttpClientModule, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule,PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)],
+  providers: [
+    HttpClientModule
+  ]
 
 })
 export class FeaturesModule {

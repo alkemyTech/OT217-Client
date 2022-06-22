@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PublicApiService } from './public-api.service';

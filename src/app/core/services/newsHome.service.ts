@@ -12,7 +12,6 @@ export class NewsHomeService {
 
   endpointSlides: string = environment.slidesUrl;
   endpointNews: string = environment.news;
-  endpointTestimonials: string = environment.testimonials;
   errorMessage: any = SetupAlertsComponent.openDialog();
 
   constructor(public http: HttpClient) { }

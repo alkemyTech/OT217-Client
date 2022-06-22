@@ -28,6 +28,7 @@ import { reducers } from './features/pages/private-pages/users/user/selector-use
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CoreModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -47,6 +48,7 @@ import { reducers } from './features/pages/private-pages/users/user/selector-use
   providers: [
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
