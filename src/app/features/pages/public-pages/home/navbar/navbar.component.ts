@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/core/services/user.service';
-
-
-
+import { Component, Input, OnInit } from '@angular/core';
+import { LogoutService } from 'src/app/core/services/logout.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,48 +10,54 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private logoutService: LogoutService) { }
 
   public isLogged: boolean = false;
 
+
   ngOnInit() {
     this.onCheckUser();
+
   }
 
   onCheckUser() {
-    if (this.userService.getUser() == null) {
+    if (localStorage.getItem("token") == null) {
       this.isLogged = false;
     } else {
       this.isLogged = true;
     }
   }
 
+  onLogout() {
+    this.logoutService.logOut();
+    localStorage.removeItem('token');
+  }
 
-  rutas: any[] = [
+  routes: any[] = [
     {
       path: "",
       titulo: "Inicio"
     },
     {
-      path: "/nosotros",
+      path: "/members",
       titulo: "Nosotros"
     },
     {
-      path: "/contacto",
+      path: "/contact",
       titulo: "Contacto"
     },
     {
-      path: "",
+      path: "/schoolCampaign",
       titulo: "Campaña materiales esc"
     },
     {
-      path: "",
+      path: "/toys",
       titulo: "Campaña juguetes"
     },
 
   ]
 
-  rutasboton: any[] = [
+  buttonRoutes: any[] = [
     {
       path: "/login",
       titulo: "Login"
@@ -66,5 +69,5 @@ export class NavbarComponent implements OnInit {
     }
   ]
 
-}
 
+}
