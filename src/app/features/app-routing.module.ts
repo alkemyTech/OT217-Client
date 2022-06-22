@@ -23,11 +23,16 @@ import { ActivitiesPageComponent } from "./pages/public-pages/activities/activit
 import { DashBoardBackofficeComponent } from "./pages/private-pages/backoffice/dash-board-backoffice/dash-board-backoffice.component";
 import { CreationActivitiesComponent } from "./pages/public-pages/activities/creation-activities/creation-activities.component";
 import { SidebarComponent } from "./pages/private-pages/backoffice/sidebar/sidebar.component";
+import { NosotrosComponent } from "./pages/public-pages/about/nosotros/nosotros.component";
 
 const routes: Routes = [
   {
     path: "actividades",
     component: ActivitiesPageComponent,
+  },
+  {
+    path: "nosotros",
+    component: NosotrosComponent,
   },
   {
     path: "backoffice/slides",
