@@ -39,7 +39,8 @@ export class LoginFormComponent implements OnInit {
   }
 
   logIn(res: any) {
-    localStorage.setItem("Token", res.token)
+    localStorage.setItem("Token", res.token);
+    localStorage.setItem("roleId", "admin");
   }
 
   openSnackBar(message: string) {
