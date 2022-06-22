@@ -76,6 +76,24 @@ ul {
   text-align: right;
 }
 
+#dropdownMenuButton {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #151515;
+  background-color: #9ac9fb;
+  border-style: none;
+}
+
+.dropdown-item {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #151515;
+}
+
+#campaign {
+  margin-right: 10%;
+}
+
 @media screen and (max-width: 1078px) {
   .navbar-nav {
     display: flex;

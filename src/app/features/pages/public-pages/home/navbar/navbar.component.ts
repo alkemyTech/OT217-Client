@@ -1,5 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { LogoutService } from 'src/app/core/services/logout.service';
+import { UserService } from 'src/app/core/services/user.service';
+
+
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +16,9 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
-  constructor(private logoutService: LogoutService) { }
+
+  constructor(private userService: UserService, private logoutService: LogoutService) { }
+
 
   public isLogged: boolean = false;
 
@@ -33,6 +41,7 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('token');
   }
 
+
   routes: any[] = [
     {
       path: "",
@@ -46,22 +55,25 @@ export class NavbarComponent implements OnInit {
       path: "/contact",
       titulo: "Contacto"
     },
+
+
+  ]
+
+  campaignRoutes: any[] = [
     {
       path: "/schoolCampaign",
-      titulo: "Campaña materiales esc"
+      titulo: "Materiales escolares"
     },
     {
       path: "/toys",
-      titulo: "Campaña juguetes"
-    },
-
+      titulo: "Juguetes"
+    }
   ]
 
   buttonRoutes: any[] = [
     {
       path: "/login",
       titulo: "Login"
-
     },
     {
       path: "/register",
