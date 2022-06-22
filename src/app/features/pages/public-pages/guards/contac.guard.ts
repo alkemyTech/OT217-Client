@@ -24,7 +24,6 @@ export class ContactGuard implements CanActivate {
     | boolean
     | UrlTree {
     const token = localStorage.getItem("token");
-    console.log(token)
 
 
     if (token == 'admin') {
