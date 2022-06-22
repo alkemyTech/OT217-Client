@@ -19,6 +19,7 @@ export class LoginFormComponent implements OnInit {
   login: User [] = [];
   createdForm: FormGroup | any;
   r: any;
+  hide = true
   private loading$:  Observable<boolean> = new Observable();
   constructor(private formBuilder: FormBuilder,
               private router: Router,
