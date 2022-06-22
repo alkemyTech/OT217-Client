@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
 
   ]
 
-  buttonroutes: any[] = [
+  buttonRoutes: any[] = [
     {
       path: "/login",
       titulo: "Login"
