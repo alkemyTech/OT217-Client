@@ -31,6 +31,7 @@ export class ActivitiesListComponent implements OnInit {
   deleteActivity = (event: any): void => {
     let id = String(event);
     this._ActivitiesServices.deleteActivities(id).subscribe(() => {
+      this.store.dispatch(loadActivities());
       this.activities$ = this.store.select(selecListActivities);
     });
   };

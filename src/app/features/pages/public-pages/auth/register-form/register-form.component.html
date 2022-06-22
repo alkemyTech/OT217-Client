@@ -1,25 +1,25 @@
 <app-navbar></app-navbar>
 <div class="container-fluid mr-0 pe-0">
     <div class="formGroup row formRegister">
-        <div class="div-card col-6">
-        <h1 class="title-register title">
-            Register
+        <div class="div-card col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <h1 class="text-welcome">
+            Registrate
         </h1>
             <form (ngSubmit)="submit()" [formGroup]="createdForm" class="form-register">
                 <div>
-                    <mat-form-field appearance="fill" class="col-6">
+                    <mat-form-field appearance="fill" class="inputWidth">
                         <mat-label>Name</mat-label>
                         <input matInput type="text" required formControlName="name"/>
                     </mat-form-field>
                 </div>
                 <div>
-                    <mat-form-field appearance="fill" class="col-6">
+                    <mat-form-field appearance="fill" class="inputWidth">
                         <mat-label>Email</mat-label>
                         <input matInput type="email" required formControlName="email"/>
                     </mat-form-field>
                 </div>
                 <div>
-                    <mat-form-field appearance="fill" class="col-6">
+                    <mat-form-field appearance="fill" class="inputWidth">
                         <mat-label>Password</mat-label>
                         <input matInput type="password" required minlength="6" formControlName="password"/>
                     </mat-form-field>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div>
-                    <mat-form-field appearance="fill" class="col-6">
+                    <mat-form-field appearance="fill" class="inputWidth">
                         <mat-label>Confirm Password</mat-label>
                         <input matInput type="password" required minlength="6" formControlName="confirmPassword"
                                placeholder="Confirm Password"/>
@@ -38,12 +38,12 @@
             <div class="divButtRegister">
                 <button mat-raised-button class="butRegister" color="primary" type="submit" [disabled]="!createdForm.valid"
                         (click)="submit()">
-                    Register
+                    Aceptar
                 </button>
             </div>
             <app-auth-google></app-auth-google>
         </div>
-        <div class="col-6 pe-0 ">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 pe-0 imag">
             <img src="./assets/img-login.jpg" class="img-login">
         </div>
     </div>
