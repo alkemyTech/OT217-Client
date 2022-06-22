@@ -43,15 +43,19 @@ export class NavbarComponent implements OnInit {
       path: "/contact",
       titulo: "Contacto"
     },
+
+
+  ]
+
+  campaignRoutes: any[] = [
     {
       path: "/schoolCampaign",
-      titulo: "Campaña materiales esc"
+      titulo: "Materiales escolares"
     },
     {
       path: "/toys",
-      titulo: "Campaña juguetes"
-    },
-
+      titulo: "Juguetes"
+    }
   ]
 
   buttonroutes: any[] = [

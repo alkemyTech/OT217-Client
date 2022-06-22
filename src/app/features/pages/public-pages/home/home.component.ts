@@ -46,16 +46,7 @@ export class HomeComponent implements OnInit {
     {
       path: "/contact",
       titulo: "Contacto"
-    },
-    {
-      path: "/schoolCampaign",
-      titulo: "Campaña materiales esc"
-    },
-    {
-      path: "/toys",
-      titulo: "Campaña juguetes"
-    },
-
+    }
   ]
 
   buttonroutes: any[] = [
@@ -67,6 +58,17 @@ export class HomeComponent implements OnInit {
     {
       path: "/register",
       titulo: "Registrate"
+    }
+  ]
+
+  campaignRoutes: any[] = [
+    {
+      path: "/schoolCampaign",
+      titulo: "Materiales escolares"
+    },
+    {
+      path: "/toys",
+      titulo: "Juguetes"
     }
   ]
 

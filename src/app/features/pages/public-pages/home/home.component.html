@@ -2,22 +2,202 @@
 <div class="principal">
   <section>
     <!-- slides-->
-    <app-slide-inicio></app-slide-inicio>
+    <!-- hero -->
+    <div class="p-5 text-center bg-image" id="foto-hero">
+      <!-- Tuve que dejarlo porque si lo guardo en css me bota el proyecto -->
+      <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3"></h1>
+            <h4 class="mb-3"></h4>
+            <div id="boton-conoce">
+              <button class="btn btn-warning" href="#!" role="button">
+
+                Conoce más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <section>
     <!-- welcome text -->
     <h1 class="title" id="texto-bienvenida">Texto de bienvenida</h1>
     <hr />
   </section>
-  <section>
-    <!-- news -->
-    <h1 class="title" id="texto-bienvenida-novedades">Últimas novedades</h1>
-    <app-news-list></app-news-list>
+
+  <!-- news -->
+  <section class="light" id="news">
+    <div class="container py-3">
+      <div class="title" id="texto-novedades">Novedades</div>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">Noticia 1</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Lun, 25 de mayo 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            fugiat asperiores inventore beatae accusamus odit minima enim, commodi
+            quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti
+            tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci
+            illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim
+            quidem excepturi, illum quos!
+          </div>
+          <ul class="postcard__tagbox">
+            <button class="btn btn-warning">Ver más</button>
+          </ul>
+        </div>
+      </article>
+      <article class="postcard light red">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title red"><a href="#">Noticia 2</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Lun, 25 de mayo 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            fugiat asperiores inventore beatae accusamus odit minima enim, commodi
+            quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti
+            tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci
+            illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim
+            quidem excepturi, illum quos!
+          </div>
+          <ul class="postcard__tagbox">
+            <button class="btn btn-warning">Ver más</button>
+          </ul>
+        </div>
+      </article>
+      <article class="postcard light green">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green"><a href="#">Noticia 3</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Lun, 25 de mayo 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            fugiat asperiores inventore beatae accusamus odit minima enim, commodi
+            quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti
+            tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci
+            illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim
+            quidem excepturi, illum quos!
+          </div>
+          <ul class="postcard__tagbox">
+            <button class="btn btn-warning">Ver más</button>
+          </ul>
+        </div>
+      </article>
+      <article class="postcard light yellow">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/501/501" alt="Image Title" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title yellow"><a href="#">Noticia 4</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            fugiat asperiores inventore beatae accusamus odit minima enim, commodi
+            quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti
+            tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci
+            illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim
+            quidem excepturi, illum quos!
+          </div>
+          <ul class="postcard__tagbox">
+            <button class="btn btn-warning">Ver más</button>
+          </ul>
+        </div>
+      </article>
+    </div>
   </section>
-  <div class="container">
+
+  <div class="container" id="testimonial-container">
     <section>
       <!-- Testimonials -->
+      <!-- Testimonials -->
       <h1 class="title">Testimonios</h1>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card testimonial-card mt-2 mb-3" id="testimonial-card">
+            <div class="card-up aqua-gradient"></div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar" />
+            </div>
+            <div class="card-body text-center">
+              <h4 class="card-title font-weight-bold">Martha Smith</h4>
+              <hr />
+              <p>
+                <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Eos, adipisci
+              </p>
+              <button class="btn btn-warning">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card testimonial-card mt-2 mb-3" id="testimonial-card2">
+            <div class="card-up aqua-gradient"></div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar" />
+            </div>
+            <div class="card-body text-center">
+              <h4 class="card-title font-weight-bold">Martha Smith</h4>
+              <hr />
+              <p>
+                <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Eos, adipisci
+              </p>
+              <button class="btn btn-warning">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card testimonial-card mt-2 mb-3">
+            <div class="card-up aqua-gradient"></div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar" />
+            </div>
+            <div class="card-body text-center">
+              <h4 class="card-title font-weight-bold">Martha Smith</h4>
+              <hr />
+              <p>
+                <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Eos, adipisci
+              </p>
+              <button class="btn btn-warning">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   </div>
 </div>
@@ -34,7 +214,18 @@
         <div *ngFor="let item of routes">
           <li><a class="nav-link" aria-current="page" [routerLink]="item.path" routerLinkActive="active-link"
               [routerLinkActiveOptions]="{ exact: true }">{{item.titulo}}</a></li>
+        </div>
+        <div class="dropdown" id="campaign">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Campañas
+          </button>
 
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div *ngFor="let item of campaignRoutes">
+              <a class="dropdown-item" [routerLink]="item.path">{{item.titulo}}</a>
+            </div>
+          </div>
         </div>
         <div *ngIf="!isLogged">
           <div class="btn-group" *ngFor="let item of buttonroutes">
