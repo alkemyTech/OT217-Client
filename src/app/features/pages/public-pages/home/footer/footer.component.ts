@@ -39,10 +39,6 @@ export class FooterComponent implements OnInit {
       titulo: "Novedades"
     },
     {
-      path: "/testimonios",
-      titulo: "Testimonios"
-    },
-    {
       path: "/contact",
       titulo: "Contacto"
     },

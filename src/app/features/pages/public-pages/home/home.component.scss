@@ -571,7 +571,7 @@ li {
 #columna-container {
   display: flex;
   width: 30%;
-  height: 100%;
+  height: 890%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -579,12 +579,25 @@ li {
 
 #logo-footer {
   width: 50%;
-  margin-top: 40%;
+  margin-top: 15%;
 }
 
 .btn-group {
   margin-left: 2%;
   margin-top: 25%;
+}
+
+.dropdown {
+  display: flex;
+  margin-top: 5%;
+}
+
+#dropdownMenuButton {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #151515;
+  background-color: #9ac9fb;
+  border-style: none;
 }
 
 //dont show aside
@@ -609,10 +622,3 @@ li {
 }
 
 // aside menu adjust to 420 px
-
-@media screen and (max-width: 420px) {
-  li {
-    font-size: 18px;
-    text-align: center;
-  }
-}
