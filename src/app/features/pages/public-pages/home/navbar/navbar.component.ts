@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogoutService } from 'src/app/core/services/logout.service';
 import { UserService } from 'src/app/core/services/user.service';
 
 
@@ -13,7 +14,7 @@ export class NavbarComponent implements OnInit {
 
   activo: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private logoutService: LogoutService) { }
 
   public isLogged: boolean = false;
 
@@ -22,11 +23,16 @@ export class NavbarComponent implements OnInit {
   }
 
   onCheckUser() {
-    if (this.userService.getUser() == null) {
+    if (localStorage.getItem("token") == null) {
       this.isLogged = false;
     } else {
       this.isLogged = true;
     }
+  }
+
+  onLogout() {
+    this.logoutService.logOut();
+    localStorage.removeItem('token');
   }
 
 
@@ -62,7 +68,6 @@ export class NavbarComponent implements OnInit {
     {
       path: "/login",
       titulo: "Login"
-
     },
     {
       path: "/register",
