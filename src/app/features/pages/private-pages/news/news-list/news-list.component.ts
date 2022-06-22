@@ -39,7 +39,6 @@ export class NewsListComponent implements OnInit {
     this.loading$ = this.store.select(selectNewsLoading);
 
     this.newsService.getNews().subscribe((res) => {
-      console.log(res.data);
       this.dataArray = res.data;
     });
 
