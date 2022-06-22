@@ -61,6 +61,7 @@ import { HeaderFooterRouterComponent } from "./pages/public-pages/home/header-fo
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { ContactComponent } from './pages/public-pages/contact/contact.component';
 import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
+import { NosotrosComponent } from './pages/public-pages/about/nosotros/nosotros.component';
 
 
 
@@ -124,7 +125,8 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
     NavbarComponent,
     HeaderFooterRouterComponent,
     ContactComponent,
-    SchoolCampanignComponent
+    SchoolCampanignComponent,
+    NosotrosComponent
 
   ],
   exports: [
