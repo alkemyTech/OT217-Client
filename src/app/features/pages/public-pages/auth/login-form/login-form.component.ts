@@ -60,11 +60,10 @@ export class LoginFormComponent implements OnInit {
             this.store.dispatch(loginUsers())
           }
          else {
-         this.openSnackBar("Credentials Invalid");
+         this.openSnackBar("Correo y/o contraseña incorretos");
           }
         },
         error => {
-          console.log("error");
         });
   }
 

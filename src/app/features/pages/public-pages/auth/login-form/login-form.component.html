@@ -8,13 +8,13 @@
         <form [formGroup]="createdForm" class="form-login">
           <div class="input-login">
             <mat-form-field appearance="fill" class="inputWidth">
-              <mat-label>Email</mat-label>
+              <mat-label>Correo electrónico</mat-label>
               <input matInput type="text" formControlName="email" />
             </mat-form-field>
           </div>
           <div class="input-login">
             <mat-form-field appearance="fill" class="inputWidth">
-              <mat-label>Password</mat-label>
+              <mat-label>Contraseña</mat-label>
               <input
                 matInput
                 min="6"
@@ -41,7 +41,7 @@
       <div class="div-text-register">
         <p class="text-register">
           ¿No tienes cuenta?
-          <a class="a-link-register" routerLink="/register"> Registrate</a>
+          <a class="a-link-register" routerLink="/register"> Regístrate</a>
         </p>
         <app-auth-google></app-auth-google>
       </div>

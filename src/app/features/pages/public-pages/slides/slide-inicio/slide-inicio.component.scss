@@ -1,29 +1,35 @@
 @media only screen and (max-width: 768px) {
-   .texttitle{
+  .texttitle {
     display: none;
-   }
-   .textdescription{
-    display: none;
-   }
   }
-  
-  @media only screen and (min-width: 992px) {
-   .imagen{
+  .textdescription {
+    display: none;
+  }
+  .imagen {
     width: auto;
-   }
-   .texttitle{
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .imagen {
+    width: auto;
+    height: 500px;
+  }
+  .texttitle {
     font-size: 100%;
-   }
   }
-  
-  @media only screen and (min-width: 1200px) {
-    .imagen{
-        width: auto;
-       }
-    .texttitle{
-        font-size: 100%;
-    }
-    .textdescription{
-        font-size: 100%;
-       }
+}
+
+@media only screen and (min-width: 1200px) {
+  .imagen {
+    width: auto;
+    height: 500px;
   }
+  .texttitle {
+    font-size: 100%;
+  }
+  .textdescription {
+    font-size: 100%;
+  }
+}
