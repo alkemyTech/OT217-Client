@@ -1,5 +1,5 @@
 .editar {
-  background-color: #9ac9fb;
+  background-color: #445466;
 }
 .anchura {
   width: 20%;
@@ -56,9 +56,9 @@ nav.main-menu.expanded {
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
-  color: #999;
+  color: rgb(22, 21, 21);
   font-family: arial;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   -webkit-transform: translateZ(0) scale(1, 1);
   -webkit-transition: all 0.1s linear;
@@ -131,7 +131,7 @@ nav.main-menu li.active > a,
 }
 .area {
   float: left;
-  background: #e2e2e2;
+  background: #fffefe;
   width: 100%;
   height: 100%;
 }
