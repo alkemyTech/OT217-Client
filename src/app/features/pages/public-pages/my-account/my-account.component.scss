@@ -1,0 +1,59 @@
+.head-hero{
+    background-image: url('../../../../../assets/kids-min.png');
+    background-size:cover;
+    background-position: center;
+    height: 150px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome{
+    color: #151515;
+    text-align: left;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+        color: #8DCAFF;
+    }
+}
+
+.avatar{
+    margin-top: -100px;
+    width: 175px;
+    height: auto;
+}
+
+.news-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px #888888;
+    width: 50%;
+    height: 200px;
+}
+
+.box-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.admin-button{
+    background: #8DCAFF;
+    margin-top: 25px;
+    color: #151515;
+    font-weight: bold;
+    height: 50px;
+}

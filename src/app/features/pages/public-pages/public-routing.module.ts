@@ -22,6 +22,7 @@ import { SchoolCampanignComponent } from "./school-campanign/school-campanign.co
 import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.component";
 import { DonationsGuard } from "./guards/donations.guard";
 import { ContactGuard } from "./guards/contac.guard";
+import { MyAccountComponent } from "./my-account/my-account.component";
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: "actividades",
     component: ActivitiesPageComponent,
+  },
+  {
+    path: "myaccount",
+    component: MyAccountComponent,
   },
   {
     path: "toys",

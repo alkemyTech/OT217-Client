@@ -62,6 +62,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { ContactComponent } from './pages/public-pages/contact/contact.component';
 import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { MyAccountComponent } from './pages/public-pages/my-account/my-account.component';
 
 
 
@@ -125,7 +126,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     NavbarComponent,
     HeaderFooterRouterComponent,
     ContactComponent,
-    SchoolCampanignComponent
+    SchoolCampanignComponent,
+    MyAccountComponent
 
   ],
   exports: [

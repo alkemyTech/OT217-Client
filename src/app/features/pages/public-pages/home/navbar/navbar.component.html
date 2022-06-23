@@ -1,6 +1,6 @@
 <nav class="navbar-custom navbar-expand-lg navbar-light bg-blue">
   <div id="user-mess" *ngIf="isLogged">
-    <h5>Bienvenido Usuario/a</h5>
+    <h5><a [routerLink]="'/myaccount'">Bienvenido Usuario/a</a></h5>
   </div>
   <div class="container-fluid">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
