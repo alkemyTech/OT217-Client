@@ -23,7 +23,9 @@
   </section>
   <section>
     <!-- welcome text -->
-    <h1 class="title" id="texto-bienvenida">Texto de bienvenida</h1>
+    <div *ngFor="let data of listaDatos |keyvalue |slice:0:1">
+      <h1 class="title" id="texto-bienvenida">{{data.value.welcome_text}}</h1>
+    </div>
     <hr />
   </section>
 

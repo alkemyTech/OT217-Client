@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LogoutService } from 'src/app/core/services/logout.service';
+import { OrganizationService } from 'src/app/core/services/organization.service';
 
 
 @Component({
@@ -9,15 +10,18 @@ import { LogoutService } from 'src/app/core/services/logout.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private logoutService: LogoutService) { }
+  constructor(private logoutService: LogoutService, private organizationService: OrganizationService) { }
 
 
   public isLogged: boolean = false;
+  public listaDatos: Array<any> = [];
 
 
   ngOnInit() {
     this.onCheckUser();
-
+    this.organizationService.topOrganization().subscribe((result: any) => {
+      this.listaDatos = result;
+    })
   }
 
   onCheckUser() {
