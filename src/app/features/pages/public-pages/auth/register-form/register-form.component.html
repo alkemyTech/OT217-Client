@@ -8,28 +8,28 @@
             <form (ngSubmit)="submit()" [formGroup]="createdForm" class="form-register">
                 <div>
                     <mat-form-field appearance="fill" class="inputWidth">
-                        <mat-label>Name</mat-label>
+                        <mat-label>Nombre</mat-label>
                         <input matInput type="text" required formControlName="name"/>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="fill" class="inputWidth">
-                        <mat-label>Email</mat-label>
+                        <mat-label>Correo electrónico</mat-label>
                         <input matInput type="email" required formControlName="email"/>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="fill" class="inputWidth">
-                        <mat-label>Password</mat-label>
+                        <mat-label> Contraseña </mat-label>
                         <input matInput type="password" required minlength="6" formControlName="password"/>
                     </mat-form-field>
                     <div *ngIf="createdForm?.controls?.password?.errors?.pattern && createdForm?.controls?.password?.touched">
-                        Password is not valid.
+                        La contraseña no es valida.
                     </div>
                 </div>
                 <div>
                     <mat-form-field appearance="fill" class="inputWidth">
-                        <mat-label>Confirm Password</mat-label>
+                        <mat-label>Confirmar contraseña</mat-label>
                         <input matInput type="password" required minlength="6" formControlName="confirmPassword"
                                placeholder="Confirm Password"/>
                     </mat-form-field>

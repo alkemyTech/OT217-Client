@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class SchoolCampanignComponent implements OnInit {
   public currentDate = Date.now();
-  public eventDate = new Date("Jun 20, 2022 13:00").getTime();
+  public eventDate = new Date("Jul 20, 2022 13:00").getTime();
   public days: number;
   public hours: number;
   public minutes: number;
