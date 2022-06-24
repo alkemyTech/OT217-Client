@@ -3,37 +3,20 @@
   <section>
     <app-slide-inicio></app-slide-inicio>
     <!-- slides-->
-    <!-- hero -->
-    <div class="p-5 text-center bg-image" id="foto-hero">
-      <!-- Tuve que dejarlo porque si lo guardo en css me bota el proyecto -->
-      <div class="mask">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="text-white">
-            <h1 class="mb-3"></h1>
-            <h4 class="mb-3"></h4>
-            <div id="boton-conoce">
-              <button class="btn btn-warning" href="#!" role="button">
 
-                Conoce más
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
-  <section>
+  <section id="welcome-text-container">
+    <br>
     <!-- welcome text -->
     <div *ngFor="let data of listaDatos |keyvalue |slice:0:1">
-      <h1 class="title" id="texto-bienvenida">{{data.value.welcome_text}}</h1>
+      <h1 class="title" id="welcome-text">{{data.value.welcome_text}}</h1>
     </div>
-    <hr />
   </section>
 
   <!-- news -->
   <section class="light" id="news">
     <div class="container py-3">
-      <div class="title" id="texto-novedades">Novedades</div>
+      <div class="title" id="news-text">Novedades</div>
 
       <article class="postcard light blue">
         <a class="postcard__img_link" href="#">

@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <main class="main-container">
   <div class="hero-section">
     <h2 class="text-display title">¡Contribuye!</h2>
@@ -5,16 +6,9 @@
       Con tu ayuda podemos crear un futuro mejor.
     </p>
     <div class="donation-container">
-        <mat-label>Selecciona una cantidad</mat-label>
-      <mat-slider
-        (valueChange)="setDonation($event!)"
-        value="{{ donation }}"
-        thumbLabel
-        step="100"
-        min="100"
-        max="500"
-        aria-label="units"
-      >
+      <mat-label>Selecciona una cantidad</mat-label>
+      <mat-slider (valueChange)="setDonation($event!)" value="{{ donation }}" thumbLabel step="100" min="100" max="500"
+        aria-label="units">
       </mat-slider>
       <p class="text-display">
         Tu donación será: <span class="stress">{{ donation | currency: "ARS":"symbol" }}</span>
@@ -29,3 +23,4 @@
     </div>
   </div>
 </main>
+<app-footer></app-footer>

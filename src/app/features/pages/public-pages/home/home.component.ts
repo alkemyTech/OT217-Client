@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       titulo: "Inicio"
     },
     {
-      path: "/members",
+      path: "/nosotros",
       titulo: "Nosotros"
     },
     {

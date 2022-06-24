@@ -48,7 +48,6 @@ import { NewsListComponent } from './pages/private-pages/news/news-list/news-lis
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { HeaderSidebarComponent } from './pages/private-pages/header-sidebar/header-sidebar.component';
 import { ToysCampaignComponent } from './pages/public-pages/toys-campaign/toys-campaign.component';
-import { FooterJuguetesComponent } from "./pages/public-pages/home/footer-juguetes/footer-juguetes.component";
 import { PageNotFoundComponent } from './pages/public-pages/page-not-found/page-not-found.component';
 import { PdfViewerModule } from "ng2-pdf-viewer";
 import { DialogContentPdfComponent } from "./components/dialog-content-pdf/dialog-content-pdf.component";
@@ -63,6 +62,7 @@ import { ContactComponent } from './pages/public-pages/contact/contact.component
 import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/school-campanign.component";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MyAccountComponent } from './pages/public-pages/my-account/my-account.component';
+import { FooterJuguetesComponent } from "./pages/public-pages/toys-campaign/footer-juguetes/footer-juguetes.component";
 
 
 
@@ -76,14 +76,14 @@ import { MyAccountComponent } from './pages/public-pages/my-account/my-account.c
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-   SlidesFormComponent,
+    SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     ActivitiesPageComponent,
     ActivityCardComponent,
     PaginatePipe,
     SlideInicioComponent,
- SlideHomeComponent,
+    SlideHomeComponent,
     DashBoardBackofficeComponent,
     CreationActivitiesComponent,
     FormContactComponent,
@@ -92,7 +92,7 @@ import { MyAccountComponent } from './pages/public-pages/my-account/my-account.c
     ThanksComponent,
     DetailComponent,
     UserComponent,
-  SlidesListComponent,
+    SlidesListComponent,
     TableComponent,
     CardComponent,
     HomeComponent,
@@ -134,7 +134,7 @@ import { MyAccountComponent } from './pages/public-pages/my-account/my-account.c
     RegisterFormComponent,
     CategoriesFormComponent,
     NewsFormComponent,
-   SlidesFormComponent,
+    SlidesFormComponent,
     TestimonialFormComponent,
     UserFormComponent,
     RouterModule,
@@ -145,7 +145,7 @@ import { MyAccountComponent } from './pages/public-pages/my-account/my-account.c
   ],
   entryComponents: [SetupAlertsComponent],
 
-  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, SweetAlert2Module, MaterialModule, AppRoutingModule, RouterModule, MatIconModule,LeafletModule,PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
+  imports: [CommonModule, CKEditorModule, ReactiveFormsModule, FormsModule, SweetAlert2Module, MaterialModule, AppRoutingModule, RouterModule, MatIconModule, LeafletModule, PdfViewerModule, AngularFireModule.initializeApp(environment.firebaseConfig)]
 
 })
 export class FeaturesModule {
