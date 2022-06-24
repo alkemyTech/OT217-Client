@@ -193,6 +193,10 @@
     justify-content: center;
     align-self: center;
   }
+
+  .logoScolar{
+    width: 80px;
+  }
   
   @media only screen and (min-width: 768px) {
     .timer-show {
@@ -218,11 +222,11 @@
   
   @media only screen and (min-width: 1200px) {
     .smart-bg{
-      background-image: url(../../../../../assets/escolar/opción1.png);
+      background-image: linear-gradient(rgba(194, 218, 229, 0.7), rgba(198, 216, 218, 0.7)), url(../../../../../assets/escolar/opción1.png);
       background-repeat: no-repeat;
+      background-size: contain;
       background-size: cover;
       background-attachment: fixed;
-      overflow: scroll;
       background-color: #ade0fd;
     }
   }

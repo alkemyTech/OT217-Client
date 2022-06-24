@@ -18,14 +18,12 @@ export class PrivateApiServiceService {
     return this.http.put<T>(url, body, { headers: this.headers });
   }
 
-<<<<<<< HEAD
   private delete<T>(url: string):Observable<T> {
     return this.http.delete<T>(url, { headers: this.headers});
 
     
     
   }
-=======
   public patch<T>(url: string, id: string | number, body: any):Observable<T> {
     return this.http.patch<T>(url, body , { headers: this.headers });
   }
@@ -40,5 +38,4 @@ export class PrivateApiServiceService {
 
 
 
->>>>>>> main
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LogoutService } from 'src/app/core/services/logout.service';
+import { OrganizationService } from 'src/app/core/services/organization.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  rutas: any[] = [
+  constructor(private logoutService: LogoutService, private organizationService: OrganizationService) { }
+
+
+  public isLogged: boolean = false;
+  public listaDatos: Array<any> = [];
+
+
+  ngOnInit() {
+    this.onCheckUser();
+    this.organizationService.topOrganization().subscribe((result: any) => {
+      this.listaDatos = result;
+    })
+  }
+
+  onCheckUser() {
+    if (localStorage.getItem("token") == null) {
+      this.isLogged = false;
+    } else {
+      this.isLogged = true;
+    }
+  }
+
+  onLogout() {
+    this.logoutService.logOut();
+    localStorage.removeItem('token');
+  }
+
+
+  routes: any[] = [
     {
       path: "",
       titulo: "Inicio"
@@ -17,32 +48,33 @@ export class HomeComponent implements OnInit {
       titulo: "Nosotros"
     },
     {
-      path: "/actividades",
-      titulo: "Actividades"
-    },
-
-    {
-      path: "/novedades",
-      titulo: "Novedades"
-    },
-    {
-      path: "/testimonios",
-      titulo: "Testimonios"
-    },
-    {
-      path: "/contactos",
-      titulo: "Contactos"
-    },
-    {
-      path: "/contribuye",
-      titulo: "Contribuye"
-    },
-
+      path: "/contact",
+      titulo: "Contacto"
+    }
   ]
 
-  constructor() { }
+  buttonroutes: any[] = [
+    {
+      path: "/login",
+      titulo: "Login"
 
-  ngOnInit() {
-  }
+    },
+    {
+      path: "/register",
+      titulo: "Registrate"
+    }
+  ]
+
+  campaignRoutes: any[] = [
+    {
+      path: "/schoolCampaign",
+      titulo: "Materiales escolares"
+    },
+    {
+      path: "/toys",
+      titulo: "Juguetes"
+    }
+  ]
+
 
 }

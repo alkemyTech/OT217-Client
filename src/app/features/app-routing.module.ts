@@ -41,6 +41,7 @@ const routes: Routes = [
   {
     path: "donar",
     component: DonationsComponent,
+
   },
   {
     path: "gracias",
@@ -58,9 +59,9 @@ const routes: Routes = [
     path: "backoffice/news/:id",
     component: NewsFormComponent,
   },
- {
+  {
     path: "backoffice/newslide",
-   component: SlidesFormComponent,
+    component: SlidesFormComponent,
   },
   {
     path: "backoffice/slides/:id",
@@ -96,7 +97,7 @@ const routes: Routes = [
   },
   {
     path: "backoffice/Home/:id",
-   component: SlideHomeComponent,
+    component: SlideHomeComponent,
   },
   {
     path: "members",
@@ -110,31 +111,35 @@ const routes: Routes = [
 
   {
     path: "backoffice",
-    component: DashBoardBackofficeComponent
+    component: DashBoardBackofficeComponent,
   },
   {
     path: "creationActividades",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
   {
     path: "backoffice/activities/create",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
   {
     path: "creationActividades/:id",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
   {
     path: "**",
     redirectTo: "actividades",
     pathMatch: "full",
   },
-
-]
+];
 
 @NgModule({
   declarations: [],
   exports: [RouterModule],
-  imports: [CommonModule, RouterModule.forRoot(routes), privateRoutingModule, publicRoutingModule],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes),
+    privateRoutingModule,
+    publicRoutingModule,
+  ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

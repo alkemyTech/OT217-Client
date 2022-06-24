@@ -37,5 +37,9 @@ export class OrganizationListService extends PublicApiService {
     return this.getById<Organization>(this.endpoint + "/" + id);
   }
 
+  getOrganizationData(): Observable<any> {
+    return this.http.get(this.endpoint);
+  }
+
 
 }
