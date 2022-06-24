@@ -1,11 +1,26 @@
 .map {
-  height: 50%;
-  width: 90%;
-  margin: auto;
+  height: 90vh;
+  width: 95%;
+  margin: 30px 1px;
   
 }
 .background{
   background-image: url("../../../../../assets/escolar/Logotipo-campaña-materiales-escolares.png");
   background-repeat: no-repeat;
   background-position: right top
+}
+@media (max-width: 1100px) {
+  .formContact{
+    padding-left:40px ;
+  }
+}
+
+@media (max-width:575px) {
+  .formContact{
+    padding-right:40px ;
+  }
+  .colums{
+    width: 100%;
+    margin-left: 12px;
+  }
 }
