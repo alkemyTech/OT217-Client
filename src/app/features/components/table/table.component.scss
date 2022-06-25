@@ -79,3 +79,13 @@
     justify-content: center;
     align-items: center;
   }
+
+  .create-button{
+    color: #151515;
+    display: flex;
+    justify-content: center;
+    button{
+      background: #9ac9fb;
+      width: 60%;
+    }
+  }

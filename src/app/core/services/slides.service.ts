@@ -9,10 +9,6 @@ import { environment } from "../../../environments/environment.prod";
 })
 export class SlidesService extends PublicApiService {
 
-  public constructor(http: HttpClient) {
-    super(http);
-  }
-
   postSlides<Slides>(slides: any): Observable<any> {
     return this.post<Slides>(slides);
   }
@@ -21,8 +17,8 @@ export class SlidesService extends PublicApiService {
     return this.get<Slides>(this.getUrl());
   }
 
-  putSlides<Slides>(slides: any, id: string): Observable<Slides> {
-    return this.put<Slides>(id, slides);
+  putSlides(slides: any, id: string): Observable<any> {
+    return this.put<any>('https://ongapi.alkemy.org/api/slides/' + String(id), slides);
   }
 
   getSlidesById<Slides>(id:string):Observable<Slides>{
@@ -36,4 +32,8 @@ export class SlidesService extends PublicApiService {
     return environment.slidesUrl;
   }
 
+
+  newPut(slide:any, id:string):Observable<any>{
+    return this.http.put('https://ongapi.alkemy.org/api/slides/' + id, slide)
+  }
 }

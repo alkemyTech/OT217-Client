@@ -6,6 +6,9 @@
   </p>
 </div>
 
+<div class="create-button">
+  <button mat-raised-button [routerLink]="'/backoffice/newslide'">Crear {{ title }}</button>
+</div>
 <div *ngIf="dataArray.length === 0; else elseBlock">
   <app-skeleton [skeletonStyle]="'table'" [repetition]="3"></app-skeleton>
 </div>

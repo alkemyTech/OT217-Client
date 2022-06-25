@@ -102,8 +102,10 @@ export class SlidesFormComponent implements OnInit {
 
     if (this.slidesId) {
       this.slidesService
-        .putSlides(slidesCommit, this.slidesId)
-        .subscribe((response) => { });
+        .newPut(slidesCommit, this.slidesId)
+        .subscribe((response) => { 
+          console.log(response)
+        });
       this.slides.reset();
     } else if (!this.slidesId) {
       this.slidesService.postSlides(slidesCommit).subscribe((response) => { });
