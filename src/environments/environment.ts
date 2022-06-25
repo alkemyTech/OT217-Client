@@ -8,6 +8,7 @@ export const environment = {
   members: "https://ongapi.alkemy.org/api/members",
   baseUrl:"https://ongapi.alkemy.org/api",
   news: "/news",
+  users: "/users",
   slidesUrl : "/slides",
   contacts: "/contacts",
   firebaseConfig : {
