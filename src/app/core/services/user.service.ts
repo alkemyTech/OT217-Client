@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Users } from "src/app/shared/model/Users";
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators'
 import { PublicApiService } from "./public-api.service";
 import { environment } from "src/environments/environment";
 
@@ -18,6 +18,7 @@ export class UserService extends PublicApiService {
     super(http);
   }
   url: string = "https://ongapi.alkemy.org/api/users";
+  searchUrl:string = "/users?search="
 
   postUser(user: any): Observable<any> {
     return this.http.post(this.url, user);
@@ -48,4 +49,5 @@ export class UserService extends PublicApiService {
     deleteUsers<Users>(id:string):Observable<Users>{
       return this.delete<Users>(this.getUrl()+'/' +id);
     }
+    
 }

@@ -8,7 +8,7 @@ export interface Users {
 
   password: string;
 
-  role_id: number;
+  role_id:string;
 
   remember_token: string;
 

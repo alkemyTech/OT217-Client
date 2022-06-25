@@ -14,6 +14,8 @@ import { MatTableModule } from '@angular/material/table';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule} from '@angular/material/autocomplete'
 
 
 
@@ -36,6 +38,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     NgxSkeletonLoaderModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule
 
   ],
   exports: [
@@ -53,7 +57,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     NgxSkeletonLoaderModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatDialogActions
+    MatDialogActions,
+    MatAutocompleteModule,
+    BrowserAnimationsModule
   ]
 })
 export class MaterialModule { }
