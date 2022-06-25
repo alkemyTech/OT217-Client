@@ -25,17 +25,20 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new userActions.Load());
    this.usuario$ = this.store.pipe(select(fromUsers.getUsers))
+   this.getUsers()
   }
 
 
-  onDelete(user: Users) {
-    this.userService
-      .deleteUser(user)
-      .subscribe(
-        () => (this.users = this.users.filter((u) => u.id !== user.id))
-      );
+  getUsers() {
+    this.userService.getUsers().subscribe((response) => {
+      this.users = response.data;
+    });
   }
-  onEdit(user: Users) {
-    this.route.navigate([`/backoffice/users/${user.id}`]);
-  } 
+
+  deleteUsers= (args: any): void => {
+    let id = String(args);
+    this.userService.deleteUsers(id).subscribe(() => {
+      this.getUsers();
+    });
+  };
 }
