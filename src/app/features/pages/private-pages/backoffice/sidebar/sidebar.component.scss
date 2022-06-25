@@ -27,8 +27,9 @@ nav.main-menu.expanded {
 }
 
 .main-menu {
+  padding-top: 100px ;
   background-color: #9ac9fb;
-  position: absolute;
+  position: sticky;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -37,7 +38,6 @@ nav.main-menu.expanded {
   overflow: hidden;
   -webkit-transition: width 0.05s linear;
   transition: width 0.05s linear;
-  -webkit-transform: translateZ(0) scale(1, 1);
   z-index: 1000;
 }
 
@@ -128,12 +128,6 @@ nav.main-menu li.active > a,
 .dashboard-page nav.dashboard-menu ul li.active a {
   color: #fff;
   background-color: #9ac9fb;
-}
-.area {
-  float: left;
-  background: #fffefe;
-  width: 100%;
-  height: 100%;
 }
 @font-face {
   font-family: "Titillium Web";
