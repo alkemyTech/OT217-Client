@@ -11,3 +11,19 @@ export class Activities{
 
     }
 }
+
+export interface Organization {
+    constructor(
+        name: string,
+        logo: string,
+        welcome_text: string,
+        short_description: string,
+        address: string,
+        phone: string,
+        facebook_url: string,
+        linkedin_url: string,
+        instagram_url: string,
+        twitter_url: string
+
+    )
+}
