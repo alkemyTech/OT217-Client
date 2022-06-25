@@ -1,5 +1,11 @@
 //menu items, logo and links
+.nabvarLg{
+  display: flex;
+}
 
+.btb-toggler{
+  display: none !important;
+}
 .menu {
   background-color: #9ac9fb;
   width: 100%;
@@ -37,28 +43,34 @@ ul {
 }
 
 .logo {
-  width: 40%;
+ // width: 40%;
   list-style-type: none;
 }
 
 /* Modify the background color */
 .navbar-custom {
   background-color: #9ac9fb;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .nav-link {
   font-family: Roboto;
 }
-
+.hoverLink:hover{
+  font-size: 1.5rem ;
+}
 .nav-item active {
   list-style: none;
 }
 
 .navbar-nav {
   display: flex;
-  margin-left: 1%;
+  margin-left: 6%;
 }
-
+.btn-margin{
+  margin-right: 2%;
+}
 .btn-group :nth-child(1) {
   margin-left: 7%;
 }
@@ -91,7 +103,10 @@ ul {
 }
 
 #campaign {
-  margin-right: 10%;
+  margin-right: 5%;
+}
+.headerNavWidth{
+  width: 200px;
 }
 
 @media screen and (max-width: 1078px) {
@@ -106,3 +121,21 @@ ul {
     font-size: 14px;
   }
 }
+@media screen and (min-width: 721px) {
+  .headerNavWidth{
+    display: none;
+  }
+  
+}
+@media (max-width:991px){
+  #campaign {
+    margin-bottom: 15px;
+  }
+  .navbar-nav {
+    margin-left: 3%;
+  }
+  .heihtName{
+    height: 12px;
+  }
+}
+
