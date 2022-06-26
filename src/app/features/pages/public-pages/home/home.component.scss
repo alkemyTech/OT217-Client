@@ -549,27 +549,6 @@ li {
   border-style: none;
 }
 
-//dont show aside
-
-@media screen and (max-width: 1560px) and (min-width: 992px) {
-  #columna {
-    display: none;
-  }
-
-  #columna-container {
-    display: none;
-  }
-}
-
-//show aside
-
-@media screen and (max-width: 991px) {
-  .principal {
-    width: 70%;
-    float: left;
-  }
-}
-
 //welcome text decrease font size to adjust small screen
 
 @media screen and (max-width: 800px) {
