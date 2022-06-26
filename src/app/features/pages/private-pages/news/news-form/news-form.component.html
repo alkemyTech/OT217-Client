@@ -9,10 +9,11 @@
           class="inputs"
           matInput
           formControlName="name"
+          (change)="setError()"
         />
         <mat-error>4 Caracteres Mínimo</mat-error>
       </mat-form-field>
-<!-- 
+
       <mat-form-field appearance="fill">
         <mat-label>Categoria</mat-label>
         <mat-select class="inputs" formControlName="category_id">
@@ -23,7 +24,7 @@
           </div>
         </mat-select>
         <mat-error>Todos los campos son obligatorios</mat-error>
-      </mat-form-field> -->
+      </mat-form-field>
 
       <div class="special-input">
         <label class="input-label">Agrega una imagen a la novedad</label>
@@ -37,14 +38,14 @@
         />
       </div>
 
-<!--       <div class="special-input">
+      <div class="special-input">
         <label class="input-label">Descripción de la novedad</label>
         <ckeditor
           class="content-editor file-input"
           formControlName="content"
           [editor]="Editor"
         ></ckeditor>
-      </div> -->
+      </div>
 
       <button
         mat-raised-button
@@ -54,6 +55,12 @@
       >
         Enviar
       </button>
+      <button
+      class="formButton2 inputs"
+      (click)="setError()"
+    >
+      Enviar
+    </button>
     </form>
   </main>
 </div>

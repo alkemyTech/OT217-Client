@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RouterTestingModule } from "@angular/router/testing";
+import { NewsService } from 'src/app/core/services/news.service';
+import { MatSelectModule } from '@angular/material/select';
 
 import { NewsFormComponent } from './news-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -44,7 +46,9 @@ fdescribe('NewsFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewsFormComponent ]
+      declarations: [ NewsFormComponent ],
+      imports: [HttpClientTestingModule, ReactiveFormsModule, RouterTestingModule, MatDialogModule ], 
+      providers: [NewsService]
     })
     .compileComponents();
   });
@@ -61,18 +65,27 @@ fdescribe('NewsFormComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('Components Validations'), () =>{
+  it('Components Validations', () =>{
     const fixture = TestBed.createComponent(NewsFormComponent);
     const app = fixture.componentInstance;
     fixture.detectChanges();
 
-    const form = app.email;
-    const name = app.email.controls['name']
+    const form = app.titleForm;
+    const name = app.titleForm.controls['name']
     name.setValue('Franco')
 
-    const btnElement = fixture.debugElement.query(By.css('formButton'))
-    btnElement.nativeElement.click()
+    expect(form.valid).toBeTruthy();
+  });
 
-    expect(form.invalid).toBeTrue();
-  }
+  it('API error is TRUE', () =>{
+    const fixture = TestBed.createComponent(NewsFormComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const error = app.testError;
+    const name = app.titleForm.controls['name']
+    name.setValue('')
+
+    expect(error).toBeTruthy();
+  });
 });

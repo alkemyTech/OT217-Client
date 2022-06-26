@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { CategoriesService } from "src/app/core/services/categories.service";
 import { NewsService } from "src/app/core/services/news.service";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { News } from "../../../../../shared/models/News";
@@ -14,9 +13,11 @@ import { AlertComponent } from "src/app/features/components/setup-alerts/alert/a
   styleUrls: ["./news-form.component.scss"],
 })
 export class NewsFormComponent implements OnInit {
+  testError:boolean = true;
+
   categories: News[] = [];
   cardImageBase64: string = "";
-  email = new FormGroup({
+  titleForm = new FormGroup({
     name: new FormControl('', Validators.minLength(4)),
   })
   news: any;
@@ -33,6 +34,10 @@ export class NewsFormComponent implements OnInit {
     reader.onload = () => {
       this.cardImageBase64 = reader.result as string;
     };
+  }
+
+  setError(){
+    this.testError = false;
   }
 
   newsCommit() {
@@ -74,7 +79,6 @@ export class NewsFormComponent implements OnInit {
   }
 
   constructor(
-    private categoriesService: CategoriesService,
     private newsService: NewsService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -84,9 +88,9 @@ export class NewsFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe((response) => {
+/*     this.categoriesService.getCategories().subscribe((response) => {
       this.categories = response.data;
-    });
+    }); */
 
     if (this.newsId) {
       this.title = "Modificar Novedad";
