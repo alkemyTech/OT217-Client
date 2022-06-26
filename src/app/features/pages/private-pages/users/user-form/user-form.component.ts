@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Validators, FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { UserService } from "src/app/core/services/user.service";
+import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 @Component({
   selector: "app-user-form",
@@ -12,6 +13,7 @@ export class UserFormComponent {
   formRecicler: any;
   userId: string | null = "";
   archivoImage: string = "";
+  public Editor = ClassicEditor;
 
   constructor(
     private FormBuilder: FormBuilder,
