@@ -179,6 +179,11 @@
   font-size: large;
 }
 
+.app-footer-juguetes{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
 .left {
   display: flex;
   justify-content: center;
@@ -213,6 +218,10 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-color: #ade0fd;
+  }
+  .campaign-image{
+    max-height: 500px;
+    max-width: auto;
   }
 }
 
