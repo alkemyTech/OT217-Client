@@ -55,7 +55,7 @@ export class NewsFormComponent implements OnInit {
       );
       this.news.reset();
     } else if (!this.newsId) {
-      this.newsService.postNews(newsCommit).subscribe(
+      this.newsService.newPostNews(newsCommit).subscribe(
         (response) => {
           return response;
         },

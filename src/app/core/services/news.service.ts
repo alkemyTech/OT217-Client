@@ -45,4 +45,7 @@ export class NewsService extends PublicApiService {
   }
 
 
+  newPostNews(news:any):Observable<any>{
+    return this.http.post('https://ongapi.alkemy.org/api/news', news);
+  }
 }
