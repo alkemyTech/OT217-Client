@@ -48,8 +48,8 @@ export class NavbarComponent implements OnInit {
       titulo: "Inicio"
     },
     {
-      path: "/nosotros",
-      titulo: "Nosotros"
+      path: "/donar",
+      titulo: "Donar"
     },
     {
       path: "/contact",
