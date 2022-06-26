@@ -1,8 +1,14 @@
-<app-navbar></app-navbar>
-<input type="text" class="form-control" placeholder="Buscar actividad" #txtQuery
+<div class="divider-container">
+  <hr class="divider">
+</div>
+
+<div class="form-control-container">
+  <input type="text" class="form-control" placeholder="Buscar actividad" #txtQuery
   (keyup)="shearsActie(txtQuery.value)" />
+</div>
+
 <main class="activity-page-container container-fluid" data-aos="fade-up">
-  <h2 class="page-title text">Activity</h2>
+  <h2 class="page-title text">Actividades</h2>
   <p class="page-description text">
     Mediante nuestros programas educativos, buscamos incrementar la capacidad
     intelectual, moral y afectiva de las personas de acuerdo con la cultura y
@@ -27,4 +33,3 @@
     </mat-paginator>
   </div>
 </main>
-<app-footer></app-footer>
