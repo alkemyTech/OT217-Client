@@ -34,7 +34,7 @@ export class AuthGoogleComponent {
     if (this.newUser) {
       this.saveService.registerUser(this.user).subscribe(
         (r) => {
-          this.router.navigate(["/actividades"]);
+          this.router.navigate(["/home"]);
           this.saveService.addToken(r);
         },
         (error) => {

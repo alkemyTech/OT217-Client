@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { Slides } from "src/app/shared/models/Slides";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { FormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { SlidesService } from "src/app/core/services/slides.service";
 import { MatDialog } from "@angular/material/dialog";
 import { SlidesModalComponent } from "../slides-modal/slides-modal.component";
+import { AlertsService } from "src/app/core/services/alerts.service";
 
 @Component({
   selector: "app-slides-form",
@@ -28,7 +29,9 @@ export class SlidesFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private slidesService: SlidesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private alert: AlertsService,
+    private routes: Router
   ) {
     this.slidesId = this.route.snapshot.params.id;
   }
@@ -103,12 +106,17 @@ export class SlidesFormComponent implements OnInit {
     if (this.slidesId) {
       this.slidesService
         .newPut(slidesCommit, this.slidesId)
-        .subscribe((response) => { 
-          console.log(response)
+        .subscribe((response) => {
+          console.log(response);
+          this.alert.modifiedOk();
+          this.routes.navigate(['/backoffice/slides'])
         });
       this.slides.reset();
     } else if (!this.slidesId) {
-      this.slidesService.postSlides(slidesCommit).subscribe((response) => { });
+      this.slidesService.postSlides(slidesCommit).subscribe((response) => {
+        this.alert.createdOk();
+        this.routes.navigate(['/backoffice/slides'])
+      });
       this.slides.reset();
     }
   }

@@ -32,7 +32,11 @@ const routes: Routes = [
   },
   {
     path: "actividades",
-    component: ActivitiesPageComponent,
+    component: HomeComponent,
+  },
+  {
+    path: "slideslide",
+    component: SlideInicioComponent,
   },
   {
     path: "myaccount",
