@@ -63,6 +63,7 @@ import { SchoolCampanignComponent } from "./pages/public-pages/school-campanign/
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MyAccountComponent } from './pages/public-pages/my-account/my-account.component';
 import { FooterJuguetesComponent } from "./pages/public-pages/toys-campaign/footer-juguetes/footer-juguetes.component";
+import { UserSearchComponent } from './pages/private-pages/users/user-search/user-search.component';
 
 
 
@@ -127,7 +128,8 @@ import { FooterJuguetesComponent } from "./pages/public-pages/toys-campaign/foot
     HeaderFooterRouterComponent,
     ContactComponent,
     SchoolCampanignComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    UserSearchComponent,
 
   ],
   exports: [
