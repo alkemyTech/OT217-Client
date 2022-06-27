@@ -1,0 +1,29 @@
+<div class="find-container">
+  <h3 id="title">Búsqueda de Usuarios</h3>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Buscar Usuarios"
+    #txtQuery
+    (keyup)="dateChanged()"
+    [(ngModel)]="search"
+  />
+</div>
+<div class="container" id="contenedor">
+  <table class="table">
+    <thead>
+      <tr id="border">
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fecha de Creaciòn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of screenUsers">
+        <td id="name">{{ item.name }}</td>
+        <td id="email">{{ item.email }}</td>
+        <td>{{ item.created_at }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

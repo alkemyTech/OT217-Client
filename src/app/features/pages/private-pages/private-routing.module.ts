@@ -13,6 +13,7 @@ import { CreationActivitiesComponent } from "../public-pages/activities/creation
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { UserGuard } from "src/app/features/pages/private-pages/guards/user.guard/user.guard.component";
+import { UserSearchComponent } from "./users/user-search/user-search.component";
 const routes: Routes = [
   {
     canActivate: [UserGuard],
@@ -23,6 +24,11 @@ const routes: Routes = [
     canActivate: [UserGuard],
     path: "backoffice/organization/edit",
     component: OrganizationEditComponent,
+  },
+  {
+    canActivate: [UserGuard],
+    path: "users/search",
+    component: UserSearchComponent,
   },
   {
     canActivate: [UserGuard],
@@ -67,38 +73,38 @@ const routes: Routes = [
   {
     canActivate: [UserGuard],
     path: "backoffice/organization/list",
-    component: OrganizationListComponent
+    component: OrganizationListComponent,
   },
   {
     canActivate: [UserGuard],
     path: "backoffice",
-    component: DashBoardBackofficeComponent
+    component: DashBoardBackofficeComponent,
   },
   {
     canActivate: [UserGuard],
     path: "backoffice/activities/create",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
   {
     canActivate: [UserGuard],
     path: "backoffice/activities/create/:id",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
   {
     canActivate: [UserGuard],
     path: "backoffice/activities/create",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
   {
     canActivate: [UserGuard],
     path: "backoffice/activities/create/:id",
-    component: CreationActivitiesComponent
+    component: CreationActivitiesComponent,
   },
-]
+];
 
 @NgModule({
   declarations: [],
   exports: [RouterModule],
   imports: [CommonModule, RouterModule.forRoot(routes)],
 })
-export class privateRoutingModule { }
+export class privateRoutingModule {}
