@@ -23,6 +23,7 @@ import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.compone
 import { DonationsGuard } from "./guards/donations.guard";
 import { ContactGuard } from "./guards/contac.guard";
 import { MyAccountComponent } from "./my-account/my-account.component";
+import { NosotrosComponent } from "./about/nosotros/nosotros.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: "actividades",
     component: ActivitiesPageComponent,
+  },
+  {
+    path: "nosotros",
+    component: NosotrosComponent,
   },
   {
     path: "myaccount",
