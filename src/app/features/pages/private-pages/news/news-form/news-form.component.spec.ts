@@ -1,21 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RouterTestingModule } from "@angular/router/testing";
 import { NewsService } from 'src/app/core/services/news.service';
-import { MatSelectModule } from '@angular/material/select';
+
 
 import { NewsFormComponent } from './news-form.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule, ControlValueAccessor } from '@angular/forms';
 import { MatDialogModule} from '@angular/material/dialog';
-import { forwardRef } from '@angular/core';
 
-import { Component } from '@angular/core';
-
-import { async } from '@angular/core/testing';
-import { MatOptionModule } from '@angular/material/core';
-import { By } from '@angular/platform-browser';
 
 class MatSelectStubComponent implements ControlValueAccessor {
   writeValue(obj: any) {}
