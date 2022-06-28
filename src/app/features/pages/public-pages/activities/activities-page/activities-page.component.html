@@ -6,7 +6,9 @@
   <input type="text" class="form-control" placeholder="Buscar actividad" #txtQuery
   (keyup)="shearsActie(txtQuery.value)" />
 </div>
-
+<div *ngIf="activities.length === 0; else elseBlock">
+  <app-skeleton [skeletonStyle]="'table'" [repetition]="3"></app-skeleton>
+</div>
 <main class="activity-page-container container-fluid" data-aos="fade-up">
   <h2 class="page-title text">Actividades</h2>
   <p class="page-description text">
