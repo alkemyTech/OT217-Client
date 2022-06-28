@@ -130,7 +130,6 @@ import { UserSearchComponent } from './pages/private-pages/users/user-search/use
     SchoolCampanignComponent,
     MyAccountComponent,
     UserSearchComponent,
-
   ],
   exports: [
     RegisterFormComponent,
