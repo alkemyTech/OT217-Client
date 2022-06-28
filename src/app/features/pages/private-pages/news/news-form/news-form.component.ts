@@ -88,9 +88,6 @@ export class NewsFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-/*     this.categoriesService.getCategories().subscribe((response) => {
-      this.categories = response.data;
-    }); */
 
     if (this.newsId) {
       this.title = "Modificar Novedad";
