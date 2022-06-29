@@ -23,6 +23,7 @@ import { SlideInicioComponent } from "./slides/slide-inicio/slide-inicio.compone
 import { DonationsGuard } from "./guards/donations.guard";
 import { ContactGuard } from "./guards/contac.guard";
 import { MyAccountComponent } from "./my-account/my-account.component";
+import { UserGuard } from "./guards/user.guard";
 
 const routes: Routes = [
   {
@@ -73,6 +74,7 @@ const routes: Routes = [
     component: LoginFormComponent,
   },
   {
+    canActivate:[UserGuard],
     path: "register",
     component: RegisterFormComponent,
   },
