@@ -8,7 +8,7 @@ import { environment } from "../../../environments/environment";
   providedIn: "root",
 })
 export abstract class PublicApiService {
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   protected baseUrl: string = environment.baseUrl;
 
@@ -18,7 +18,7 @@ export abstract class PublicApiService {
     return this.http.post<T>(this.baseUrl + this.getUrl(), body);
   }
 
-  public get<T>(endpoint:string): Observable<T> {
+  public get<T>(endpoint: string): Observable<T> {
     return this.http.get<T>(this.baseUrl + this.getUrl());
   }
 

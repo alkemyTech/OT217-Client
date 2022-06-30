@@ -1,19 +1,19 @@
 <main class="activity-page-container container-fluid" data-aos="fade-up">
-  <h2 class="page-title text">Nosotros</h2>
+  <h2 class="page-title text">Miembros</h2>
   <p class="page-description text">
     Estos son los principales miembros de nuestra organización
   </p>
   <div class="row p-4">
+
     <app-members-card-component class=" col-12 col-md-6 col-lg-4 mt-3"
-      *ngFor="let item of membersData | paginate: page_size:page_number" name="{{ item.name }}" image="{{ item.image }}"
-      description="{{ item.description }}">
+      *ngFor="let item of membersData$ | async | paginate: page_size:page_number" name="{{ item.name }}"
+      image="{{ item.image }}" description="{{ item.description }}">
 
     </app-members-card-component>
 
   </div>
   <div class="card-paginator">
-    <mat-paginator [length]="membersData.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
-      (page)="handlePage($event)">
+    <mat-paginator [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions" (page)="handlePage($event)">
     </mat-paginator>
   </div>
 </main>
