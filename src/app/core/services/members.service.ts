@@ -8,35 +8,48 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root'
 })
 export class MembersService extends PublicApiService {
-    getUrl(): string {
-        throw new Error('Error');
-    }
 
-    endpoint: string = environment.members;
+
+    //endpoint: string = environment.members;
 
     public constructor(_http: HttpClient) {
         super(_http);
     }
 
+    organizationApiUrl = "https://ongapi.alkemy.org/api/members"
+
+
+
+    topMembers(): Observable<any> {
+        return this.http.get(this.organizationApiUrl);
+    }
+
+    getUrl(): string {
+        return environment.members;
+    }
+
+
     postMembers<Members>(members: any): Observable<any> {
-        return this.post<Members>(this.endpoint);
+        return this.post<Members>(this.getUrl);
     }
 
     getMembers<Members>(): Observable<any> {
-        return this.get<Members>(this.endpoint);
+        return this.get<Members>(this.getUrl());
     }
 
     putMembers<Members>(members: any, id: string): Observable<Members> {
-        return this.put<Members>(this.endpoint + "/" + id, members);
+        return this.put<Members>(this.getUrl + "/" + id, members);
     }
 
     getMembersById<Members>(id: string): Observable<Members> {
-        return this.getById<Members>(this.endpoint + "/" + id);
+        return this.getById<Members>(this.getUrl + "/" + id);
     }
 
     deleteMembers<Members>(id: string): Observable<Members> {
-        return this.delete<Members>(this.endpoint + "/" + id);
+        return this.delete<Members>(this.getUrl + "/" + id);
     }
+
+
 
 }
 

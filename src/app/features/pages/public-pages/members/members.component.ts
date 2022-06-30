@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MembersService } from 'src/app/core/services/members.service';
 import { PageEvent } from '@angular/material/paginator';
-import { inject } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { retrievedMembersList } from 'src/app/shared/state/members/members.actions';
+import { Observable } from 'rxjs';
+import { selectMembers } from 'src/app/shared/state/members/members.selectors';
 
 
 
@@ -14,8 +17,11 @@ import { inject } from '@angular/core';
 
 export class MembersComponent implements OnInit {
   membersData: any;
+  membersData$: Observable<any> = new Observable()
 
-  constructor(private membersService: MembersService) { }
+  constructor(private membersService: MembersService, private store: Store) {
+    this.membersData$ = this.store.select(selectMembers)
+  }
 
   page_size: number = 3;
   page_number: number = 1;
@@ -26,8 +32,15 @@ export class MembersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.membersService.getMembers().subscribe(response => {
-      this.membersData = response.data;
+    this.loadData();
+
+  }
+
+  loadData() {
+    this.membersService.topMembers().subscribe(response => {
+      this.store.dispatch(retrievedMembersList({ members: response.data }))
+      //this.membersData = response.data;
     })
   }
+
 }
