@@ -128,7 +128,8 @@ import { MyAccountComponent } from "./pages/public-pages/my-account/my-account.c
     SchoolCampanignComponent,
     UserComponent,
     NosotrosComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    
   ],
   exports: [
     RegisterFormComponent,
