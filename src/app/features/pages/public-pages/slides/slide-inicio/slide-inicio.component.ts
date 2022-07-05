@@ -17,8 +17,19 @@ export class SlideInicioComponent implements OnInit {
   }
 
   getSlides() {
+    let slidesData = []
     this.slideService.getSlides().subscribe((response) => {
-      this.slides = response.data;
+      slidesData = response.data;
+      slidesData.map((slide)=>{
+        if(slide.order == 1){
+          this.slides.push(slide);
+        } else if(slide.order == 2){
+          this.slides.push(slide);
+        }else if(slide.order == 3){
+          this.slides.push(slide);
+        }
+      })
+      
     });
   }
 }

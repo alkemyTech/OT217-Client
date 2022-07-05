@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Activity} from "../../../../../../shared/models/Activity";
 import {ActivityService} from "../../../../../../core/services/activity.service";
 import {ActivatedRoute} from "@angular/router";
-
+import { ErrorActivitiesService } from "src/app/core/services/errorActivities.service";
 @Component({
     selector: 'app-detail',
     templateUrl: './detail.component.html',
@@ -13,7 +13,8 @@ import {ActivatedRoute} from "@angular/router";
      private id!: number;
 
     constructor(private activitiesService: ActivityService,
-                private activatedRoute: ActivatedRoute,) {
+                private activatedRoute: ActivatedRoute,
+                private dialog: ErrorActivitiesService) {
     }
 
     ngOnInit(): void {
@@ -24,6 +25,8 @@ import {ActivatedRoute} from "@angular/router";
     getActivitiesById(id: number) {
         this.activitiesService.getActivitiesById(id).subscribe((response) => {
             this.activities = response.data;
+        }, error => {
+            this.dialog.openSnackBar("Erro al obtener la informacion de la actividad")
         });
     }
 }

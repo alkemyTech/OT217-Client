@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
+
 @Component({
   selector: "app-form-contact",
   templateUrl: "./form-contact.component.html",
@@ -8,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class FormContactComponent {
   public formLogin: FormGroup;
+
+  isCheck= true;
+  showError=true;
 
   constructor(private formBuilder: FormBuilder) {
     this.formLogin = this.formBuilder.group({

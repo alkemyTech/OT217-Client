@@ -1,15 +1,17 @@
+<div class="nav-backoffice">
+  <a [routerLink]="'/backoffice'">
+    <mat-icon> arrow_back </mat-icon>
+  </a>
+  <img src="../../../../../../assets/LOGO-SOMOS MAS.png" alt="logo somo mas" />
+</div>
 <app-table
-[title]="'Slides'"
-
-[dataArray]="slidesDataTable"
-[firstCol]="'Slide'"
-[secondCol]="'orden'"
-[thirdCol]="'Acciones'"
-
-[imageTrue]="true"
-[orderTrue]="true"
-
-[editUrl]="'/backoffice/slides/'"
-[deleteElement]="deleteElement"
-
+  [title]="'Slides'"
+  [dataArray]="slidesDataTable"
+  [firstCol]="'Slide'"
+  [secondCol]="'orden'"
+  [thirdCol]="'Acciones'"
+  [imageTrue]="true"
+  [orderTrue]="true"
+  [editUrl]="'/backoffice/slides/'"
+  [deleteElement]="deleteElement"
 ></app-table>

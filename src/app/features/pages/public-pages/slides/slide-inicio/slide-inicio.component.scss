@@ -6,8 +6,9 @@
     display: none;
   }
   .imagen {
-    width: auto;
+    width: 600px;
     height: 500px;
+    object-fit: cover;
   }
 }
 

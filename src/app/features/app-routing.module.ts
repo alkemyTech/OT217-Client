@@ -26,8 +26,8 @@ import { SidebarComponent } from "./pages/private-pages/backoffice/sidebar/sideb
 
 const routes: Routes = [
   {
-    path: "actividades",
-    component: ActivitiesPageComponent,
+    path: "home",
+    component: HomeComponent,
   },
   {
     path: "backoffice/slides",
@@ -100,7 +100,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "actividades",
+    redirectTo: "home",
     pathMatch: "full",
   },
 
@@ -122,7 +122,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "actividades",
+    redirectTo: "home",
     pathMatch: "full",
   },
 ];

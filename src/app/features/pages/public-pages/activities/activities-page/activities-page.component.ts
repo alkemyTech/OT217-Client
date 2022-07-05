@@ -10,6 +10,7 @@ import {
 } from "rxjs/operators";
 import { Subject } from "rxjs";
 import { ActivitiesServices } from "src/app/core/services/activities.service";
+import { ErrorActivitiesService } from "src/app/core/services/errorActivities.service";
 
 @Component({
   selector: "app-activities-page",
@@ -23,7 +24,8 @@ export class ActivitiesPageComponent implements OnInit {
 
   constructor(
     private activitiesService: ActivityService,
-    private activitieService: ActivitiesServices
+    private activitieService: ActivitiesServices,
+    private dialog: ErrorActivitiesService
   ) {}
 
   page_size: number = 3;
@@ -52,6 +54,9 @@ export class ActivitiesPageComponent implements OnInit {
   loadActivities() {
     this.activitiesService.getActivities().subscribe((response) => {
       this.activities = response.data;
+    }, error => {
+       this.dialog.openSnackBar("Erro al obtener las actividades")
+       
     });
   }
   shearsActie(search: any) {
