@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NosotrosService } from 'src/app/core/services/nosotros.service';
-import { Organization } from 'src/app/features/models';
+import { Organization } from '../../../../../shared/models/organization';
 @Component({
   selector: 'app-nosotros',
   templateUrl: './nosotros.component.html',
@@ -9,13 +9,20 @@ import { Organization } from 'src/app/features/models';
 export class NosotrosComponent implements OnInit {
 
   
+  _nosotros: Organization[];
+ 
 
   constructor(
-    private nosotrosService: NosotrosService,
-  ) { }
+    private nosotrosService: NosotrosService) { }
 
-  ngOnInit(): void {
-    console.log(this.nosotrosService.getOrganization())
+  ngOnInit() {
+    this.nosotrosService.getNosotros().subscribe( data => this._nosotros = data);
   }
 
-}
+  
+ 
+  }
+
+  
+
+
