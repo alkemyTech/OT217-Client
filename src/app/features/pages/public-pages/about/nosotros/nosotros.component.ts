@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Data } from 'popper.js';
 import { NosotrosService } from 'src/app/core/services/nosotros.service';
 import { Organization } from '../../../../../shared/models/organization';
 @Component({
