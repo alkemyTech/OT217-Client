@@ -10,6 +10,7 @@ import { OrganizationListComponent } from 'src/app/features/pages/private-pages/
 })
 export class NosotrosService {
   
+  
   private urlApi: string = "https://ongapi.alkemy.org/api/organization";
   
   
