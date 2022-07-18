@@ -1,11 +1,24 @@
 <app-navbar></app-navbar>
-<div class="text-center">
-    <h1>Nosotros</h1>
-        <ul>
-            <li>
-                {{ _nosotros | json }}
+<div class="position-container">
+    <div class="text-center">
+        
+        <!--<div>
+            <h1>Nosotros</h1>
+        </div>-->
 
-            </li>
-        </ul>
+        <div>
+            <ul>
+                <li *ngFor="let elements of _nosotros | ObjToArray ">
+                    <h2>{{ elements.name }}</h2>
+                    {{ elements.long_description }}
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </div>
 <app-footer></app-footer>
+                    
+
+
+        
