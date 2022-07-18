@@ -64,6 +64,7 @@ import { NosotrosComponent } from "./pages/public-pages/about/nosotros/nosotros.
 import { FooterJuguetesComponent } from "./pages/public-pages/toys-campaign/footer-juguetes/footer-juguetes.component";
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
 import { MyAccountComponent } from "./pages/public-pages/my-account/my-account.component";
+import { ObjToArrayPipe } from "../shared/pipes/nosotros.pipe";
 
 
 
@@ -129,6 +130,7 @@ import { MyAccountComponent } from "./pages/public-pages/my-account/my-account.c
     UserComponent,
     NosotrosComponent,
     MyAccountComponent,
+    ObjToArrayPipe
     
   ],
   exports: [
