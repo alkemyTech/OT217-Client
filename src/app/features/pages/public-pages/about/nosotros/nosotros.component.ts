@@ -9,15 +9,17 @@ import { Organization } from '../../../../../shared/models/organization';
 })
 export class NosotrosComponent implements OnInit {
 
+  organization: Organization;
+  _nosotros: any;
   
-  _nosotros: Organization[];
- 
+  //name: any;
 
   constructor(
     private nosotrosService: NosotrosService) { }
 
   ngOnInit() {
-    this.nosotrosService.getNosotros().subscribe( data => this._nosotros = data);
+    this.nosotrosService.getNosotros()
+      .subscribe( data => this._nosotros = data)
   }
 
   
